@@ -7,12 +7,12 @@
   --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#F7F7F7; --surface3:#EBEBEB;
   --ink:#222222; --ink2:#717171; --ink3:#ADADAD;
   --border:#DDDDDD; --borderSoft:#EBEBEB;
-  --rausch:#FF385C; --rauschInk:#E31C5F; --onRausch:#FFFFFF;
+  --rausch:#FF385C; --onRausch:#FFFFFF;
   --btn:linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%);
   --good:#008A05; --goodBg:#EAF6EA; --arches:#C1570D; --archesBg:#FDF1E8;
   --error:#C13515; --errorBg:#FDEDE9;
   --mapLand:#F0EDE6; --mapLand2:#E6E2D8; --mapWater:#BFD8E6; --mapLine:#D2CEC4;
-  --shadow:0 6px 16px rgba(0,0,0,.12); --shadowSm:0 2px 4px rgba(0,0,0,.18);
+  --shadow:0 6px 16px rgba(0,0,0,.12);
   --pill:#FFFFFF; --pillInk:#222222;
 }
 @media (prefers-color-scheme:dark){
@@ -20,12 +20,12 @@
     --bg:#121212; --surface:#1C1C1C; --surface2:#242424; --surface3:#2E2E2E;
     --ink:#F7F7F7; --ink2:#B0B0B0; --ink3:#7D7D7D;
     --border:#3A3A3A; --borderSoft:#2C2C2C;
-    --rausch:#FF5A78; --rauschInk:#FF80A0; --onRausch:#2A0710;
+    --rausch:#FF5A78; --onRausch:#2A0710;
     --btn:linear-gradient(to right,#FF385C 0%,#FF5A78 50%,#FF6B86 100%);
     --good:#5DD36A; --goodBg:#15291A; --arches:#F5945C; --archesBg:#2E1D10;
     --error:#FF8163; --errorBg:#301410;
     --mapLand:#23241F; --mapLand2:#2C2E27; --mapWater:#16303E; --mapLine:#3A3C34;
-    --shadow:0 6px 16px rgba(0,0,0,.6); --shadowSm:0 2px 4px rgba(0,0,0,.7);
+    --shadow:0 6px 16px rgba(0,0,0,.6);
     --pill:#2E2E2E; --pillInk:#F7F7F7;
   }
 }
@@ -33,685 +33,740 @@
   --bg:#121212; --surface:#1C1C1C; --surface2:#242424; --surface3:#2E2E2E;
   --ink:#F7F7F7; --ink2:#B0B0B0; --ink3:#7D7D7D;
   --border:#3A3A3A; --borderSoft:#2C2C2C;
-  --rausch:#FF5A78; --rauschInk:#FF80A0; --onRausch:#2A0710;
+  --rausch:#FF5A78; --onRausch:#2A0710;
   --btn:linear-gradient(to right,#FF385C 0%,#FF5A78 50%,#FF6B86 100%);
   --good:#5DD36A; --goodBg:#15291A; --arches:#F5945C; --archesBg:#2E1D10;
   --error:#FF8163; --errorBg:#301410;
   --mapLand:#23241F; --mapLand2:#2C2E27; --mapWater:#16303E; --mapLine:#3A3C34;
-  --shadow:0 6px 16px rgba(0,0,0,.6); --shadowSm:0 2px 4px rgba(0,0,0,.7);
+  --shadow:0 6px 16px rgba(0,0,0,.6);
   --pill:#2E2E2E; --pillInk:#F7F7F7;
 }
 *{box-sizing:border-box}
-body{
-  background:var(--bg); color:var(--ink); margin:0;
-  font-family:Figtree,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
-  font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased;
-}
+body{background:var(--bg); color:var(--ink); margin:0;
+  font-family:Figtree,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{margin:0; font-weight:600; letter-spacing:-.015em; text-wrap:balance}
 a{color:inherit}
 .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
-
-/* ---------- Kopfleiste ---------- */
-.topbar{
-  position:sticky; top:0; z-index:40; background:var(--bg);
-  border-bottom:1px solid var(--borderSoft);
-}
-.topbar .inner{display:flex; align-items:center; gap:18px; height:66px; max-width:1180px; margin:0 auto; padding:0 24px}
-.brand{font-weight:800; font-size:20px; color:var(--rausch); letter-spacing:-.03em; white-space:nowrap}
-.navlinks{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.topbar{position:sticky; top:0; z-index:40; background:var(--bg); border-bottom:1px solid var(--borderSoft)}
+.topbar .inner{display:flex; align-items:center; gap:18px; height:64px; max-width:1180px; margin:0 auto; padding:0 24px}
+.brand{font-weight:800; font-size:19px; color:var(--rausch); letter-spacing:-.03em; white-space:nowrap}
+.navlinks{display:flex; gap:2px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
 .navlinks::-webkit-scrollbar{display:none}
-.navlinks a{
-  text-decoration:none; font-size:14px; font-weight:500; color:var(--ink2);
-  padding:9px 14px; border-radius:999px; white-space:nowrap;
-}
+.navlinks a{text-decoration:none; font-size:14px; font-weight:500; color:var(--ink2); padding:8px 12px; border-radius:999px; white-space:nowrap}
 .navlinks a:hover{background:var(--surface2); color:var(--ink)}
-
-/* ---------- Titelblock ---------- */
-.hero{padding:38px 0 6px}
-.hero h1{font-size:clamp(28px,4.4vw,40px); font-weight:700; line-height:1.12}
+.hero{padding:36px 0 4px}
+.hero h1{font-size:clamp(27px,4.2vw,38px); font-weight:700; line-height:1.13}
 .hero .meta{color:var(--ink2); font-size:15.5px; margin-top:9px; display:flex; flex-wrap:wrap; gap:0 7px}
 .hero .meta span::after{content:"·"; margin-left:7px; color:var(--ink3)}
 .hero .meta span:last-child::after{content:""}
-.hero .lede{margin-top:16px; font-size:17px; color:var(--ink2); max-width:66ch; line-height:1.6}
-
-/* ---------- allgemein ---------- */
-section{padding:40px 0; border-top:1px solid var(--borderSoft)}
-section:first-of-type{border-top:none}
-.sechead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:22px}
+.hero .lede{margin-top:15px; font-size:17px; color:var(--ink2); max-width:66ch; line-height:1.6}
+section{padding:38px 0; border-top:1px solid var(--borderSoft)}
+.sechead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:20px}
 .sechead h2{font-size:clamp(21px,2.6vw,26px); font-weight:600}
 .sechead .hint{font-size:14px; color:var(--ink2); margin-left:auto}
-.card{background:var(--surface); border:1px solid var(--border); border-radius:12px}
-.star{font-size:.92em; vertical-align:baseline}
-
-/* ---------- Golfprogramm ---------- */
-.progwrap{overflow-x:auto; scrollbar-width:thin; margin:0 -24px; padding:0 24px}
-.prog{display:grid; grid-template-columns:repeat(5,minmax(184px,1fr)); gap:14px; min-width:min-content}
-.day{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 17px 17px}
-.day .d{font-size:12.5px; font-weight:700; color:var(--rausch); text-transform:uppercase; letter-spacing:.06em}
-.day .c{font-size:19px; font-weight:600; margin-top:5px; line-height:1.2}
-.day .cc{font-size:14px; color:var(--ink2); margin-top:2px}
-.day .t{font-size:14px; color:var(--ink); margin-top:11px; font-variant-numeric:tabular-nums}
-.day .f{font-size:13.5px; color:var(--ink2); margin-top:8px; padding-top:9px; border-top:1px solid var(--borderSoft); font-variant-numeric:tabular-nums}
-.progsum{
-  margin-top:16px; background:var(--surface2); border-radius:12px; padding:15px 19px;
-  display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; font-size:15px; color:var(--ink2);
-}
-.progsum b{font-size:23px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums}
-
-/* ---------- Karte ---------- */
-.mapcard{border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--mapLand)}
-.mapscroll{overflow-x:auto}
-.mapscroll svg{display:block; width:100%; min-width:700px; height:auto}
-.bub{cursor:pointer}
-.bub .cap{
-  fill:var(--pill); stroke:rgba(0,0,0,.09); stroke-width:1;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,.22));
-  transition:fill .13s ease;
-}
-.bub .bt{fill:var(--pillInk); font-weight:700; transition:fill .13s ease}
-.bub:hover .cap, .bub.on .cap{fill:var(--ink)}
-.bub:hover .bt, .bub.on .bt{fill:var(--bg)}
-.maplegend{
-  display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center;
-  padding:14px 18px; background:var(--surface); border-top:1px solid var(--border);
-  font-size:13.5px; color:var(--ink2);
-}
-.maplegend b{color:var(--ink); font-weight:600}
+.pnl{background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden}
+.pnl .ph{padding:20px 22px 0}
+.pnl .ph h3{font-size:19px; font-weight:600}
+.pnl .ph p{margin:8px 0 0; font-size:15px; color:var(--ink2); line-height:1.55; max-width:64ch}
+.tnote{padding:14px 18px; font-size:13.5px; color:var(--ink2); background:var(--surface2); border-top:1px solid var(--border); line-height:1.55}
+.chw{overflow-x:auto; padding:8px 12px 14px}
+.chw svg{display:block; width:100%; min-width:520px; height:auto}
+.flag{display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:700; white-space:nowrap; border:1px solid transparent}
+.flag.neu{background:var(--rausch); color:var(--onRausch)}
+.flag.ok{background:var(--goodBg); color:var(--good); border-color:var(--good)}
+.flag.no{background:var(--errorBg); color:var(--error); border-color:var(--error)}
+.flag.warn{background:var(--archesBg); color:var(--arches); border-color:var(--arches)}
+/* Golfprogramm */
+.progwrap{overflow-x:auto; margin:0 -24px; padding:0 24px}
+.prog{display:grid; grid-template-columns:repeat(5,minmax(178px,1fr)); gap:13px; min-width:min-content}
+.day{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:15px 16px 16px}
+.day.opt{border-color:var(--rausch); border-width:1.5px}
+.day .d{font-size:12.5px; font-weight:700; color:var(--rausch); text-transform:uppercase; letter-spacing:.05em}
+.day .c{font-size:18px; font-weight:600; margin-top:5px; line-height:1.2}
+.day .cc{font-size:13.5px; color:var(--ink2); margin-top:2px}
+.day .t{font-size:13.5px; margin-top:10px; font-variant-numeric:tabular-nums}
+.day .f{font-size:13px; color:var(--ink2); margin-top:7px; padding-top:8px; border-top:1px solid var(--borderSoft); font-variant-numeric:tabular-nums}
+.day .nite{margin-top:9px; font-size:12.5px; font-weight:700}
+.day .nite.ja{color:var(--good)} .day .nite.nein{color:var(--error)}
+.progsum{margin-top:15px; background:var(--surface2); border-radius:12px; padding:14px 18px; display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; font-size:15px; color:var(--ink2)}
+.progsum b{font-size:22px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums}
 </style>
 
 <div class="topbar">
   <div class="inner">
     <span class="brand">Marbella 2027</span>
     <nav class="navlinks">
-      <a href="#programm">Golfprogramm</a>
-      <a href="#kosten">Kosten</a>
-      <a href="#karte">Karte</a>
-      <a href="#vergleich">Vergleich</a>
-      <a href="#objekte">Objekte</a>
-      <a href="#entscheid">Entscheid</a>
-      <a href="#offen">Offene Punkte</a>
+      <a href="#golf">Golf</a><a href="#kosten">Kosten</a><a href="#karte">Karte</a>
+      <a href="#vergleich">Vergleich</a><a href="#betten">Betten</a><a href="#bisherige">Bisherige</a><a href="#alternativen">Alternativen</a>
+      <a href="#ausgang">Ausgang</a><a href="#offen">Offen</a>
     </nav>
   </div>
 </div>
 
 <div class="wrap">
-
   <header class="hero">
-    <h1>Sechs Unterkünfte für die Golfwoche</h1>
-    <p class="meta">
-      <span>Mi 5. – Mo 10. Mai 2027</span><span>5 Nächte</span><span>8 Gäste</span><span>6 Objekte</span><span>4 Golfplätze</span><span>Marbella, Andalusien</span>
-    </p>
-    <p class="lede">Alles, was den Entscheid trägt, auf einer Seite: Preis, Bewertung, Ausstattung, Parkplätze — und wie weit ihr von jedem Objekt aus jeden Morgen zum Abschlag fahrt.</p>
+    <h1>Wo wohnen wir, und stimmt der Golfplan?</h1>
+    <p class="meta"><span>Mi 5. – Mo 10. Mai 2027</span><span>5 Nächte</span><span>8 Mann</span><span>13 Objekte geprüft</span><span>Marbella</span></p>
+    <p class="lede">Alle Preise sind jetzt echte Airbnb-Gesamtpreise für genau unseren Zeitraum — nicht mehr die Zahlen aus der Umfrage. Dazu drei Alternativen, die besser passen als alles bisher Geprüfte, ein überarbeiteter Golfplan und wo man abends hinkommt.</p>
   </header>
 
-  <section id="programm">
+  <section id="golf">
     <div class="sechead">
-      <h2>Euer Golfprogramm</h2>
-      <p class="hint">Landung 12:25 · je zwei Flights</p>
+      <h2>Der Golfplan — und wie er besser geht</h2>
+      <p class="hint">Fahrzeiten ab Marbella-Zentrum</p>
     </div>
-    <div class="progwrap">
-      <div class="prog">
-        <div class="day"><div class="d">Mi 5. Mai</div><div class="c">La Cala</div><div class="cc">Campo América</div><div class="t">16:00 / 16:10</div><div class="f">100 € pro Person</div></div>
-        <div class="day"><div class="d">Do 6. Mai</div><div class="c">Mijas</div><div class="cc">Los Olivos · Los Lagos</div><div class="t">09:40 / 09:50<br>16:00 / 16:10</div><div class="f">135 € + 105 €</div></div>
-        <div class="day"><div class="d">Fr 7. Mai</div><div class="c">La Hacienda</div><div class="cc">Alcaidesa</div><div class="t">09:00 / 09:12<br>15:12 / 15:24</div><div class="f">180 € + 180 €</div></div>
-        <div class="day"><div class="d">Sa 8. Mai</div><div class="c">Rio Real</div><div class="cc">Marbella</div><div class="t">15:00 / 15:10</div><div class="f">140 € pro Person</div></div>
-        <div class="day"><div class="d">So 9. Mai</div><div class="c">La Cala</div><div class="cc">Europa · Asia</div><div class="t">08:30 / 08:40<br>16:00 / 16:10</div><div class="f">134 € + 100 €</div></div>
+
+    <div class="pnl" style="margin-bottom:22px">
+      <div class="ph">
+        <h3>So steht er heute</h3>
+        <p>Acht Runden auf vier Anlagen. Das Problem ist nicht die Menge, sondern die Reihenfolge: Der Sonntag startet um 08:30 in La Cala — mit 33 Minuten Anfahrt heisst das Tagwache um sieben. <b>Damit ist die Samstagnacht tot</b>, ausgerechnet der Abend, an dem in Marbella und Banús am meisten läuft.</p>
+      </div>
+      <div class="progwrap" style="padding:18px 22px 22px; margin:0">
+        <div class="prog">
+          <div class="day"><div class="d">Mi 5. Mai</div><div class="c">La Cala</div><div class="cc">Campo América · 33 Min</div><div class="t">16:00 / 16:10</div><div class="f">100 €</div><div class="nite ja">Abend frei</div></div>
+          <div class="day"><div class="d">Do 6. Mai</div><div class="c">Mijas</div><div class="cc">Olivos · Lagos · 32 Min</div><div class="t">09:40 · 16:00</div><div class="f">135 € + 105 €</div><div class="nite nein">kurze Nacht — Fr 09:00</div></div>
+          <div class="day"><div class="d">Fr 7. Mai</div><div class="c">La Hacienda</div><div class="cc">Alcaidesa · <b>52 Min</b></div><div class="t">09:00 · 15:12</div><div class="f">180 € + 180 €</div><div class="nite ja">Nacht frei</div></div>
+          <div class="day"><div class="d">Sa 8. Mai</div><div class="c">Rio Real</div><div class="cc">Marbella · 12 Min</div><div class="t">15:00 / 15:10</div><div class="f">140 €</div><div class="nite nein">kurze Nacht — So 08:30</div></div>
+          <div class="day"><div class="d">So 9. Mai</div><div class="c">La Cala</div><div class="cc">Europa · Asia · 33 Min</div><div class="t">08:30 · 16:00</div><div class="f">134 € + 100 €</div><div class="nite ja">Nacht frei</div></div>
+        </div>
+        <p class="progsum">Fahrzeit gesamt <b>5,4 Std</b> <span>· Greenfees <b style="font-size:15px">1'174 €</b> pro Person · zwei von drei Ausgehnächten blockiert</span></p>
       </div>
     </div>
-    <p class="progsum">Greenfees pro Person <b>1'174 €</b> <span>— fix, egal wo wir schlafen. Die Unterkunft kommt mit 304 bis 515 pro Kopf dazu.</span></p>
-  </section>
 
-  <section id="kosten">
-    <div class="sechead">
-      <h2>Was der Trip pro Mann kostet</h2>
-      <p class="hint">Greenfees plus Unterkunft · ohne Flug und Mietwagen</p>
-    </div>
     <div class="pnl">
       <div class="ph">
-        <h3>Die Greenfees stehen fest, die Unterkunft nicht</h3>
-        <p>1'174 pro Person fallen an, egal wo wir schlafen. Die Unterkunft bewegt sich zwischen 304 und 515 pro Kopf — die ganze Diskussion über die sechs Objekte ist also <b>211 pro Mann</b> wert, gut ein Achtel der Gesamtkosten.</p>
+        <h3>Mein Vorschlag <span class="flag neu">überarbeitet</span></h3>
+        <p>Gleiche acht Runden, gleiche Anzahl Löcher. Ich habe nur die Reihenfolge gedreht, den Ankunftstag entschärft und <b>La Hacienda durch Las Brisas ersetzt</b> — beides Championship-Plätze, aber Las Brisas liegt 14 statt 52 Minuten entfernt und kostet rund 40 € weniger pro Runde.</p>
       </div>
-      <div class="chw">
-        <svg viewBox="0 0 760 300" role="img" aria-label="Gestapelte Balken: Greenfees und Unterkunft pro Person je Objekt, aufsteigend nach Gesamtkosten">
-          <g font-size="13" fill="var(--ink2)">
-            <rect x="124" y="14" width="12" height="12" rx="2" fill="var(--ink2)"/>
-            <text x="143" y="24">Greenfees 1'174</text>
-            <rect x="262" y="14" width="12" height="12" rx="2" fill="var(--rausch)"/>
-            <text x="281" y="24">Unterkunft pro Person</text>
-          </g>
-          <g stroke="var(--borderSoft)" stroke-width="1">
-            <line x1="284" y1="38" x2="284" y2="264"/><line x1="444" y1="38" x2="444" y2="264"/><line x1="604" y1="38" x2="604" y2="264"/>
-          </g>
-          <line x1="124" y1="38" x2="124" y2="264" stroke="var(--border)" stroke-width="1.4"/>
-          <g font-size="13" font-weight="600" fill="var(--ink)" text-anchor="end">
-            <text x="116" y="62">B · Aloha</text><text x="116" y="100">D · Casa Chloe</text>
-            <text x="116" y="138">C · Casa Savia</text><text x="116" y="176">E · Mariposa</text>
-            <text x="116" y="214">A · East Marbella</text><text x="116" y="252">F · Puerto Banús</text>
-          </g>
-          <g>
-            <rect x="124" y="44" width="375.7" height="26" rx="3" fill="var(--ink2)"/><rect x="501.7" y="44" width="97.3" height="26" rx="3" fill="var(--rausch)"/><text x="608" y="62" font-size="14" font-weight="700" fill="var(--ink)">1'478</text>
-            <rect x="124" y="82" width="375.7" height="26" rx="3" fill="var(--ink2)"/><rect x="501.7" y="82" width="132.2" height="26" rx="3" fill="var(--rausch)"/><text x="643" y="100" font-size="14" font-weight="700" fill="var(--ink)">1'587</text>
-            <rect x="124" y="120" width="375.7" height="26" rx="3" fill="var(--ink2)"/><rect x="501.7" y="120" width="145.6" height="26" rx="3" fill="var(--rausch)"/><text x="656" y="138" font-size="14" font-weight="700" fill="var(--ink)">1'629</text>
-            <rect x="124" y="158" width="375.7" height="26" rx="3" fill="var(--ink2)"/><rect x="501.7" y="158" width="149.1" height="26" rx="3" fill="var(--rausch)"/><text x="660" y="176" font-size="14" font-weight="700" fill="var(--ink)">1'640</text>
-            <rect x="124" y="196" width="375.7" height="26" rx="3" fill="var(--ink2)"/><rect x="501.7" y="196" width="164.8" height="26" rx="3" fill="var(--rausch)"/><text x="675" y="214" font-size="14" font-weight="700" fill="var(--ink)">1'689</text>
-            <rect x="124" y="234" width="375.7" height="26" rx="3" fill="var(--ink2)"/><text x="510" y="252" font-size="13.5" fill="var(--ink2)">Unterkunftspreis noch offen</text>
-          </g>
-          <g font-size="12.5" fill="var(--ink2)" text-anchor="middle">
-            <text x="124" y="282">0</text><text x="284" y="282">500</text><text x="444" y="282">1'000</text><text x="604" y="282">1'500</text>
-          </g>
-        </svg>
+      <div class="progwrap" style="padding:18px 22px 22px; margin:0">
+        <div class="prog">
+          <div class="day opt"><div class="d">Mi 5. Mai</div><div class="c">Rio Real</div><div class="cc">Marbella · 12 Min</div><div class="t">16:00 / 16:10</div><div class="f">ca. 140 €</div><div class="nite ja">Ankunft entspannt</div></div>
+          <div class="day opt"><div class="d">Do 6. Mai</div><div class="c">La Cala</div><div class="cc">América · Europa · 33 Min</div><div class="t">09:00 · 15:00</div><div class="f">ca. 100 € + 134 €</div><div class="nite nein">langer Tag, ruhiger Abend</div></div>
+          <div class="day opt"><div class="d">Fr 7. Mai</div><div class="c">Mijas</div><div class="cc">Olivos · Lagos · 32 Min</div><div class="t">09:40 · 16:00</div><div class="f">ca. 135 € + 105 €</div><div class="nite ja">Freitagnacht frei</div></div>
+          <div class="day opt"><div class="d">Sa 8. Mai</div><div class="c">Las Brisas</div><div class="cc">Nueva Andalucía · 14 Min</div><div class="t">11:00 · eine Runde</div><div class="f">ca. 140 €</div><div class="nite ja">Samstagnacht frei</div></div>
+          <div class="day opt"><div class="d">So 9. Mai</div><div class="c">Santa Clara<br>+ Rio Real</div><div class="cc">beide 12 Min</div><div class="t">10:00 · 15:30</div><div class="f">ca. 110 € + 140 €</div><div class="nite ja">letzte Nacht frei</div></div>
+        </div>
+        <p class="progsum">Fahrzeit gesamt <b>3,6 Std</b> <span>· <b style="font-size:15px">1,8 Std weniger</b> im Auto, <b style="font-size:15px">drei</b> statt einer freien Ausgehnacht, und rund <b style="font-size:15px">170 €</b> weniger Greenfees pro Mann</span></p>
       </div>
-      <p class="tnote">Greenfees aus eurem Golfsheet. Die Beträge aus der Umfrage sind Gesamtpreise für die ganze Gruppe — hier durch acht geteilt. Sollten die beiden Beträge nicht in derselben Währung stehen, ändert das an der Reihenfolge nichts — der Greenfee-Anteil ist bei jedem Objekt gleich gross.</p>
-    </div>
-  </section>
-
-  <section id="karte">
-    <div class="sechead">
-      <h2>Wo alles liegt</h2>
-      <p class="hint">Gesamtpreis für 5 Nächte · Klick springt zum Objekt</p>
-    </div>
-    <div class="mapcard">
-      <div class="mapscroll">
-      <svg viewBox="0 0 1000 620" role="img" aria-label="Karte der Küste von San Pedro bis Las Chapas mit den sechs Unterkünften und ihren Wochenpreisen">
-        <defs><clipPath id="fr"><rect x="0" y="0" width="1000" height="620"/></clipPath></defs>
-        <g clip-path="url(#fr)">
-          <rect x="0" y="0" width="1000" height="620" fill="var(--mapLand)"/>
-          <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246 L 1000,0 L 0,0 L 0,196 Z" fill="var(--mapLand2)"/>
-          <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246" fill="none" stroke="var(--mapLine)" stroke-width="1.2"/>
-          <path d="M -32.4,589.5 L -24.1,595.9 L -14.3,596.1 L -6.0,593.9 L 1.8,588.9 L 10.2,580.6 L 18.3,572.6 L 27.6,564.8 L 37.0,558.9 L 44.8,554.4 L 53.0,547.7 L 60.9,541.0 L 68.8,534.9 L 76.7,527.2 L 85.3,521.3 L 94.7,514.8 L 102.7,508.2 L 111.8,499.9 L 121.2,492.3 L 129.0,486.9 L 137.9,482.8 L 146.4,482.2 L 155.5,482.8 L 163.9,477.6 L 171.8,467.8 L 179.5,464.6 L 187.5,460.8 L 195.1,458.1 L 203.5,457.2 L 211.3,449.2 L 220.2,442.2 L 228.0,448.1 L 236.7,445.7 L 245.2,433.9 L 253.8,425.5 L 262.1,422.2 L 270.5,421.7 L 280.4,401.7 L 290.8,389.4 L 300.8,378.5 L 308.7,371.9 L 317.7,365.2 L 327.1,359.2 L 335.3,355.3 L 347.2,353.8 L 358.3,353.5 L 368.6,356.6 L 376.6,355.0 L 387.0,349.4 L 396.8,343.5 L 405.7,339.7 L 416.2,334.2 L 424.5,329.1 L 433.5,325.4 L 442.7,321.3 L 475.9,317.9 L 492.5,317.9 L 508.9,313.7 L 520.4,312.2 L 531.0,314.6 L 538.9,315.3 L 547.0,320.9 L 554.8,323.2 L 563.0,317.5 L 571.5,315.7 L 579.9,315.2 L 589.9,314.1 L 597.9,309.5 L 607.8,315.0 L 615.4,314.4 L 623.7,321.6 L 631.4,315.3 L 645.0,312.4 L 654.5,311.1 L 664.0,310.4 L 679.4,310.6 L 691.6,311.7 L 717.3,316.0 L 731.8,320.0 L 747.9,325.1 L 758.2,328.5 L 770.5,336.5 L 779.3,337.5 L 790.3,340.1 L 803.7,343.7 L 823.0,347.0 L 838.8,349.6 L 849.9,351.4 L 857.6,352.9 L 867.5,355.3 L 877.8,357.6 L 889.7,359.5 L 904.5,362.1 L 913.1,364.2 L 928.6,368.2 L 940.6,371.4 L 957.0,375.8 L 969.5,379.5 L 979.6,382.6 L 988.8,385.7 L 1002.7,389.4 L 1011.0,391.5 L 1022.5,395.1 L 1060,395.1 L 1060,680 L -60,680 Z" fill="var(--mapWater)"/>
-          <text x="700" y="505" fill="var(--ink3)" font-size="19" letter-spacing="6" font-weight="500" opacity=".85">MITTELMEER</text>
-
-          <!-- Golfplätze -->
-          <g font-size="13" font-weight="600" fill="var(--error)">
-            <g transform="translate(764,279)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="-22" text-anchor="end">Rio Real Golf</text></g>
-            <g transform="translate(213,331)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="22" text-anchor="end">Aloha Golf</text></g>
-            <g transform="translate(892,326)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="9" y="-8">Santa Clara</text></g>
-          </g>
-          <!-- Ziele ausserhalb der Karte -->
-          <g font-size="13" font-weight="500">
-            <g transform="translate(984,116)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">La Cala Resort</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">17–32 km · 27–38 Min.</text></g>
-            <g transform="translate(984,172)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">Mijas Golf</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">33–47 km · 32–40 Min.</text></g>
-            <g transform="translate(14,556)"><path d="M 0,-8 L -10,0 L 0,8 Z" fill="var(--error)"/><text x="9" y="-2" font-weight="600" fill="var(--ink)">La Hacienda · Alcaidesa</text><text x="9" y="15" fill="var(--ink2)" font-size="12.5">54–70 km · 42–53 Min.</text></g>
-          </g>
-          <!-- Ortsmarken -->
-          <g font-size="13.5" font-weight="600" fill="var(--ink2)">
-            <text x="292" y="230" text-anchor="middle">▲ La Concha</text>
-            <text x="42" y="493">San Pedro</text>
-            <text x="592" y="299">Marbella</text>
-            <text x="250" y="470" text-anchor="middle">Puerto Banús</text>
-          </g>
-          <circle cx="571.5" cy="293.9" r="3.5" fill="var(--ink2)"/>
-          <circle cx="28.6" cy="478.3" r="3.5" fill="var(--ink2)"/>
-          <circle cx="250" cy="433.4" r="3.5" fill="var(--ink2)"/>
-
-          <!-- Preis-Bubbles -->
-          <g class="bubs" font-size="14.5">
-            <g class="bub" data-id="E" tabindex="0" role="link" aria-label="E Villa Mariposa, 3724 gesamt für 5 Nächte, ganze Gruppe">
-              <rect class="cap" x="796" y="256" width="102" height="32" rx="16"/>
-              <text class="bt" x="847" y="277" text-anchor="middle">E · 3'724</text>
-            </g>
-            <g class="bub" data-id="A" tabindex="0" role="link" aria-label="A Villa East Marbella, 4119 gesamt für 5 Nächte, ganze Gruppe">
-              <rect class="cap" x="515" y="248" width="102" height="32" rx="16"/>
-              <text class="bt" x="566" y="269" text-anchor="middle">A · 4'119</text>
-            </g>
-            <g class="bub" data-id="B" tabindex="0" role="link" aria-label="B Reihenhaus Aloha, 2434 gesamt für 5 Nächte, ganze Gruppe">
-              <rect class="cap" x="196" y="296" width="102" height="32" rx="16"/>
-              <text class="bt" x="247" y="317" text-anchor="middle">B · 2'434</text>
-            </g>
-            <g class="bub" data-id="D" tabindex="0" role="link" aria-label="D Casa Chloe, 3305 gesamt für 5 Nächte, ganze Gruppe">
-              <rect class="cap" x="160" y="371" width="102" height="32" rx="16"/>
-              <text class="bt" x="211" y="392" text-anchor="middle">D · 3'305</text>
-            </g>
-            <g class="bub" data-id="F" tabindex="0" role="link" aria-label="F Apartment Puerto Banús, Preis offen">
-              <rect class="cap" x="288" y="415" width="110" height="32" rx="16"/>
-              <text class="bt" x="343" y="436" text-anchor="middle">F · offen</text>
-            </g>
-            <g class="bub" data-id="C" tabindex="0" role="link" aria-label="C Casa Savia, 3637 gesamt für 5 Nächte, ganze Gruppe">
-              <rect class="cap" x="75" y="430" width="102" height="32" rx="16"/>
-              <text class="bt" x="126" y="451" text-anchor="middle">C · 3'637</text>
-            </g>
-          </g>
-        </g>
-      </svg>
-      </div>
-      <p class="maplegend">
-        <b>Gesamtpreis der Buchung, 5 Nächte</b>
-        <span>🚩 Golfplatz</span>
-        <span>Airbnb zeigt Standorte rund 150 m ungenau — die Karte stimmt auf Quartierebene, nicht auf die Hausnummer.</span>
-      </p>
+      <p class="tnote"><b>Was ihr dafür aufgebt:</b> La Hacienda in Alcaidesa ist der einzige echte Links-Platz der Küste — Dünen, Wind, Meer, spielt sich völlig anders als alles andere hier. Wer das will, behält den Freitag wie geplant und nimmt die 52 Minuten in Kauf; dann bleibt die Fahrzeit bei 4,2 Std — immer noch über eine Stunde besser als heute, und die drei freien Nächte bleiben erhalten. Die Startzeiten oben sind Vorschläge, keine Buchungen — Greenfees sind Richtwerte aus der Maisaison und müssen bestätigt werden.</p>
     </div>
   </section>
 
 <style>
-/* ---------- Vergleichstabelle ---------- */
+.mapcard{border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--mapLand)}
+.mapscroll{overflow-x:auto}
+.mapscroll svg{display:block; width:100%; min-width:700px; height:auto}
+.bub{cursor:pointer}
+.bub .cap{fill:var(--pill); stroke:rgba(0,0,0,.09); stroke-width:1; filter:drop-shadow(0 2px 4px rgba(0,0,0,.22)); transition:fill .13s}
+.bub .bt{fill:var(--pillInk); font-weight:700; transition:fill .13s}
+.bub:hover .cap,.bub.on .cap{fill:var(--ink)}
+.bub:hover .bt,.bub.on .bt{fill:var(--bg)}
+.bub.tip .cap{fill:var(--rausch); stroke:none}
+.bub.tip .bt{fill:var(--onRausch)}
+.bub.tip:hover .cap{fill:var(--ink)}
+.bub.tip:hover .bt{fill:var(--bg)}
+.maplegend{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; padding:14px 18px; background:var(--surface); border-top:1px solid var(--border); font-size:13.5px; color:var(--ink2)}
+.maplegend b{color:var(--ink); font-weight:600}
+.swatch{display:inline-block; width:13px; height:13px; border-radius:3px; vertical-align:-1px; margin-right:5px}
+</style>
+
+<section id="kosten">
+  <div class="sechead">
+    <h2>Was der Trip pro Mann kostet</h2>
+    <p class="hint">Greenfees plus Unterkunft · ohne Flug und Mietwagen</p>
+  </div>
+  <div class="pnl">
+    <div class="ph">
+      <h3>Die Greenfees stehen fest, die Unterkunft nicht</h3>
+      <p>1'174 pro Person fallen an, egal wo wir schlafen. Die Unterkunft bewegt sich zwischen 292 und 543 pro Kopf — die ganze Objektdiskussion ist also <b>251 pro Mann</b> wert. Die zwei rot markierten Balken sind neue Funde, die ich weiter unten erkläre.</p>
+    </div>
+    <div class="chw">
+      <svg viewBox="0 0 760 360" role="img" aria-label="Gestapelte Balken: Greenfees plus Unterkunft pro Person je Objekt, aufsteigend">
+        <g font-size="13" fill="var(--ink2)">
+          <rect x="124" y="14" width="12" height="12" rx="2" fill="var(--ink2)"/><text x="143" y="24">Greenfees 1'174</text>
+          <rect x="262" y="14" width="12" height="12" rx="2" fill="var(--rausch)"/><text x="281" y="24">Unterkunft pro Person</text>
+        </g>
+        <g stroke="var(--borderSoft)" stroke-width="1">
+          <line x1="284" y1="38" x2="284" y2="318"/><line x1="444" y1="38" x2="444" y2="318"/><line x1="604" y1="38" x2="604" y2="318"/>
+        </g>
+        <line x1="124" y1="38" x2="124" y2="318" stroke="var(--border)" stroke-width="1.4"/>
+        <g font-size="13" font-weight="600" text-anchor="end">
+          <text x="116" y="61" fill="var(--ink)">D · Casa Chloe</text>
+          <text x="116" y="96" fill="var(--rausch)">★ Casa Central</text>
+          <text x="116" y="131" fill="var(--rausch)">★ Golden Mile</text>
+          <text x="116" y="166" fill="var(--ink)">B · Aloha</text>
+          <text x="116" y="201" fill="var(--ink)">F · Puerto Banús</text>
+          <text x="116" y="236" fill="var(--ink)">C · Casa Savia</text>
+          <text x="116" y="271" fill="var(--ink)">E · Mariposa</text>
+          <text x="116" y="306" fill="var(--ink)">A · East Marbella</text>
+        </g>
+        <g>
+          <rect x="124" y="44" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="44" width="93.4" height="24" rx="3" fill="var(--rausch)"/><text x="604" y="61" font-size="14" font-weight="700" fill="var(--ink)">1'466</text>
+          <rect x="124" y="79" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="79" width="109.1" height="24" rx="3" fill="var(--rausch)"/><text x="620" y="96" font-size="14" font-weight="700" fill="var(--ink)">1'515</text>
+          <rect x="124" y="114" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="114" width="113.3" height="24" rx="3" fill="var(--rausch)"/><text x="624" y="131" font-size="14" font-weight="700" fill="var(--ink)">1'528</text>
+          <rect x="124" y="149" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="149" width="130.9" height="24" rx="3" fill="var(--rausch)"/><text x="642" y="166" font-size="14" font-weight="700" fill="var(--ink)">1'583</text>
+          <rect x="124" y="184" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="184" width="139.8" height="24" rx="3" fill="var(--rausch)"/><text x="651" y="201" font-size="14" font-weight="700" fill="var(--ink)">1'611</text>
+          <rect x="124" y="219" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="219" width="153.6" height="24" rx="3" fill="var(--rausch)"/><text x="665" y="236" font-size="14" font-weight="700" fill="var(--ink)">1'654</text>
+          <rect x="124" y="254" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="254" width="157.1" height="24" rx="3" fill="var(--rausch)"/><text x="668" y="271" font-size="14" font-weight="700" fill="var(--ink)">1'665</text>
+          <rect x="124" y="289" width="375.7" height="24" rx="3" fill="var(--ink2)"/><rect x="501.7" y="289" width="173.8" height="24" rx="3" fill="var(--rausch)"/><text x="685" y="306" font-size="14" font-weight="700" fill="var(--ink)">1'717</text>
+        </g>
+        <g font-size="12.5" fill="var(--ink2)" text-anchor="middle">
+          <text x="124" y="336">0</text><text x="284" y="336">500</text><text x="444" y="336">1'000</text><text x="604" y="336">1'500</text>
+        </g>
+      </svg>
+    </div>
+    <p class="tnote"><b>Preise neu erhoben.</b> Alle Unterkunftsbeträge sind Airbnb-Gesamtpreise für 5.–10. Mai 2027 und 8 Gäste, abgefragt am 12. September 2026, in Euro — nicht mehr die Zahlen aus der WhatsApp-Umfrage. Die Umfrage lag bei jedem Objekt fünf bis zwölf Prozent daneben und hatte bei Casa Chloe die Richtung verkehrt: dort steht heute der tiefste, nicht der dritthöchste Preis.</p>
+  </div>
+</section>
+
+<section id="karte">
+  <div class="sechead">
+    <h2>Wo alles liegt</h2>
+    <p class="hint">Gesamtpreis für 5 Nächte · Klick springt zum Objekt</p>
+  </div>
+  <div class="mapcard">
+    <div class="mapscroll">
+    <svg viewBox="0 0 1000 620" role="img" aria-label="Karte von San Pedro bis Las Chapas mit allen geprüften Unterkünften und ihren Preisen">
+      <defs><clipPath id="fr"><rect x="0" y="0" width="1000" height="620"/></clipPath></defs>
+      <g clip-path="url(#fr)">
+        <rect x="0" y="0" width="1000" height="620" fill="var(--mapLand)"/>
+        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246 L 1000,0 L 0,0 L 0,196 Z" fill="var(--mapLand2)"/>
+        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246" fill="none" stroke="var(--mapLine)" stroke-width="1.2"/>
+        <path d="M -32.4,589.5 L -14.3,596.1 L 1.8,588.9 L 18.3,572.6 L 37.0,558.9 L 53.0,547.7 L 68.8,534.9 L 85.3,521.3 L 102.7,508.2 L 121.2,492.3 L 137.9,482.8 L 155.5,482.8 L 171.8,467.8 L 187.5,460.8 L 203.5,457.2 L 220.2,442.2 L 236.7,445.7 L 253.8,425.5 L 270.5,421.7 L 290.8,389.4 L 308.7,371.9 L 327.1,359.2 L 347.2,353.8 L 368.6,356.6 L 387.0,349.4 L 405.7,339.7 L 424.5,329.1 L 442.7,321.3 L 475.9,317.9 L 508.9,313.7 L 531.0,314.6 L 547.0,320.9 L 563.0,317.5 L 579.9,315.2 L 597.9,309.5 L 615.4,314.4 L 631.4,315.3 L 654.5,311.1 L 679.4,310.6 L 717.3,316.0 L 747.9,325.1 L 770.5,336.5 L 790.3,340.1 L 823.0,347.0 L 849.9,351.4 L 877.8,357.6 L 913.1,364.2 L 940.6,371.4 L 969.5,379.5 L 988.8,385.7 L 1022.5,395.1 L 1060,395.1 L 1060,680 L -60,680 Z" fill="var(--mapWater)"/>
+        <text x="700" y="505" fill="var(--ink3)" font-size="19" letter-spacing="6" font-weight="500" opacity=".85">MITTELMEER</text>
+        <g font-size="13" font-weight="600" fill="var(--error)">
+          <g transform="translate(764,279)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="-22" text-anchor="end">Rio Real Golf</text></g>
+          <g transform="translate(213,331)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="22" text-anchor="end">Aloha Golf</text></g>
+          <g transform="translate(884,318)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="9" y="-8">Santa Clara</text></g>
+        </g>
+        <g font-size="13" font-weight="500">
+          <g transform="translate(984,116)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">La Cala Resort</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">31–38 Min.</text></g>
+          <g transform="translate(984,172)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">Mijas Golf</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">30–37 Min.</text></g>
+          <g transform="translate(14,556)"><path d="M 0,-8 L -10,0 L 0,8 Z" fill="var(--error)"/><text x="9" y="-2" font-weight="600" fill="var(--ink)">La Hacienda · Alcaidesa</text><text x="9" y="15" fill="var(--ink2)" font-size="12.5">46–53 Min.</text></g>
+        </g>
+        <g font-size="13.5" font-weight="600" fill="var(--ink2)">
+          <text x="292" y="230" text-anchor="middle">▲ La Concha</text>
+          <text x="42" y="493">San Pedro</text>
+          <text x="250" y="470" text-anchor="middle">Puerto Banús</text>
+        </g>
+        <circle cx="28.6" cy="478.3" r="3.5" fill="var(--ink2)"/><circle cx="250" cy="433.4" r="3.5" fill="var(--ink2)"/>
+        <g stroke="var(--ink2)" stroke-width="1.4">
+          <line x1="546" y1="246" x2="562" y2="262"/><line x1="478" y1="270" x2="484" y2="277"/><line x1="719" y1="300" x2="719" y2="283"/>
+        </g>
+        <circle cx="566" cy="266" r="4" fill="var(--ink)"/><circle cx="484" cy="278" r="4" fill="var(--rausch)"/><circle cx="719" cy="279" r="4" fill="var(--rausch)"/>
+        <g class="bubs" font-size="14.5">
+          <g class="bub" data-id="A" tabindex="0" role="link" aria-label="A Villa East Marbella, 4347 Euro"><rect class="cap" x="470" y="214" width="116" height="32" rx="16"/><text class="bt" x="528" y="235" text-anchor="middle">A · 4'347</text></g>
+          <g class="bub" data-id="B" tabindex="0" role="link" aria-label="B Reihenhaus Aloha, 3270 Euro"><rect class="cap" x="196" y="296" width="102" height="32" rx="16"/><text class="bt" x="247" y="317" text-anchor="middle">B · 3'270</text></g>
+          <g class="bub" data-id="C" tabindex="0" role="link" aria-label="C Casa Savia, 3839 Euro"><rect class="cap" x="75" y="430" width="102" height="32" rx="16"/><text class="bt" x="126" y="451" text-anchor="middle">C · 3'839</text></g>
+          <g class="bub" data-id="D" tabindex="0" role="link" aria-label="D Casa Chloe, 2336 Euro"><rect class="cap" x="160" y="371" width="102" height="32" rx="16"/><text class="bt" x="211" y="392" text-anchor="middle">D · 2'336</text></g>
+          <g class="bub" data-id="E" tabindex="0" role="link" aria-label="E Villa Mariposa, 3930 Euro"><rect class="cap" x="796" y="256" width="102" height="32" rx="16"/><text class="bt" x="847" y="277" text-anchor="middle">E · 3'930</text></g>
+          <g class="bub" data-id="F" tabindex="0" role="link" aria-label="F Apartment Puerto Banus, 3497 Euro"><rect class="cap" x="288" y="415" width="102" height="32" rx="16"/><text class="bt" x="339" y="436" text-anchor="middle">F · 3'497</text></g>
+          <g class="bub tip" data-id="N1" tabindex="0" role="link" aria-label="Empfehlung Casa Central Altstadt, 2725 Euro"><rect class="cap" x="540" y="276" width="150" height="32" rx="16"/><text class="bt" x="615" y="297" text-anchor="middle">★ Altstadt 2'725</text></g>
+          <g class="bub tip" data-id="N2" tabindex="0" role="link" aria-label="Empfehlung Reihenhaus Golden Mile, 2836 Euro"><rect class="cap" x="342" y="250" width="162" height="32" rx="16"/><text class="bt" x="423" y="271" text-anchor="middle">★ Golden Mile 2'836</text></g>
+          <g class="bub tip" data-id="N3" tabindex="0" role="link" aria-label="Empfehlung Finca von Marbella, 5455 Euro"><rect class="cap" x="690" y="300" width="132" height="32" rx="16"/><text class="bt" x="756" y="321" text-anchor="middle">★ Finca 5'455</text></g>
+        </g>
+      </g>
+    </svg>
+    </div>
+    <p class="maplegend">
+      <span><i class="swatch" style="background:var(--rausch)"></i><b>★ Meine drei Vorschläge</b></span>
+      <span><i class="swatch" style="background:var(--pill); border:1px solid var(--border)"></i>bisherige Auswahl</span>
+      <span>🚩 Golfplatz</span>
+      <span>Airbnb zeigt Standorte rund 150 m ungenau — die Karte stimmt auf Quartierebene.</span>
+    </p>
+  </div>
+</section>
+
+<style>
 .tblcard{border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--surface)}
 .tblscroll{overflow-x:auto}
-table.cmp{border-collapse:collapse; width:100%; min-width:940px; font-size:15px}
-table.cmp th, table.cmp td{padding:14px 16px; text-align:left; vertical-align:middle; border-bottom:1px solid var(--borderSoft)}
-table.cmp thead th{
-  font-size:12.5px; font-weight:600; color:var(--ink2); background:var(--surface2);
-  border-bottom:1px solid var(--border); white-space:nowrap; position:sticky; top:66px; z-index:5;
-}
+table.cmp{border-collapse:collapse; width:100%; min-width:1000px; font-size:14.5px}
+table.cmp th,table.cmp td{padding:13px 14px; text-align:left; vertical-align:middle; border-bottom:1px solid var(--borderSoft)}
+table.cmp thead th{font-size:12px; font-weight:600; color:var(--ink2); background:var(--surface2); border-bottom:1px solid var(--border); white-space:nowrap; position:sticky; top:64px; z-index:5}
 table.cmp thead th.s{cursor:pointer; user-select:none}
-table.cmp thead th.s:hover{color:var(--ink)}
-table.cmp thead th.s::after{content:" ⇅"; opacity:.4; font-size:11px}
+table.cmp thead th.s::after{content:" ⇅"; opacity:.4; font-size:10px}
 table.cmp thead th.s.asc::after{content:" ↑"; opacity:1; color:var(--rausch)}
 table.cmp thead th.s.desc::after{content:" ↓"; opacity:1; color:var(--rausch)}
-table.cmp tbody tr{transition:background .12s ease}
-table.cmp tbody tr:hover, table.cmp tbody tr.on{background:var(--surface2)}
+table.cmp tbody tr:hover,table.cmp tbody tr.on{background:var(--surface2)}
+table.cmp tbody tr.tip td:first-child{box-shadow:inset 3px 0 0 var(--rausch)}
 table.cmp tbody tr:last-child td{border-bottom:none}
-td.n, th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
-.oc{display:flex; align-items:center; gap:12px}
-.dot{width:30px; height:30px; border-radius:50%; background:var(--rausch); color:var(--onRausch);
-  display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex:0 0 auto}
-.oc a{font-weight:600; text-decoration:none}
+td.n,th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+.oc{display:flex; align-items:center; gap:11px}
+.dot{width:29px;height:29px;border-radius:50%;background:var(--ink3);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex:0 0 auto}
+.dot.tip{background:var(--rausch); color:var(--onRausch)}
+.oc a{font-weight:600; text-decoration:none; white-space:nowrap}
 .oc a:hover{text-decoration:underline}
-.oc small{display:block; color:var(--ink2); font-weight:400; font-size:13px; white-space:nowrap}
-.oc a{white-space:nowrap}
-.tag{display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:600; white-space:nowrap; border:1px solid transparent}
-.tag.ok{background:var(--goodBg); color:var(--good); border-color:var(--good)}
-.tag.no{background:var(--errorBg); color:var(--error); border-color:var(--error)}
+.oc small{display:block; color:var(--ink2); font-weight:400; font-size:12.5px; white-space:nowrap}
 .hi{color:var(--good); font-weight:700}
 .lo{color:var(--error); font-weight:600}
-.soft{color:var(--ink2)}
-.tnote{padding:14px 18px; font-size:13.5px; color:var(--ink2); background:var(--surface2); border-top:1px solid var(--border)}
-
-/* ---------- Objektkarten ---------- */
-.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(410px,1fr)); gap:24px; align-items:start}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.lst{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px 24px 24px; scroll-margin-top:82px}
-.lst-h{display:flex; gap:13px; align-items:flex-start}
-.lst-h .dot{width:34px; height:34px; font-size:15px; margin-top:2px}
-.lst-h h3{font-size:21px; line-height:1.22; font-weight:600}
-.lst-h .loc{font-size:14.5px; color:var(--ink2); margin-top:3px}
-.fav{display:inline-block; margin-top:7px; padding:4px 11px; border:1px solid var(--border); border-radius:999px; font-size:12.5px; font-weight:700}
-.rate{display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin-top:14px; font-size:15px}
-.rate .sc{font-weight:700; font-size:17px}
-.rate .sep{color:var(--ink3)}
-.rate .rv{color:var(--ink2); text-decoration:underline; text-underline-offset:2px}
-.chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
-.chip{font-size:13px; padding:5px 11px; border:1px solid var(--border); border-radius:999px; color:var(--ink2); white-space:nowrap}
-.price{margin-top:18px; padding:15px 17px; background:var(--surface2); border-radius:12px; display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap}
-.price .tot{font-size:25px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1.1}
-.price .per{font-size:14px; color:var(--ink2); text-align:right}
-.price .per b{color:var(--ink); font-weight:700}
-.lst h4{font-size:15.5px; font-weight:700; margin:20px 0 9px; padding-top:18px; border-top:1px solid var(--borderSoft)}
-.lst ul{margin:0; padding-left:21px}
-.lst li{margin-bottom:7px; font-size:15px; line-height:1.5; color:var(--ink2)}
-.lst li b{color:var(--ink)}
-.lst li::marker{color:var(--good)}
-.lst ul.warn li::marker{color:var(--error)}
-.dists{margin-top:18px; padding-top:16px; border-top:1px solid var(--borderSoft)}
-.drow{display:flex; justify-content:space-between; gap:12px; font-size:14.5px; padding:5px 0}
-.drow .a{color:var(--ink2)}
-.drow .b{font-variant-numeric:tabular-nums}
-.cta{display:inline-block; margin-top:20px; background:var(--btn); color:#fff; text-decoration:none;
-  font-weight:600; font-size:15.5px; padding:13px 22px; border-radius:8px; border:none}
-.cta:hover{filter:brightness(1.06)}
-a:focus-visible,.bub:focus-visible,th.s:focus-visible{outline:2.5px solid var(--rausch); outline-offset:2px; border-radius:4px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Betten */
+.beds{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px}
+.bedcard{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:17px 19px 19px}
+.bedcard.top{border-color:var(--good); border-width:1.5px}
+.bedcard.bad{border-color:var(--error)}
+.bedcard h4{font-size:16px; font-weight:700; display:flex; align-items:center; gap:9px}
+.bedcard .verdict{font-size:13.5px; font-weight:700; margin-top:7px}
+.bedcard .verdict.g{color:var(--good)} .bedcard .verdict.o{color:var(--arches)} .bedcard .verdict.r{color:var(--error)}
+.bedlist{margin:11px 0 0; padding:0; list-style:none; font-size:14px; color:var(--ink2)}
+.bedlist li{display:flex; justify-content:space-between; gap:10px; padding:4px 0; border-bottom:1px dotted var(--borderSoft)}
+.bedlist li:last-child{border-bottom:none}
+.bedlist b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
+.cmwarn{margin-top:11px; font-size:13.5px; color:var(--ink2); line-height:1.5}
 </style>
 
 <section id="vergleich">
   <div class="sechead">
-    <h2>Alles im Vergleich</h2>
-    <p class="hint">Spaltentitel anklicken zum Sortieren</p>
+    <h2>Alle neun im Vergleich</h2>
+    <p class="hint">Spaltentitel anklicken zum Sortieren · ★ = mein Vorschlag</p>
   </div>
   <div class="tblcard">
     <div class="tblscroll">
     <table class="cmp">
       <thead><tr>
-        <th>Objekt</th>
-        <th class="s n" data-k="preis">Total<br>5 Nächte</th>
-        <th class="s n" data-k="pn">pro Nacht<br>und Kopf</th>
-        <th class="s n" data-k="rating">Bewertung</th>
-        <th class="n">Betten · Bäder</th>
-        <th class="s" data-k="park">Parken</th>
-        <th class="s n" data-k="golf">Golf-Fahrt<br>total</th>
-        <th class="s n" data-k="pb">Banús</th>
-        <th class="s n" data-k="mb">Marbella</th>
+        <th>Objekt</th><th class="s n" data-k="preis">Total<br>5 Nächte</th><th class="s n" data-k="pn">pro Nacht<br>und Kopf</th>
+        <th class="s n" data-k="rating">Bewertung</th><th class="s n" data-k="allein">schlafen<br>allein</th>
+        <th class="s n" data-k="bad">Bäder</th><th class="s" data-k="park">Parken</th>
+        <th class="s n" data-k="golf">Golf-Fahrt<br>neuer Plan</th><th class="s n" data-k="pb">Banús</th><th class="s n" data-k="mb">Marbella</th>
       </tr></thead>
       <tbody id="tb">
-        <tr data-id="A" data-preis="4119" data-pn="103" data-rating="4.85" data-park="2" data-golf="298" data-pb="10" data-mb="5">
-          <td><div class="oc"><span class="dot">A</span><span><a href="#obj-A">Villa East Marbella</a><small>Villa · Ost-Marbella</small></span></div></td>
-          <td class="n lo">4'119</td><td class="n lo">103</td>
-          <td class="n">★ 4,85 <span class="soft">· 40</span></td>
-          <td class="n">9 · 3,5</td><td><span class="tag ok">Grundstück</span></td>
-          <td class="n hi">5,0 Std</td><td class="n">10 Min</td><td class="n hi">5 Min</td>
+        <tr class="tip" data-id="N1" data-preis="2725" data-pn="68" data-rating="5.0" data-allein="4" data-bad="4" data-park="1" data-golf="3.6" data-pb="12" data-mb="0">
+          <td><div class="oc"><span class="dot tip">★</span><span><a href="#obj-N1">Casa Central</a><small>Wohnung · Marbella Altstadt</small></span></div></td>
+          <td class="n hi">2'725</td><td class="n hi">68</td><td class="n">★ 5,0 <span style="color:var(--ink2)">· 14</span></td>
+          <td class="n">4 von 8</td><td class="n">4</td><td><span class="flag no">Parkhaus</span></td>
+          <td class="n">3,6 Std</td><td class="n">12 Min</td><td class="n hi">zu Fuss</td>
         </tr>
-        <tr data-id="B" data-preis="2434" data-pn="61" data-rating="5.0" data-park="3" data-golf="360" data-pb="6" data-mb="14">
-          <td><div class="oc"><span class="dot">B</span><span><a href="#obj-B">Reihenhaus Aloha</a><small>Reihenhaus · Nueva Andalucía</small></span></div></td>
-          <td class="n hi">2'434</td><td class="n hi">61</td>
-          <td class="n">★ 5,0 <span class="soft">· 1</span></td>
-          <td class="n">4 · 3,5</td><td><span class="tag ok">Garage</span></td>
-          <td class="n lo">6,0 Std</td><td class="n">6 Min</td><td class="n">14 Min</td>
+        <tr class="tip" data-id="N2" data-preis="2836" data-pn="71" data-rating="4.93" data-allein="8" data-bad="3.5" data-park="2" data-golf="3.7" data-pb="11" data-mb="7">
+          <td><div class="oc"><span class="dot tip">★</span><span><a href="#obj-N2">Reihenhaus Golden Mile</a><small>Reihenhaus · Golden Mile</small></span></div></td>
+          <td class="n hi">2'836</td><td class="n hi">71</td><td class="n">★ 4,93 <span style="color:var(--ink2)">· 29</span></td>
+          <td class="n hi">8 von 8</td><td class="n">3,5</td><td><span class="flag ok">Grundstück</span></td>
+          <td class="n">3,7 Std</td><td class="n">11 Min</td><td class="n">7 Min</td>
         </tr>
-        <tr data-id="C" data-preis="3637" data-pn="91" data-rating="4.86" data-park="2" data-golf="344" data-pb="5" data-mb="14">
-          <td><div class="oc"><span class="dot">C</span><span><a href="#obj-C">Casa Savia</a><small>Reihenhaus · San Pedro</small></span></div></td>
-          <td class="n">3'637</td><td class="n">91</td>
-          <td class="n">★ 4,86 <span class="soft">· 14</span></td>
-          <td class="n">4 · 2,5</td><td><span class="tag ok">Grundstück</span></td>
-          <td class="n">5,7 Std</td><td class="n">5 Min</td><td class="n">14 Min</td>
+        <tr class="tip" data-id="N3" data-preis="5455" data-pn="136" data-rating="5.0" data-allein="7" data-bad="3.5" data-park="2" data-golf="3.2" data-pb="17" data-mb="11">
+          <td><div class="oc"><span class="dot tip">★</span><span><a href="#obj-N3">Finca von Marbella</a><small>Villa · Ost-Marbella</small></span></div></td>
+          <td class="n lo">5'455</td><td class="n lo">136</td><td class="n hi">★ 5,0 <span style="color:var(--ink2)">· 80</span></td>
+          <td class="n">7 von 8</td><td class="n">3,5</td><td><span class="flag ok">Grundstück</span></td>
+          <td class="n hi">3,2 Std</td><td class="n lo">17 Min</td><td class="n">11 Min</td>
         </tr>
-        <tr data-id="D" data-preis="3305" data-pn="83" data-rating="4.91" data-park="2" data-golf="350" data-pb="4" data-mb="13">
+        <tr data-id="D" data-preis="2336" data-pn="58" data-rating="4.91" data-allein="2" data-bad="2" data-park="2" data-golf="3.8" data-pb="4" data-mb="13">
           <td><div class="oc"><span class="dot">D</span><span><a href="#obj-D">Casa Chloe</a><small>Wohnung · Nueva Andalucía</small></span></div></td>
-          <td class="n">3'305</td><td class="n">83</td>
-          <td class="n hi">★ 4,91 <span class="soft">· 35</span></td>
-          <td class="n lo">4 · 2</td><td><span class="tag ok">Grundstück</span></td>
-          <td class="n">5,8 Std</td><td class="n hi">4 Min</td><td class="n">13 Min</td>
+          <td class="n hi">2'336</td><td class="n hi">58</td><td class="n">★ 4,91 <span style="color:var(--ink2)">· 35</span></td>
+          <td class="n lo">2 von 8</td><td class="n lo">2</td><td><span class="flag ok">Grundstück</span></td>
+          <td class="n">3,8 Std</td><td class="n hi">4 Min</td><td class="n">13 Min</td>
         </tr>
-        <tr data-id="E" data-preis="3724" data-pn="93" data-rating="4.64" data-park="4" data-golf="292" data-pb="16" data-mb="11">
+        <tr data-id="B" data-preis="3270" data-pn="82" data-rating="5.0" data-allein="0" data-bad="3.5" data-park="3" data-golf="4.0" data-pb="6" data-mb="14">
+          <td><div class="oc"><span class="dot">B</span><span><a href="#obj-B">Reihenhaus Aloha</a><small>Reihenhaus · Nueva Andalucía</small></span></div></td>
+          <td class="n">3'270</td><td class="n">82</td><td class="n">★ 5,0 <span style="color:var(--ink2)">· nur 1</span></td>
+          <td class="n lo">0 von 8</td><td class="n">3,5</td><td><span class="flag ok">Garage</span></td>
+          <td class="n lo">4,0 Std</td><td class="n">6 Min</td><td class="n">14 Min</td>
+        </tr>
+        <tr data-id="F" data-preis="3497" data-pn="87" data-rating="4.82" data-allein="7" data-bad="3" data-park="0" data-golf="3.9" data-pb="2" data-mb="13">
+          <td><div class="oc"><span class="dot">F</span><span><a href="#obj-F">Apt. Puerto Banús</a><small>Wohnung · am Hafen</small></span></div></td>
+          <td class="n">3'497</td><td class="n">87</td><td class="n">★ 4,82 <span style="color:var(--ink2)">· 128</span></td>
+          <td class="n">7 von 8</td><td class="n">3</td><td><span class="flag no">kein eigener</span></td>
+          <td class="n">3,9 Std</td><td class="n hi">zu Fuss</td><td class="n">13 Min</td>
+        </tr>
+        <tr data-id="C" data-preis="3839" data-pn="96" data-rating="4.86" data-allein="0" data-bad="2.5" data-park="2" data-golf="4.0" data-pb="5" data-mb="14">
+          <td><div class="oc"><span class="dot">C</span><span><a href="#obj-C">Casa Savia</a><small>Reihenhaus · San Pedro</small></span></div></td>
+          <td class="n">3'839</td><td class="n">96</td><td class="n">★ 4,86 <span style="color:var(--ink2)">· 14</span></td>
+          <td class="n lo">0 von 8</td><td class="n">2,5</td><td><span class="flag ok">Grundstück</span></td>
+          <td class="n lo">4,0 Std</td><td class="n">5 Min</td><td class="n">14 Min</td>
+        </tr>
+        <tr data-id="E" data-preis="3930" data-pn="98" data-rating="4.64" data-allein="0" data-bad="5.5" data-park="4" data-golf="3.0" data-pb="16" data-mb="11">
           <td><div class="oc"><span class="dot">E</span><span><a href="#obj-E">Villa Mariposa</a><small>Villa · Santa Clara Golf</small></span></div></td>
-          <td class="n">3'724</td><td class="n">93</td>
-          <td class="n lo">★ 4,64 <span class="soft">· 11</span></td>
-          <td class="n">4 · 5,5</td><td><span class="tag ok">2 Autos ✓</span></td>
-          <td class="n hi">4,9 Std</td><td class="n lo">16 Min</td><td class="n">11 Min</td>
+          <td class="n">3'930</td><td class="n">98</td><td class="n lo">★ 4,64 <span style="color:var(--ink2)">· 11</span></td>
+          <td class="n lo">0 von 8</td><td class="n hi">5,5</td><td><span class="flag ok">2 Autos ✓</span></td>
+          <td class="n hi">3,0 Std</td><td class="n lo">16 Min</td><td class="n">11 Min</td>
         </tr>
-        <tr data-id="F" data-preis="99999" data-pn="99999" data-rating="4.82" data-park="0" data-golf="350" data-pb="2" data-mb="13">
-          <td><div class="oc"><span class="dot">F</span><span><a href="#obj-F">Apt. Puerto Banús</a><small>Wohnung · Puerto Banús · 12 Gäste</small></span></div></td>
-          <td class="n soft">offen</td><td class="n soft">offen</td>
-          <td class="n">★ 4,82 <span class="soft">· 128</span></td>
-          <td class="n">7 · 3</td><td><span class="tag no">kein eigener</span></td>
-          <td class="n">5,8 Std</td><td class="n hi">2 Min</td><td class="n">13 Min</td>
+        <tr data-id="A" data-preis="4347" data-pn="109" data-rating="4.85" data-allein="8" data-bad="3.5" data-park="4" data-golf="3.2" data-pb="10" data-mb="5">
+          <td><div class="oc"><span class="dot">A</span><span><a href="#obj-A">Villa East Marbella</a><small>Villa · Marbella</small></span></div></td>
+          <td class="n lo">4'347</td><td class="n lo">109</td><td class="n">★ 4,85 <span style="color:var(--ink2)">· 40</span></td>
+          <td class="n hi">8 von 8</td><td class="n">3,5</td><td><span class="flag ok">2 Autos ✓</span></td>
+          <td class="n hi">3,2 Std</td><td class="n">10 Min</td><td class="n hi">5 Min</td>
         </tr>
       </tbody>
     </table>
     </div>
-    <p class="tnote"><b>Golf-Fahrt total</b> = Hin- und Rückweg zu allen fünf Runden eures Programms (La Cala zweimal, dazu Mijas, La Hacienda, Rio Real). Zwischen dem besten und dem schlechtesten Objekt liegt gut eine Stunde Autofahrt. Die Beträge aus der WhatsApp-Umfrage sind Gesamtpreise für die ganze Buchung; «pro Nacht und Kopf» ist daraus durch acht Personen und fünf Nächte gerechnet.</p>
+    <p class="tnote"><b>Golf-Fahrt neuer Plan</b> = Hin- und Rückweg aller fünf Golftage nach dem überarbeiteten Programm oben. <b>Schlafen allein</b> = wie viele der acht ein Bett für sich haben, ohne Schlafsofa mitzuzählen. Alle Preise sind Airbnb-Gesamtpreise für 5.–10. Mai 2027 in Euro, Stand 12. September 2026.</p>
   </div>
 </section>
 
-<section id="objekte">
+<section id="betten">
   <div class="sechead">
-    <h2>Die sechs Objekte</h2>
-    <p class="hint">Angaben aus den Inseraten, Stand 12. September 2026</p>
+    <h2>Wer schläft wo — und wie breit</h2>
+    <p class="hint">Acht Mann, keine Paare</p>
   </div>
-  <div class="grid">
+  <p style="max-width:72ch; color:var(--ink2); font-size:16px; margin:0 0 22px">Airbnb misst in Kategorien, nicht in Zentimetern: <b style="color:var(--ink)">Einzelbett 90 cm</b>, <b style="color:var(--ink)">Doppelbett rund 140 cm</b>, <b style="color:var(--ink)">Queensize 150–160 cm</b>, <b style="color:var(--ink)">Kingsize 180–200 cm</b>. Entscheidend ist die Rechnung danach: Wer sich zu zweit ein Doppelbett teilt, hat 70 cm — <b style="color:var(--ink)">weniger als in einem normalen Einzelbett</b>. Auf einem Kingsize sind es 90 bis 100.</p>
+  <div class="beds">
 
-    <article class="lst" id="obj-A">
-      <div class="lst-h"><span class="dot">A</span><div><h3>Elegante Villa in Strandnähe</h3><p class="loc">Ganze Villa · Ost-Marbella</p></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">4,85</span><span class="sep">·</span><span class="rv">40 Bewertungen</span><span class="sep">·</span><span>Superhost Nicola</span></p>
-      <div class="chips"><span class="chip">8 Gäste</span><span class="chip">4 Schlafzimmer</span><span class="chip">9 Betten</span><span class="chip">3,5 Bäder</span><span class="chip">Infinitypool</span><span class="chip">Whirlpool</span><span class="chip">Haustiere ok</span></div>
-      <div class="price"><span class="tot">4'119</span><span class="per">Gesamtpreis für alle 8<br><b>103</b> pro Nacht und Person</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>Salzwasser-Infinitypool und Whirlpool für acht</b> — als einziges Objekt beides privat</li>
-        <li><b>Neun Betten auf acht Gäste</b> — niemand schläft auf dem Sofa, dazu 3,5 Bäder</li>
-        <li>Drei Schlafzimmer oben mit eigenem Terrassenzugang und Meerblick</li>
-        <li>Marbella-Zentrum in 5 Fahrminuten, Trocadero Arena 15 Min. zu Fuss</li>
-        <li>Zweitkürzeste Golfwoche: eine Stunde weniger Auto als B</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Strenge Anlagenordnung:</b> Ruhezeit 22–10 Uhr, keine Partys oder Events, nur registrierte Gäste auf dem Grundstück — ein Verstoss kann zur sofortigen Kündigung führen</li>
-        <li>Müll selbst entsorgen, sonst 50 € Gebühr</li>
-        <li>Puerto Banús ist 10 Fahrminuten weg — für einen Abend dort fällt ein Fahrer aus</li>
-        <li>Das teuerste Objekt im Feld; Sauberkeit und Preis-Leistung je 4,7</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">23,1 km · 30 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">38,2 km · 32 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">63,5 km · 47 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">7,8 km · 10 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">10,2 km · 10 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">1,7 km · 5 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">53,3 km · 42 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/45110324" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard top">
+      <h4><span class="dot tip">★</span> Reihenhaus Golden Mile</h4>
+      <p class="verdict g">8 Betten auf 5 Zimmer — jeder schläft allein</p>
+      <ul class="bedlist"><li><span>Betten gesamt</span><b>8</b></li><li><span>Schlafzimmer</span><b>5</b></li><li><span>müssen teilen</span><b>niemand</b></li></ul>
+      <p class="cmwarn">Die einzige Unterkunft im Feld, die acht Betten auf fünf Zimmer verteilt. Die genaue Zimmeraufteilung steht nicht im Inserat — beim Gastgeber nachfragen.</p>
+    </div>
 
-    <article class="lst" id="obj-B">
-      <div class="lst-h"><span class="dot">B</span><div><h3>Golf-Reihenhaus Aloha</h3><p class="loc">Ganzes Reihenhaus · Nueva Andalucía</p></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">5,0</span><span class="sep">·</span><span class="rv">nur 1 Bewertung</span><span class="sep">·</span><span>Gastgeber Frank</span></p>
-      <div class="chips"><span class="chip">8 Gäste</span><span class="chip">4 Schlafzimmer</span><span class="chip">4 Betten</span><span class="chip">3,5 Bäder</span><span class="chip">Garage</span><span class="chip">Aussenküche</span><span class="chip">Gemeinschaftspool</span></div>
-      <div class="price"><span class="tot">2'434</span><span class="per">Gesamtpreis für alle 8<br><b>61</b> pro Nacht und Person</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>Eigener Zugang zum Aloha Golf direkt aus dem Garten</b>, eingezäunt, mit Blick über den Platz</li>
-        <li><b>Spart 211 pro Mann</b> gegenüber Villa A — das Günstigste mit Abstand</li>
-        <li>Aussenküche mit Grill, Spüle und Weinkühlschrank, überdachte Terrasse</li>
-        <li>Garage auf dem Grundstück plus Strassenparkplätze</li>
-        <li>Puerto Banús in 6 Fahrminuten, mitten im Golf Valley</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Eine einzige Bewertung.</b> Die 5,0 sagt statistisch nichts — ihr kauft ein unbekanntes Objekt</li>
-        <li>Nur vier Betten für acht Leute: Doppelbelegung in jedem Zimmer</li>
-        <li><b>Kein privater Pool</b>, nur Gemeinschaftspool — und der Gastgeber warnt selbst, dass die Öffnungszeiten stark schwanken</li>
-        <li>Drei Etagen, viele Treppen</li>
-        <li>Die längste Golfwoche im Feld: 6,0 Stunden Auto</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">31,6 km · 38 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">46,7 km · 40 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">58,0 km · 47 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">16,3 km · 17 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">3,1 km · 6 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">8,7 km · 14 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">61,8 km · 49 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/1688259960223194509" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard top">
+      <h4><span class="dot">A</span> Villa East Marbella</h4>
+      <p class="verdict g">9 Betten — jeder schläft allein</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1</span><b>3 Doppel + 2 Einzel</b></li><li><span>Schlafzimmer 2</span><b>1 Doppelbett</b></li><li><span>Schlafzimmer 3</span><b>1 Doppelbett</b></li><li><span>Schlafzimmer 4</span><b>2 Einzelbetten</b></li></ul>
+      <p class="cmwarn">Rechnerisch perfekt, praktisch mit einem Haken: fünf der neun Betten stehen in <b>einem einzigen Zimmer</b>. Wer nachts Ruhe braucht, schläft trotzdem zu fünft.</p>
+    </div>
 
-    <article class="lst" id="obj-C">
-      <div class="lst-h"><span class="dot">C</span><div><h3>Casa Savia</h3><p class="loc">Ganzes Reihenhaus · San Pedro</p></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">4,86</span><span class="sep">·</span><span class="rv">14 Bewertungen</span><span class="sep">·</span><span>Vacation Marbella</span></p>
-      <div class="chips"><span class="chip">8 Gäste</span><span class="chip">4 Schlafzimmer</span><span class="chip">4 Betten</span><span class="chip">2,5 Bäder</span><span class="chip">Privatpool beheizbar</span><span class="chip">700 m zum Strand</span></div>
-      <div class="price"><span class="tot">3'637</span><span class="per">Gesamtpreis für alle 8<br><b>91</b> pro Nacht und Person</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>Privater beheizbarer Pool</b> hinter hohen Mauern, dazu ein Gemeinschaftspool</li>
-        <li>700 m zum Strand — fünf Gehminuten, kein Auto nötig</li>
-        <li><b>Bestbewertete Sauberkeit im Feld (4,9)</b>, komplett neu renoviert</li>
-        <li>WLAN mit 300 Mbit, eigene Waschküche, Fitnessstudio I/O nebenan</li>
-        <li>Kürzeste Fahrt nach La Hacienda (42 Min.) — der weiteste Golftag am Freitag</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Nur Gäste ab 30 Jahren.</b> Das muss die ganze Gruppe erfüllen</li>
-        <li><b>Partystrafe 1'000 €</b>, Rauchen im Haus 300 €, Ruhezeit ab 21 Uhr — die schärfsten Hausregeln im Feld</li>
-        <li><b>Check-in erst ab 16 Uhr.</b> Ihr landet 12:25 und schlagt am Mittwoch um 16:00 in La Cala ab — das geht nicht auf, früher Check-in kostet 100 €</li>
-        <li>Nur 2,5 Bäder für acht Mann, und nur vier Betten</li>
-        <li>Pool beheizen kostet 25 € extra</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">32,3 km · 37 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">47,4 km · 39 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">53,7 km · 42 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">17,0 km · 17 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">2,7 km · 5 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">9,4 km · 14 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">62,5 km · 49 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/1221671418211741135" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard top">
+      <h4><span class="dot">F</span> Apartment Puerto Banús</h4>
+      <p class="verdict g">7 von 8 schlafen allein</p>
+      <ul class="bedlist"><li><span>SZ 1 · 3</span><b>je 1 Queensize</b></li><li><span>SZ 2 · 4</span><b>je 2 Einzelbetten</b></li><li><span>SZ 5</span><b>1 Doppelbett</b></li></ul>
+      <p class="cmwarn">Vier Einzelbetten plus drei Doppelbetten auf fünf Zimmer. Nur einer muss sich ein Queensize teilen — und er hat mit 80 cm mehr Platz als in den meisten anderen Objekten.</p>
+    </div>
 
-    <article class="lst" id="obj-D">
-      <div class="lst-h"><span class="dot">D</span><div><h3>Casa Chloe</h3><p class="loc">Ganze Wohnung · Nueva Andalucía</p><span class="fav">◆ Gäste-Favorit</span></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">4,91</span><span class="sep">·</span><span class="rv">35 Bewertungen</span><span class="sep">·</span><span>Gastgeberin Chloe</span></p>
-      <div class="chips"><span class="chip">8 Gäste</span><span class="chip">4 Schlafzimmer</span><span class="chip">4 Betten</span><span class="chip">2 Bäder</span><span class="chip">Aufzug</span><span class="chip">24/7 Security</span><span class="chip">Gemeinschaftspool</span></div>
-      <div class="price"><span class="tot">3'305</span><span class="per">Gesamtpreis für alle 8<br><b>83</b> pro Nacht und Person</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>Beste Bewertung im Feld</b> und als einziges ein Gäste-Favorit — 94 % Fünf-Sterne aus 35 Bewertungen</li>
-        <li>Centro Plaza direkt gegenüber: Supermarkt, Thai, Pizzeria, Frühstück — abends ohne Auto</li>
-        <li>Vier Fahrminuten nach Puerto Banús</li>
-        <li>Grosser Gemeinschaftspool, Aufzug, 24/7-Sicherheitsdienst</li>
-        <li><b>Lage 4,9</b> — der Bestwert im Feld</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Nur zwei Bäder für acht Mann.</b> Bei Startzeiten um 08:30 und 08:40 ist das der Engpass des ganzen Trips</li>
-        <li>Das vierte Schlafzimmer ist eine Schlafcouch — einer schläft im Wohnbereich</li>
-        <li>Kein privater Aussenbereich ausser einem Esstisch im Freien, kein eigener Pool, kein Grill</li>
-        <li>Mit 19 Ausstattungsmerkmalen das dünnste Inserat: weder Spülmaschine noch Kaffeemaschine aufgeführt</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">31,5 km · 37 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">46,6 km · 39 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">56,5 km · 45 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">16,2 km · 17 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">1,8 km · 4 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">8,6 km · 13 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">61,7 km · 49 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/1426033411556144418" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard top">
+      <h4><span class="dot tip">★</span> Finca von Marbella</h4>
+      <p class="verdict g">7 von 8 schlafen allein</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1</span><b>4 Einzelbetten</b></li><li><span>Schlafzimmer 2</span><b>1 Kingsize</b></li><li><span>Schlafzimmer 3</span><b>1 Queensize</b></li><li><span>Schlafzimmer 4</span><b>1 Doppelbett</b></li></ul>
+      <p class="cmwarn">Vier Einzelbetten in einem Raum, dazu drei Doppelzimmer. Der achte teilt sich am besten das Kingsize — 90 bis 100 cm pro Mann.</p>
+    </div>
 
-    <article class="lst" id="obj-E">
-      <div class="lst-h"><span class="dot">E</span><div><h3>Villa Mariposa</h3><p class="loc">Ganze Villa · Santa Clara Golf</p></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">4,64</span><span class="sep">·</span><span class="rv">11 Bewertungen</span><span class="sep">·</span><span>Buena Vida (Agentur)</span></p>
-      <div class="chips"><span class="chip">8 Gäste</span><span class="chip">4 Schlafzimmer</span><span class="chip">4 Betten</span><span class="chip">5,5 Bäder</span><span class="chip">Pool beheizbar</span><span class="chip">Whirlpool</span><span class="chip">2 Parkplätze</span></div>
-      <div class="price"><span class="tot">3'724</span><span class="per">Gesamtpreis für alle 8<br><b>93</b> pro Nacht und Person</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>Als einziges Objekt ausdrücklich zwei Parkplätze auf dem Grundstück</b> — genau das, was ihr braucht</li>
-        <li><b>Kürzeste Golfwoche im Feld:</b> 4,9 Stunden, eine Stunde weniger als B</li>
-        <li>Liegt im Golfresort Santa Clara direkt neben dem 15. Loch, Rio Real in 7 Minuten</li>
-        <li>Panoramablick auf Küste, Meer und La Concha; beheizbarer Pool und Whirlpool</li>
-        <li>Umzäunte, bewachte Urbanisation mit Alarmanlage — und am nächsten am Flughafen</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Schwächste Bewertung im Feld (4,64).</b> Nur 73 % Fünf-Sterne, Kommunikation und Lage je 4,6</li>
-        <li>Das Inserat nennt 5,5 Bäder, die Beschreibung drei — vor der Buchung klären</li>
-        <li>Am weitesten weg von Puerto Banús (16 Min.) und von La Hacienda (53 Min.)</li>
-        <li>Pool beheizen 42,86 €, späte Ankunft 50 € extra</li>
-        <li>Vermieter ist eine Agentur, kein privater Gastgeber</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">17,3 km · 27 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">33,4 km · 32 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">69,7 km · 53 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">3,3 km · 7 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">16,3 km · 16 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">6,5 km · 11 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">48,5 km · 42 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/973810797315194730" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard">
+      <h4><span class="dot tip">★</span> Casa Central</h4>
+      <p class="verdict o">4 von 8 schlafen allein</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1</span><b>1 Kingsize</b></li><li><span>Schlafzimmer 2</span><b>2 Einzelbetten</b></li><li><span>Schlafzimmer 3</span><b>1 Queensize</b></li><li><span>Schlafzimmer 4</span><b>2 Einzelbetten</b></li></ul>
+      <p class="cmwarn">Vier haben ein eigenes Bett, vier teilen sich Kingsize und Queensize — also 90 beziehungsweise 80 cm pro Mann. Machbar, aber nicht komfortabel.</p>
+    </div>
 
-    <article class="lst" id="obj-F">
-      <div class="lst-h"><span class="dot">F</span><div><h3>Apartment Puerto Banús</h3><p class="loc">Ganze Wohnung · zweite Reihe Hafen</p></div></div>
-      <p class="rate"><span class="star">★</span><span class="sc">4,82</span><span class="sep">·</span><span class="rv">128 Bewertungen</span><span class="sep">·</span><span>Banus Properties</span></p>
-      <div class="chips"><span class="chip">12 Gäste</span><span class="chip">5 Schlafzimmer</span><span class="chip">7 Betten</span><span class="chip">3 Bäder</span><span class="chip">200 m²</span><span class="chip">Hafenblick</span><span class="chip">Aufzug</span></div>
-      <div class="price"><span class="tot soft">offen</span><span class="per">In der Umfrage keinem Eintrag<br>eindeutig zuzuordnen</span></div>
-      <h4>Das spricht dafür</h4>
-      <ul>
-        <li><b>128 Bewertungen</b> — zehnmal mehr Erfahrungswerte als die meisten. Die 4,82 ist die belastbarste Zahl im Feld</li>
-        <li><b>Zwei Gehminuten zum Ausgang.</b> Ihr steht mitten in Puerto Banús, niemand muss fahren</li>
-        <li>12 Plätze, 5 Schlafzimmer, 7 Betten — bei acht Mann schläft jeder allein</li>
-        <li>200 m², Hafen- und Meerblick, 82-Zoll-TV, Bluetooth-Anlage, Trainingsgeräte</li>
-        <li>Eigenständiger Check-in per Code — passt zur Landung um 12:25</li>
-      </ul>
-      <h4>Gut zu wissen</h4>
-      <ul class="warn">
-        <li><b>Kein eigener Parkplatz.</b> Nur ein kostenpflichtiges Parkhaus ausserhalb — bei zwei Mietwagen ein täglicher Kostenpunkt und im Mai in Banús eng. Das ist der Knackpunkt</li>
-        <li>Kein Pool, kein Garten, keine Terrasse zum Grillen</li>
-        <li>Mitten im Ausgangsviertel heisst auch: laut, besonders am Wochenende</li>
-        <li>Preis für euren Zeitraum noch offen</li>
-      </ul>
-      <div class="dists">
-        <div class="drow"><span class="a">La Cala Resort</span><span class="b">30,8 km · 37 Min</span></div>
-        <div class="drow"><span class="a">Mijas Golf</span><span class="b">45,9 km · 39 Min</span></div>
-        <div class="drow"><span class="a">La Hacienda</span><span class="b">56,4 km · 46 Min</span></div>
-        <div class="drow"><span class="a">Rio Real</span><span class="b">15,5 km · 16 Min</span></div>
-        <div class="drow"><span class="a">Puerto Banús</span><span class="b">0,4 km · 2 Min</span></div>
-        <div class="drow"><span class="a">Marbella Altstadt</span><span class="b">7,9 km · 13 Min</span></div>
-        <div class="drow"><span class="a">Flughafen Málaga</span><span class="b">60,9 km · 48 Min</span></div>
-      </div>
-      <a class="cta" href="https://www.airbnb.de/rooms/50327211" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
-    </article>
+    <div class="bedcard">
+      <h4><span class="dot">E</span> Villa Mariposa</h4>
+      <p class="verdict o">niemand allein — aber alle auf Kingsize</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1–4</span><b>je 1 Kingsize</b></li><li><span>pro Mann</span><b>90–100 cm</b></li></ul>
+      <p class="cmwarn">Vier Zimmer, vier Kingsize-Betten, vier Paare. Keiner schläft allein — aber wenn schon teilen, dann hier am breitesten. Dazu 5,5 Bäder.</p>
+    </div>
+
+    <div class="bedcard">
+      <h4><span class="dot">D</span> Casa Chloe</h4>
+      <p class="verdict o">2 von 8 schlafen allein</p>
+      <ul class="bedlist"><li><span>2 Zimmer</span><b>je 1 Kingsize</b></li><li><span>1 Zimmer</span><b>2 Betten à 90 cm</b></li><li><span>Wohnbereich</span><b>Schlafcouch → 180 cm</b></li></ul>
+      <p class="cmwarn">Zwei schlafen auf 90ern allein, sechs teilen sich Kingsize-Betten — eines davon ist eine <b>Schlafcouch im Wohnbereich</b>. Dazu nur zwei Bäder für acht Mann.</p>
+    </div>
+
+    <div class="bedcard">
+      <h4><span class="dot">C</span> Casa Savia</h4>
+      <p class="verdict r">niemand allein</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1</span><b>Kingsize 200 × 200</b></li><li><span>Schlafzimmer 2–4</span><b>je Queensize 160 × 200</b></li><li><span>auf den Queens</span><b>80 cm pro Mann</b></li></ul>
+      <p class="cmwarn">Vier Paare. Das Hauptschlafzimmer ist mit 200 × 200 grosszügig, die drei übrigen liegen bei 80 cm pro Mann.</p>
+    </div>
+
+    <div class="bedcard bad">
+      <h4><span class="dot">B</span> Reihenhaus Aloha</h4>
+      <p class="verdict r">niemand allein — und die engsten Betten im Feld</p>
+      <ul class="bedlist"><li><span>Schlafzimmer 1 · 2</span><b>je Queensize ≈ 160</b></li><li><span>Schlafzimmer 3 · 4</span><b>je Doppelbett ≈ 140</b></li><li><span>auf den Doppelbetten</span><b>70 cm pro Mann</b></li></ul>
+      <p class="cmwarn">Vier Betten für acht Mann. Vier von euch landen auf 140er-Doppelbetten — <b>70 cm pro Person</b>, schmaler als ein Einzelbett. Für fünf Nächte mit Golf am Morgen ist das die schlechteste Konstellation im ganzen Vergleich.</p>
+    </div>
 
   </div>
 </section>
 
 <style>
-.two{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:24px; align-items:start}
-@media(max-width:900px){.two{grid-template-columns:1fr}}
-.pnl{background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden}
-.pnl .ph{padding:20px 22px 0}
-.pnl .ph h3{font-size:19px; font-weight:600}
-.pnl .ph p{margin:8px 0 0; font-size:15px; color:var(--ink2); line-height:1.55; max-width:56ch}
-.chw{overflow-x:auto; padding:8px 12px 14px}
-.chw svg{display:block; width:100%; min-width:520px; height:auto}
-.verds{display:flex; flex-direction:column}
-.vrd{padding:17px 22px; border-bottom:1px solid var(--borderSoft); display:flex; gap:14px}
-.vrd:last-child{border-bottom:none}
-.vrd .dot{width:30px; height:30px; font-size:14px; margin-top:2px}
-.vrd .lbl{font-size:12.5px; font-weight:700; color:var(--rausch); text-transform:uppercase; letter-spacing:.05em}
-.vrd strong{display:block; font-size:16.5px; font-weight:600; margin-top:2px}
-.vrd p{margin:5px 0 0; font-size:14.5px; color:var(--ink2); line-height:1.5}
-.qcard{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px 26px 26px}
-.qcard + .qcard{margin-top:20px}
-.qcard h3{font-size:19px; font-weight:600}
-.qcard .who{font-size:14.5px; color:var(--ink2); margin:7px 0 0}
-.qcard ol{margin:16px 0 0; padding-left:0; list-style:none; counter-reset:q}
-.qcard li{counter-increment:q; position:relative; padding:0 0 14px 40px; font-size:15.5px; line-height:1.55}
-.qcard li:last-child{padding-bottom:0}
-.qcard li::before{
-  content:counter(q); position:absolute; left:0; top:1px; width:26px; height:26px; border-radius:50%;
-  background:var(--surface3); color:var(--ink); font-size:13px; font-weight:700;
-  display:flex; align-items:center; justify-content:center;
-}
-.qcard li b{font-weight:700}
-.qcard li em{font-style:normal; color:var(--ink2); display:block; font-size:14px; margin-top:3px}
-footer{border-top:1px solid var(--border); margin-top:40px; padding:28px 0 70px; font-size:13.5px; color:var(--ink2); line-height:1.65}
+.recos{display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:22px; align-items:start}
+.reco{background:var(--surface); border:1.5px solid var(--rausch); border-radius:12px; padding:22px 24px 24px; scroll-margin-top:80px}
+.reco.plain{border-color:var(--border); border-width:1px}
+.reco .rank{display:inline-block; background:var(--rausch); color:var(--onRausch); font-size:12px; font-weight:700; padding:4px 11px; border-radius:999px; margin-bottom:11px}
+.reco h3{font-size:21px; line-height:1.2}
+.reco .loc{font-size:14.5px; color:var(--ink2); margin-top:3px}
+.reco .rate{display:flex; gap:7px; align-items:center; flex-wrap:wrap; margin-top:12px; font-size:15px}
+.reco .rate b{font-size:17px}
+.reco .pricebox{margin-top:15px; padding:14px 16px; background:var(--surface2); border-radius:12px; display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap}
+.reco .pricebox .t{font-size:25px; font-weight:700; font-variant-numeric:tabular-nums}
+.reco .pricebox .p{font-size:13.5px; color:var(--ink2); text-align:right}
+.reco h5{font-size:14px; font-weight:700; margin:18px 0 8px; padding-top:16px; border-top:1px solid var(--borderSoft)}
+.reco ul{margin:0; padding-left:20px}
+.reco li{margin-bottom:6px; font-size:14.5px; line-height:1.5; color:var(--ink2)}
+.reco li b{color:var(--ink)}
+.reco li::marker{color:var(--good)}
+.reco ul.mi li::marker{color:var(--error)}
+.cta{display:inline-block; margin-top:18px; background:var(--btn); color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:12px 20px; border-radius:8px}
+.cta:hover{filter:brightness(1.06)}
+/* Ausgang */
+.venues{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px}
+.venue{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:17px 19px 18px}
+.venue .kind{font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--rausch)}
+.venue h4{font-size:17px; margin-top:4px}
+.venue .where{font-size:13px; color:var(--ink2); margin-top:3px}
+.venue p{margin:10px 0 0; font-size:14.5px; color:var(--ink2); line-height:1.5}
+.venue .meta{margin-top:11px; padding-top:10px; border-top:1px solid var(--borderSoft); font-size:13px; color:var(--ink2); display:flex; flex-wrap:wrap; gap:4px 14px}
+.venue .meta b{color:var(--ink)}
+a:focus-visible,.bub:focus-visible,th.s:focus-visible{outline:2.5px solid var(--rausch); outline-offset:2px; border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+footer{border-top:1px solid var(--border); margin-top:38px; padding:26px 0 70px; font-size:13.5px; color:var(--ink2); line-height:1.65}
 footer p{margin:0 0 10px; max-width:80ch}
-footer b{color:var(--ink); font-weight:600}
+footer b{color:var(--ink)}
+.qcard{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px 24px 24px}
+.qcard + .qcard{margin-top:18px}
+.qcard h3{font-size:18px}
+.qcard .who{font-size:14.5px; color:var(--ink2); margin:6px 0 0}
+.qcard ol{margin:15px 0 0; padding-left:0; list-style:none; counter-reset:q}
+.qcard li{counter-increment:q; position:relative; padding:0 0 13px 38px; font-size:15px; line-height:1.5}
+.qcard li:last-child{padding-bottom:0}
+.qcard li::before{content:counter(q); position:absolute; left:0; top:0; width:25px; height:25px; border-radius:50%; background:var(--surface3); color:var(--ink); font-size:12.5px; font-weight:700; display:flex; align-items:center; justify-content:center}
+.qcard li em{font-style:normal; color:var(--ink2); display:block; font-size:14px; margin-top:3px}
 </style>
 
-<section id="entscheid">
+<style>
+.olds{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; align-items:start}
+.old{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px 20px; scroll-margin-top:80px}
+.old-h{display:flex; gap:11px; align-items:flex-start}
+.old h3{font-size:18px; line-height:1.22}
+.old .loc{font-size:13.5px; color:var(--ink2); margin-top:2px}
+.old .rt{font-size:14.5px; margin-top:10px}
+.old .rt b{font-size:16px}
+.old .pb{margin-top:12px; padding:11px 14px; background:var(--surface2); border-radius:10px; display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap}
+.old .pb .t{font-size:21px; font-weight:700; font-variant-numeric:tabular-nums}
+.old .pb .s{font-size:13px; color:var(--ink2)}
+.old ul{margin:13px 0 0; padding-left:19px}
+.old li{font-size:14px; line-height:1.45; color:var(--ink2); margin-bottom:5px}
+.old li b{color:var(--ink)}
+.old li.plus::marker{color:var(--good)} .old li.minus::marker{color:var(--error)}
+.old .lnk{display:inline-block; margin-top:13px; font-size:14px; font-weight:600; color:var(--rausch); text-decoration:none; border-bottom:1.5px solid currentColor; padding-bottom:1px}
+</style>
+
+<section id="bisherige">
   <div class="sechead">
-    <h2>Der Zielkonflikt</h2>
-    <p class="hint">Zwei Dinge, die ihr nicht gleichzeitig haben könnt</p>
+    <h2>Die bisherige Auswahl</h2>
+    <p class="hint">Eure sechs Links, mit neu erhobenen Preisen</p>
   </div>
-  <div class="two">
-    <div class="pnl">
-      <div class="ph">
-        <h3>Golf oder Ausgang</h3>
-        <p>Eure Plätze liegen im Osten, Puerto Banús im Westen. Wer kurze Wege zum Abschlag will, fährt abends; wer zu Fuss ausgehen will, fährt morgens. Links unten wäre das perfekte Objekt — dort liegt keines.</p>
-      </div>
-      <div class="chw">
-        <svg viewBox="0 0 760 420" role="img" aria-label="Streudiagramm: Golf-Fahrzeit gegen Fahrminuten nach Puerto Banús für alle sechs Objekte">
-          <g stroke="var(--borderSoft)" stroke-width="1" fill="none">
-            <line x1="62" y1="271.9" x2="736" y2="271.9"/><line x1="62" y1="175.8" x2="736" y2="175.8"/>
-            <line x1="62" y1="79.7" x2="736" y2="79.7"/>
-            <line x1="188.4" y1="22" x2="188.4" y2="368"/><line x1="441.1" y1="22" x2="441.1" y2="368"/>
-            <line x1="693.9" y1="22" x2="693.9" y2="368"/>
-          </g>
-          <g stroke="var(--border)" stroke-width="1.4" fill="none">
-            <line x1="62" y1="22" x2="62" y2="368"/><line x1="62" y1="368" x2="736" y2="368"/>
-          </g>
-          <g font-size="12.5" fill="var(--ink2)">
-            <text x="52" y="372" text-anchor="end">0</text><text x="52" y="275.9" text-anchor="end">5</text>
-            <text x="52" y="179.8" text-anchor="end">10</text><text x="52" y="83.7" text-anchor="end">15</text>
-            <text x="188.4" y="388" text-anchor="middle">5,0 Std</text>
-            <text x="441.1" y="388" text-anchor="middle">5,5 Std</text>
-            <text x="693.9" y="388" text-anchor="middle">6,0 Std</text>
-          </g>
-          <g font-size="12.5" font-weight="600" fill="var(--ink2)">
-            <text x="62" y="410">← weniger Autofahren zum Golf (fünf Runden, hin und zurück)</text>
-            <text transform="translate(16,368) rotate(-90)" x="0" y="0">← näher am Ausgang (Min. nach Banús)</text>
-          </g>
-          <g>
-            <g><circle cx="121.0" cy="60.4" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="138" y="65" font-size="13.5" font-weight="600" fill="var(--ink)">E · Villa Mariposa</text></g>
-            <g><circle cx="171.5" cy="175.8" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="188" y="180.4" font-size="13.5" font-weight="600" fill="var(--ink)">A · Villa East Marbella</text></g>
-            <g><circle cx="559.1" cy="271.9" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="542" y="276.5" text-anchor="end" font-size="13.5" font-weight="600" fill="var(--ink)">C · Casa Savia</text></g>
-            <g><circle cx="609.6" cy="291.1" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="626" y="295.7" font-size="13.5" font-weight="600" fill="var(--ink)">D · Casa Chloe</text></g>
-            <g><circle cx="609.6" cy="329.6" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="626" y="334.2" font-size="13.5" font-weight="600" fill="var(--ink)">F · Puerto Banús</text></g>
-            <g><circle cx="693.9" cy="252.7" r="10" fill="var(--rausch)" stroke="var(--surface)" stroke-width="2"/><text x="706" y="236" text-anchor="end" font-size="13.5" font-weight="600" fill="var(--ink)">B · Reihenhaus Aloha</text></g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div class="pnl verds">
-      <div class="vrd"><span class="dot">A</span><div><span class="lbl">Wenn ihr das Rundum-Paket wollt</span><strong>Villa East Marbella</strong><p>Neun Betten, 3,5 Bäder, eigener Infinitypool und Whirlpool, fünf Minuten nach Marbella und die zweitkürzeste Golfwoche. Kostet dafür 103 pro Nacht und Kopf — 42 mehr als B.</p></div></div>
-      <div class="vrd"><span class="dot">B</span><div><span class="lbl">Wenn der Preis entscheidet</span><strong>Reihenhaus Aloha</strong><p>61 pro Nacht und Kopf, Garage, und der Garten grenzt direkt an den Aloha-Platz. Der Haken: eine einzige Bewertung, kein privater Pool und die längsten Fahrten zum Golf.</p></div></div>
-      <div class="vrd"><span class="dot">E</span><div><span class="lbl">Wenn die Golflogistik entscheidet</span><strong>Villa Mariposa</strong><p>Kürzeste Golfwoche, direkt im Resort, und als einziges Objekt ausdrücklich zwei Parkplätze. Dafür die schwächste Bewertung im Feld und 16 Minuten bis Banús.</p></div></div>
-      <div class="vrd"><span class="dot">F</span><div><span class="lbl">Wenn der Ausgang entscheidet</span><strong>Apartment Puerto Banús</strong><p>Zwei Gehminuten zum Hafen, 128 Bewertungen, fünf Schlafzimmer. Scheitert aber an eurer Parkplatz-Bedingung — es gibt nur ein kostenpflichtiges Parkhaus ausserhalb.</p></div></div>
+  <div class="olds">
+
+    <article class="old" id="obj-D">
+      <div class="old-h"><span class="dot">D</span><div><h3>Casa Chloe</h3><p class="loc">Wohnung · Nueva Andalucía</p></div></div>
+      <p class="rt">★ <b>4,91</b> <span style="color:var(--ink2)">· 35 Bewertungen · Gäste-Favorit</span></p>
+      <div class="pb"><span class="t">2'336</span><span class="s">5 Nächte · <b style="color:var(--ink)">58</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus"><b>Das Günstigste von allen neun</b>, und die beste Bewertung eurer sechs</li>
+        <li class="plus">Centro Plaza gegenüber, Puerto Banús in 4 Fahrminuten</li>
+        <li class="minus"><b>Nur zwei Bäder für acht Mann</b> — bei zwei Startzeiten morgens der Engpass</li>
+        <li class="minus">Nur zwei schlafen allein, einer auf der Schlafcouch im Wohnbereich</li>
+        <li class="minus">Kein privater Aussenbereich, kein Grill, dünn ausgestattet</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/1426033411556144418" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+    <article class="old" id="obj-B">
+      <div class="old-h"><span class="dot">B</span><div><h3>Golf-Reihenhaus Aloha</h3><p class="loc">Reihenhaus · Nueva Andalucía</p></div></div>
+      <p class="rt">★ <b>5,0</b> <span style="color:var(--ink2)">· nur 1 Bewertung</span></p>
+      <div class="pb"><span class="t">3'270</span><span class="s">5 Nächte · <b style="color:var(--ink)">82</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus">Eigener Zugang zum Aloha Golf direkt aus dem Garten, Garage, Aussenküche</li>
+        <li class="minus"><b>Eine einzige Bewertung</b> — die 5,0 sagt statistisch nichts</li>
+        <li class="minus"><b>Die engsten Betten im Feld:</b> vier Mann auf 140er-Doppelbetten, 70 cm pro Person</li>
+        <li class="minus">Kein privater Pool; Gemeinschaftspool mit schwankenden Öffnungszeiten</li>
+        <li class="minus">Längste Golfwege im neuen Plan (4,0 Std.)</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/1688259960223194509" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+    <article class="old" id="obj-F">
+      <div class="old-h"><span class="dot">F</span><div><h3>Apartment Puerto Banús</h3><p class="loc">Wohnung · zweite Reihe Hafen</p></div></div>
+      <p class="rt">★ <b>4,82</b> <span style="color:var(--ink2)">· 128 Bewertungen</span></p>
+      <div class="pb"><span class="t">3'497</span><span class="s">5 Nächte · <b style="color:var(--ink)">87</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus"><b>128 Bewertungen</b> — die belastbarste Zahl eurer sechs</li>
+        <li class="plus"><b>Ausgang vor der Tür</b>, 12 Gäste, 7 Betten, 200 m², Hafenblick</li>
+        <li class="minus"><b>Kein eigener Parkplatz</b> — nur kostenpflichtiges Parkhaus ausserhalb</li>
+        <li class="minus">Kein Pool, kein Garten, keine Terrasse zum Grillen</li>
+        <li class="minus">Mitten im Ausgangsviertel: laut am Wochenende</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/50327211" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+    <article class="old" id="obj-C">
+      <div class="old-h"><span class="dot">C</span><div><h3>Casa Savia</h3><p class="loc">Reihenhaus · San Pedro</p></div></div>
+      <p class="rt">★ <b>4,86</b> <span style="color:var(--ink2)">· 14 Bewertungen</span></p>
+      <div class="pb"><span class="t">3'839</span><span class="s">5 Nächte · <b style="color:var(--ink)">96</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus">Privater beheizbarer Pool, 700 m zum Strand, beste Sauberkeitsnote (4,9)</li>
+        <li class="plus">Hauptschlafzimmer mit Kingsize 200 × 200</li>
+        <li class="minus">Niemand schläft allein; drei Paare auf 160er-Queens</li>
+        <li class="minus"><b>Check-in erst ab 16 Uhr</b>, früher 100 € — bei Landung 12:25 ein Thema</li>
+        <li class="minus">Partystrafe 1'000 €, Ruhezeit ab 21 Uhr, nur 2,5 Bäder</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/1221671418211741135" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+    <article class="old" id="obj-E">
+      <div class="old-h"><span class="dot">E</span><div><h3>Villa Mariposa</h3><p class="loc">Villa · Santa Clara Golf</p></div></div>
+      <p class="rt">★ <b>4,64</b> <span style="color:var(--ink2)">· 11 Bewertungen</span></p>
+      <div class="pb"><span class="t">3'930</span><span class="s">5 Nächte · <b style="color:var(--ink)">98</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus"><b>5,5 Bäder</b> und ausdrücklich zwei Parkplätze auf dem Grundstück</li>
+        <li class="plus">Kürzeste Golfwege im neuen Plan (3,0 Std.), direkt neben dem 15. Loch</li>
+        <li class="plus">Vier Kingsize-Betten — wenn schon teilen, dann hier am breitesten</li>
+        <li class="minus"><b>Schwächste Bewertung im Feld (4,64)</b>, nur 73 % Fünf-Sterne</li>
+        <li class="minus">16 Minuten bis Banús, 11 bis Marbella — hier fährt man zu jedem Abend</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/973810797315194730" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+    <article class="old" id="obj-A">
+      <div class="old-h"><span class="dot">A</span><div><h3>Elegante Villa in Strandnähe</h3><p class="loc">Villa · Marbella</p></div></div>
+      <p class="rt">★ <b>4,85</b> <span style="color:var(--ink2)">· 40 Bewertungen · Superhost</span></p>
+      <div class="pb"><span class="t">4'347</span><span class="s">5 Nächte · <b style="color:var(--ink)">109</b> pro Nacht und Mann</span></div>
+      <ul>
+        <li class="plus"><b>Neun Betten — jeder schläft allein</b>, dazu Infinitypool und Whirlpool für acht</li>
+        <li class="plus">Parkplatz hinter Elektrotor für <b>zwei Autos</b>, Marbella in 5 Minuten</li>
+        <li class="minus"><b>Das Teuerste der neun</b> — 1'622 € mehr als Casa Central</li>
+        <li class="minus">Fünf der neun Betten stehen in einem einzigen Zimmer</li>
+        <li class="minus">Strenge Anlagenordnung: Ruhezeit 22–10 Uhr, keine Partys, nur registrierte Gäste</li>
+      </ul>
+      <a class="lnk" href="https://www.airbnb.de/rooms/45110324" target="_blank" rel="noopener">Inserat öffnen →</a>
+    </article>
+
+  </div>
+</section>
+
+<section id="alternativen">
+  <div class="sechead">
+    <h2>Drei, die besser passen</h2>
+    <p class="hint">Aus 18 geprüften Objekten im Raum Marbella</p>
+  </div>
+  <p style="max-width:74ch; color:var(--ink2); font-size:16px; margin:0 0 24px">Ihr wollt beides — kurze Wege zum Abschlag <i>und</i> zu Fuss in den Ausgang. In Nueva Andalucía gibt es das nicht, dort ist man nah an Banús und weit von jedem Golfplatz. <b style="color:var(--ink)">In Marbella gibt es das schon:</b> Die Altstadt liegt 12 Minuten von Rio Real, 14 von Las Brisas, 12 von Puerto Banús — und der eigene Ausgang beginnt vor der Haustür.</p>
+  <div class="recos">
+
+    <article class="reco" id="obj-N1">
+      <span class="rank">Vorschlag 1 · das Beste aus beidem</span>
+      <h3>Casa Central</h3>
+      <p class="loc">Ganze Wohnung · mitten in der Altstadt von Marbella</p>
+      <p class="rate"><span>★</span><b>5,0</b><span style="color:var(--ink2)">· 14 Bewertungen · Gäste-Favorit</span></p>
+      <div class="pricebox"><span class="t">2'725</span><span class="p">5 Nächte gesamt<br><b style="color:var(--ink)">68</b> pro Nacht und Mann</span></div>
+      <h5>Warum dieses Objekt</h5>
+      <ul>
+        <li><b>Der günstigste Preis im ganzen Vergleich</b> — 1'622 € weniger als die Villa East Marbella, bei besserer Bewertung</li>
+        <li><b>Restaurants und Ausgang vor der Tür.</b> Du warst noch nie in Marbella: Der Casco Antiguo mit der Plaza de los Naranjos beginnt hier, das Puerto Deportivo mit den Clubs ist zehn Gehminuten weg</li>
+        <li><b>Vier Bäder für acht Mann</b> — bei zwei Startzeiten morgens der Unterschied zwischen entspannt und Warteschlange</li>
+        <li>Golfmässig der zentralste Punkt der Küste: Rio Real und Santa Clara 12 Min., Las Brisas 14, Aloha 11</li>
+        <li>Puerto Banús in 12 Fahrminuten — das Taxi kostet 20 bis 25 €, dafür fährt niemand</li>
+      </ul>
+      <h5>Was dagegen spricht</h5>
+      <ul class="mi">
+        <li><b>Kein eigener Parkplatz.</b> Der Gastgeber verweist auf ein Parkhaus bei der Calle Príncipe, online reservierbar — bei zwei Autos rechne mit 150 bis 250 € für die Woche</li>
+        <li>Nur vier von acht schlafen allein, die anderen teilen Kingsize und Queensize</li>
+        <li>Kein Pool, kein Garten, keine Terrasse zum Grillen</li>
+        <li>Altstadt heisst auch: Es kann abends vor dem Fenster laut sein</li>
+      </ul>
+      <a class="cta" href="https://www.airbnb.de/rooms/1510724801534649656" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
+    </article>
+
+    <article class="reco" id="obj-N2">
+      <span class="rank">Vorschlag 2 · jeder sein eigenes Bett</span>
+      <h3>Reihenhaus Golden Mile</h3>
+      <p class="loc">Ganzes Reihenhaus · Golden Mile, zwischen Marbella und Banús</p>
+      <p class="rate"><span>★</span><b>4,93</b><span style="color:var(--ink2)">· 29 Bewertungen · Gäste-Favorit</span></p>
+      <div class="pricebox"><span class="t">2'836</span><span class="p">5 Nächte gesamt<br><b style="color:var(--ink)">71</b> pro Nacht und Mann</span></div>
+      <h5>Warum dieses Objekt</h5>
+      <ul>
+        <li><b>Acht Betten auf fünf Zimmer</b> — jeder schläft allein, und anders als in der Villa East Marbella nicht zu fünft im selben Raum</li>
+        <li><b>Genau in der Mitte:</b> Marbella 7 Fahrminuten, Puerto Banús 11. Egal wohin ihr abends wollt, es sind zehn Minuten Taxi</li>
+        <li>Zweitgünstigster Preis im Feld, und 4,93 aus 29 Bewertungen ist eine belastbare Zahl</li>
+        <li>Privater Garten mit Grill, Meerblick, Anlage mit zwei Pools und grossen Grünflächen</li>
+        <li>Eigener Parkplatz auf dem Grundstück</li>
+      </ul>
+      <h5>Was dagegen spricht</h5>
+      <ul class="mi">
+        <li><b>Die Zimmeraufteilung steht nicht im Inserat</b> — acht Betten auf fünf Zimmer, aber welche Grössen, sagt der Gastgeber nicht. Vorher fragen</li>
+        <li>Golden Mile heisst: nichts zu Fuss. Für jeden Abend braucht ihr ein Taxi</li>
+        <li>Kein privater Pool, nur die Gemeinschaftspools der Anlage</li>
+        <li>3,5 Bäder für acht Mann — solide, aber weniger als bei Casa Central</li>
+      </ul>
+      <a class="cta" href="https://www.airbnb.de/rooms/950588449849254017" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
+    </article>
+
+    <article class="reco" id="obj-N3">
+      <span class="rank">Vorschlag 3 · wenn Qualität vor Preis geht</span>
+      <h3>Die Finca von Marbella</h3>
+      <p class="loc">Ganze Villa · Ost-Marbella, zu Fuss zum Strand</p>
+      <p class="rate"><span>★</span><b>5,0</b><span style="color:var(--ink2)">· 80 Bewertungen · Gäste-Favorit</span></p>
+      <div class="pricebox"><span class="t">5'455</span><span class="p">5 Nächte gesamt<br><b style="color:var(--ink)">136</b> pro Nacht und Mann</span></div>
+      <h5>Warum dieses Objekt</h5>
+      <ul>
+        <li><b>5,0 aus 80 Bewertungen</b> — die mit Abstand belastbarste Bewertung im ganzen Feld. Kein anderes Objekt kommt auf so viele Gäste ohne einen einzigen Ausrutscher</li>
+        <li><b>Die kürzesten Golfwege überhaupt:</b> Rio Real 4 Minuten, Santa Clara 9, La Cala 30. Über die Woche 3,2 Stunden Fahrt statt 4,0</li>
+        <li>Sieben von acht schlafen allein, privater Infinity-Pool, im Erdgeschoss lassen sich alle Fenster in den Wänden versenken</li>
+        <li>Zu Fuss zum Strand, Parkplatz auf dem Grundstück</li>
+      </ul>
+      <h5>Was dagegen spricht</h5>
+      <ul class="mi">
+        <li><b>5'455 € — fast das Doppelte von Casa Central.</b> 682 pro Mann statt 341</li>
+        <li>Puerto Banús ist 17 Fahrminuten weg, Marbella 11 — hier fährt man zu jedem Abend</li>
+        <li>Für La Hacienda die schlechteste Ausgangslage im Feld (56 Min.), falls ihr den Links-Platz behalten wollt</li>
+      </ul>
+      <a class="cta" href="https://www.airbnb.de/rooms/33247982" target="_blank" rel="noopener">Auf Airbnb ansehen</a>
+    </article>
+
+  </div>
+  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:20px">Ebenfalls geprüft und knapp dahinter: <b>Casa Gina</b> (Altstadt, 4 SZ, 5 Betten, 3.122 €), <b>Villa El Paular</b> (6 SZ, 9 Betten, 5,5 Bäder, Tiefgarage für vier Autos — aber 7.600 €), <b>Familien-Chalet Ost-Marbella</b> (4,5 Bäder, 7 Betten, 4.623 €) und eine <b>Villa mit Heimkino</b> in Ost-Marbella (5.208 €). Alle vier sind gut, aber keine schlägt die drei oben in ihrem jeweiligen Punkt.</p>
+</section>
+
+<section id="ausgang">
+  <div class="sechead">
+    <h2>Wo abends etwas läuft</h2>
+    <p class="hint">Clubs, nicht Bars</p>
+  </div>
+  <div class="pnl" style="margin-bottom:22px">
+    <div class="ph" style="padding-bottom:20px">
+      <h3>Die wichtigste Einordnung zuerst: Anfang Mai ist Vorsaison</h3>
+      <p>Marbella läuft ab Juni auf vollen Touren. Anfang Mai öffnen die grossen Clubs meist nur <b>Freitag und Samstag</b>, die Beach Clubs je nach Wetter. Genau darum dreht der überarbeitete Golfplan oben diese beiden Nächte frei — im heutigen Plan ist die Samstagnacht durch die 08:30-Startzeit am Sonntag blockiert.</p>
     </div>
   </div>
+  <div class="venues">
+
+    <div class="venue">
+      <p class="kind">Club · die Institution</p>
+      <h4>Olivia Valere</h4>
+      <p class="where">Ctra. de Istán, Marbella</p>
+      <p>Der grösste Name der Küste, seit Jahrzehnten. Gebaut wie ein maurischer Palast, entsprechend inszeniert. Das ist der Abend, für den man sich anzieht — und der, den man erzählt.</p>
+      <p class="meta"><span>ab <b>Altstadt 12 Min.</b></span><span>ab <b>Golden Mile 8 Min.</b></span><span>füllt sich ab <b>01:00</b></span><span>strenger Dresscode</span></p>
+    </div>
+
+    <div class="venue">
+      <p class="kind">Clubmeile · was ihr kennt</p>
+      <h4>Puerto Banús</h4>
+      <p class="where">Hafenpromenade — Tibu, Momento, Pangea</p>
+      <p>Kennt ihr schon, und ihr mögt es. Die Clubs liegen am Hafen nebeneinander, man wechselt zu Fuss. Internationales Publikum, teuer, laut, und im Mai am Wochenende zuverlässig voll.</p>
+      <p class="meta"><span>ab <b>Altstadt 12 Min.</b></span><span>ab <b>Golden Mile 11 Min.</b></span><span>Taxi <b>20–25 €</b></span><span>Eintritt ca. 20–30 €</span></p>
+    </div>
+
+    <div class="venue">
+      <p class="kind">Clubhafen · neu für dich</p>
+      <h4>Puerto Deportivo Marbella</h4>
+      <p class="where">Marbellas eigener Yachthafen</p>
+      <p>Das Gegenstück zu Banús und der Grund, warum die Altstadt als Basis funktioniert: ein kompakter Hafen voller Clubs und Spätbars, jünger, spanischer, deutlich weniger Türsteher-Theater. <b>Zehn Gehminuten von der Altstadt</b> — der einzige Ausgang im Vergleich, für den niemand fahren muss.</p>
+      <p class="meta"><span>ab <b>Altstadt zu Fuss</b></span><span>läuft ganzjährig</span><span>kein Dresscode-Drama</span></p>
+    </div>
+
+    <div class="venue">
+      <p class="kind">Tagesparty · Sonntag</p>
+      <h4>Nikki Beach</h4>
+      <p class="where">Elviria, Ost-Marbella</p>
+      <p>Der klassische Sonntag an der Costa del Sol: Beach Club, DJ, Party am Nachmittag statt nachts. Passt perfekt zum neuen Plan, wenn ihr sonntags die zweite Runde streicht — oder zum Montag vor dem Rückflug.</p>
+      <p class="meta"><span>ab <b>Altstadt 15 Min.</b></span><span>ab <b>Finca 8 Min.</b></span><span>Saisonstart Frühjahr</span></p>
+    </div>
+
+    <div class="venue">
+      <p class="kind">Poolclub · Nachmittag</p>
+      <h4>Ocean Club Marbella</h4>
+      <p class="where">Golden Mile, beim Puente Romano</p>
+      <p>Poolparty statt Strand, tagsüber. Die Nachmittage hier sind ein eigenes Format — gut als Auftakt, bevor es abends nach Banús oder in die Altstadt geht.</p>
+      <p class="meta"><span>ab <b>Golden Mile 5 Min.</b></span><span>ab <b>Altstadt 8 Min.</b></span><span>Saisonstart Frühjahr</span></p>
+    </div>
+
+    <div class="venue">
+      <p class="kind">Vorher essen</p>
+      <h4>Casco Antiguo</h4>
+      <p class="where">Altstadt, Plaza de los Naranjos</p>
+      <p>Keine Clubs, aber der Grund, warum du Marbella sehen solltest: verwinkelte Gassen, der Orangenplatz, Restaurants dicht an dicht — von Tapas bis gehoben. Das Abendessen, bevor es weitergeht.</p>
+      <p class="meta"><span>ab <b>Casa Central: vor der Tür</b></span><span>ab <b>Golden Mile 7 Min.</b></span></p>
+    </div>
+
+  </div>
+  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px"><b>Bitte vor der Reise prüfen.</b> Clubs in Marbella wechseln Namen, Betreiber und Öffnungszeiten häufiger als anderswo, und mein Wissensstand endet im Frühjahr 2026 — eure Reise ist ein Jahr später. Die Lagen und das Grundmuster stimmen, die einzelnen Läden gehören kurz vorher gegengecheckt. Für Banús und Olivia Valere gilt: keine Shorts, keine Sportschuhe.</p>
 </section>
 
 <section id="offen">
@@ -722,35 +777,34 @@ footer b{color:var(--ink); font-weight:600}
 
   <div class="qcard">
     <h3>Fragen an die Gruppe</h3>
-    <p class="who">Das sollten wir im Chat klären, bevor jemand bucht.</p>
+    <p class="who">Erledigt: Alle acht sind über 30, die Altersregel bei Casa Savia ist kein Hindernis mehr. Der Anreisetag ist bestätigt — Mi 5.5. bis Mo 10.5.</p>
     <ol>
-      <li><b>Was ist uns wichtiger — kurze Wege zum Golf oder zu Fuss in den Ausgang?</b><em>Beides zusammen gibt es nicht. Zwischen Villa Mariposa und dem Reihenhaus Aloha liegt über die Woche eine Stunde Autofahrt; umgekehrt sind es von Mariposa 16 Minuten bis Banús statt 4.</em></li>
-      <li><b>Bleibt es bei zwei Mietwagen?</b><em>Falls ja, fällt das Apartment in Puerto Banús praktisch raus — dort gibt es nur ein kostenpflichtiges Parkhaus ausserhalb.</em></li>
-      <li><b>Muss ein privater Pool sein, oder reicht ein Gemeinschaftspool?</b><em>Privat haben nur Villa East Marbella, Casa Savia und Villa Mariposa. Beim Reihenhaus Aloha und bei Casa Chloe ist er geteilt, im Apartment gibt es gar keinen.</em></li>
-      <li><b>Sind wirklich alle acht mindestens 30 Jahre alt?</b><em>Casa Savia nimmt ausschliesslich Gruppen ab 30 — sonst fällt auch dieses Objekt weg.</em></li>
-      <li><b>Wie viel ist uns Platz wert?</b><em>Villa East Marbella hat neun Betten und 3,5 Bäder, Casa Chloe vier Betten und zwei Bäder bei gleicher Personenzahl. Bei zwei Startzeiten um 08:30 und 08:40 sind zwei Bäder für acht Mann der Engpass.</em></li>
-      <li><b>Wer hat die Umfrage erstellt und kann die Preise zuordnen?</b><em>In der Umfrage stehen zwei Reihenhäuser in Nueva Andalucía (2'434 und 2'200), unter den Links ist aber nur eines. Und für das Apartment in Puerto Banús fehlt ein Betrag ganz.</em></li>
+      <li><b>Nehmen wir den überarbeiteten Golfplan?</b><em>Gleiche acht Runden, aber 1,8 Stunden weniger Fahrt, rund 170 € weniger Greenfees pro Mann und drei statt einer freien Ausgehnacht. Der Preis dafür: La Hacienda fällt weg, der einzige Links-Platz der Küste.</em></li>
+      <li><b>Ziehen wir in die Altstadt statt nach Nueva Andalucía?</b><em>Casa Central kostet 2'725 statt 4'347 wie die Villa East Marbella, liegt golfmässig zentraler und hat als einziges Objekt den Ausgang zu Fuss. Dafür gibt es keinen eigenen Parkplatz und keinen Pool.</em></li>
+      <li><b>Wie wichtig ist ein eigenes Bett für jeden?</b><em>Beim Reihenhaus Aloha teilen sich vier von euch 140er-Doppelbetten — 70 cm pro Mann. Beim Reihenhaus Golden Mile hat jeder ein eigenes Bett, zum fast gleichen Preis.</em></li>
+      <li><b>Pool oder Lage?</b><em>Einen privaten Pool haben nur Villa East Marbella, Casa Savia, Villa Mariposa und die Finca. Die beiden günstigen Vorschläge haben Gemeinschaftspool oder gar keinen.</em></li>
+      <li><b>Wer bucht, und wann?</b><em>Beim Apartment Puerto Banús steht «normalerweise ausgebucht». Für Mai 2027 sind alle neun Objekte heute frei — das bleibt nicht so.</em></li>
     </ol>
   </div>
 
   <div class="qcard">
     <h3>Fragen an die Gastgeber</h3>
-    <p class="who">Vor der Buchung über Airbnb anfragen — je nachdem, welche Objekte in der engeren Wahl bleiben.</p>
+    <p class="who">Erst anfragen, wenn die Auswahl auf zwei oder drei Objekte geschrumpft ist.</p>
     <ol>
-      <li><b>Alle ausser Villa Mariposa: Wie viele Autos passen auf das Grundstück?</b><em>Die Inserate sagen nur «Parkplatz auf dem Grundstück» ohne Anzahl. Nur Villa Mariposa nennt ausdrücklich zwei Plätze.</em></li>
-      <li><b>Reihenhaus Aloha: Ist der Gemeinschaftspool vom 5. bis 10. Mai offen?</b><em>Der Gastgeber weist selbst darauf hin, dass die Öffnungszeiten stark schwanken.</em></li>
-      <li><b>Casa Savia: Geht ein früher Check-in am 5. Mai, und was kostet er?</b><em>Wir landen 12:25 und schlagen um 16:00 in La Cala ab, Check-in wäre regulär erst ab 16:00. Im Inserat stehen 100 € für früheren Zugang.</em></li>
+      <li><b>Reihenhaus Golden Mile: Wie sind die acht Betten auf die fünf Zimmer verteilt?</b><em>Das Inserat nennt nur die Summe. Für acht Männer ohne Paare ist die Aufteilung die entscheidende Angabe.</em></li>
+      <li><b>Casa Central: Was kostet das Parkhaus bei der Calle Príncipe für zwei Autos, fünf Tage?</b></li>
+      <li><b>Bei allen ausser Villa Mariposa und Villa East Marbella: Wie viele Autos passen aufs Grundstück?</b><em>Nur diese beiden nennen ausdrücklich zwei Plätze — bei der Villa East Marbella steht im Inserat «private parking behind electric gate for 2 cars».</em></li>
       <li><b>Villa Mariposa: Drei oder 5,5 Badezimmer?</b><em>Inserat und Beschreibung widersprechen sich.</em></li>
-      <li><b>Apartment Puerto Banús: Was kostet die Woche vom 5. bis 10. Mai — und was das Parkhaus pro Tag für zwei Autos?</b></li>
-      <li><b>Bei allen: Endpreis inklusive Reinigung, Kaution und Kurtaxe?</b><em>Die Beträge aus der Umfrage sind vermutlich Grundpreise.</em></li>
+      <li><b>Reihenhaus Aloha: Ist der Gemeinschaftspool vom 5. bis 10. Mai offen?</b><em>Der Gastgeber weist selbst auf stark schwankende Öffnungszeiten hin.</em></li>
+      <li><b>Bei allen: Endpreis inklusive Reinigung, Kaution und Kurtaxe?</b></li>
     </ol>
   </div>
 </section>
 
 <footer>
-  <p><b>Woher die Zahlen kommen.</b> Ausstattung, Bewertungen, Kapazität und Hausregeln stammen aus den sechs Airbnb-Inseraten, abgerufen am 12. September 2026. Die Preise sind die Beträge aus der WhatsApp-Umfrage, unverändert übernommen und auf 5 Nächte und 8 Personen umgerechnet — nicht bei Airbnb neu abgefragt.</p>
-  <p><b>Wie die Distanzen gerechnet sind.</b> Echte Fahrstrecken über das Strassennetz (OSRM auf OpenStreetMap-Daten), nicht Luftlinie, ohne Verkehrsaufkommen. «Golf-Fahrt total» summiert Hin- und Rückweg aller fünf Runden: La Cala zweimal, dazu Mijas, La Hacienda und Rio Real. Airbnb zeigt Standorte bewusst rund 150 Meter ungenau — die Karte stimmt auf Quartierebene, nicht auf die Hausnummer.</p>
-  <p><b>Was diese Seite nicht kann.</b> Verfügbarkeit und Endpreis stehen erst beim Buchen fest. Bei Objekten mit einer oder elf Bewertungen sagt der Schnitt wenig aus. Diese Seite gehört der Reisegruppe und steht in keiner Verbindung zu Airbnb; alle Inserate sind dort verlinkt.</p>
+  <p><b>Woher die Zahlen kommen.</b> Preise, Bewertungen, Betten, Bäder und Hausregeln stammen aus den Airbnb-Inseraten, abgefragt am 12. September 2026 für den Zeitraum 5.–10. Mai 2027 mit 8 Gästen. Es sind Gesamtpreise für die ganze Buchung in Euro; «pro Nacht und Mann» ist daraus durch acht Personen und fünf Nächte gerechnet. Die früheren Zahlen aus der WhatsApp-Umfrage sind ersetzt — sie lagen bei jedem Objekt daneben.</p>
+  <p><b>Wie die Distanzen gerechnet sind.</b> Echte Fahrstrecken über das Strassennetz (OSRM auf OpenStreetMap-Daten), nicht Luftlinie, ohne Verkehrsaufkommen. Golfplatz-Koordinaten aus OpenStreetMap. «Golf-Fahrt neuer Plan» summiert Hin- und Rückweg aller fünf Golftage nach dem überarbeiteten Programm. Airbnb zeigt Standorte bewusst rund 150 Meter ungenau.</p>
+  <p><b>Was diese Seite nicht kann.</b> Greenfees im überarbeiteten Plan sind Richtwerte für die Maisaison und keine Angebote — Startzeiten und Preise müssen bei den Clubs bestätigt werden. Verfügbarkeit und Endpreis der Unterkünfte stehen erst beim Buchen fest. Diese Seite gehört der Reisegruppe und steht in keiner Verbindung zu Airbnb; alle Inserate sind dort verlinkt.</p>
 </footer>
 
 </div>

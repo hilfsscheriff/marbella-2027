@@ -15,7 +15,8 @@ echte Fahrdistanzen zu allen vier Golfplätzen des Programms.
 | Angabe | Quelle |
 |---|---|
 | Ausstattung, Bewertungen, Kapazität, Hausregeln | Airbnb-Inserate, abgerufen am 12.09.2026 |
-| Preise | WhatsApp-Umfrage der Gruppe, unverändert übernommen, umgerechnet auf 5 Nächte und 8 Personen |
+| Preise | Airbnb-Gesamtpreise für 5.–10.5.2027 / 8 Gäste, abgefragt am 12.09.2026 (EUR) |
+| Golfplätze | OpenStreetMap (Overpass), 39 Anlagen der Region mit Koordinaten |
 | Fahrdistanzen | OSRM auf OpenStreetMap-Daten, echte Strassenrouten ohne Verkehr |
 | Küstenlinie der Karte | OpenStreetMap (Overpass) |
 | Golfplatz-Koordinaten | OpenStreetMap |
@@ -23,9 +24,18 @@ echte Fahrdistanzen zu allen vier Golfplätzen des Programms.
 Airbnb zeigt Standorte bewusst rund 150 m ungenau — die Karte stimmt auf
 Quartierebene, nicht auf die Hausnummer.
 
+## Inhalt der Seite
+
+- Golfprogramm der Gruppe und ein überarbeiteter Vorschlag (1,8 Std. weniger Fahrt,
+  drei statt einer freien Ausgehnacht, rund 170 € weniger Greenfees pro Mann)
+- Gesamtkosten pro Person: Greenfees plus Unterkunft
+- Karte mit allen neun Objekten und ihren Gesamtpreisen
+- Sortierbarer Vergleich, Bettenaufteilung, die sechs bisherigen Objekte
+- Drei Alternativvorschläge aus 18 zusätzlich geprüften Objekten
+- Ausgehmöglichkeiten in Marbella und Puerto Banús
+
 ## Offene Punkte
 
-Die Zuordnung zweier Preise aus der Umfrage ist noch ungeklärt: Es gibt zweimal
-«Reihenhaus in Nueva Andalucía», aber nur ein passendes Objekt, und für das
-Apartment in Puerto Banús fehlt ein Betrag. Die Seite listet unter «Was noch
-offen ist» die Fragen an die Gruppe und an die Gastgeber.
+Stehen auf der Seite unter «Was noch offen ist», getrennt nach Fragen an die
+Gruppe und an die Gastgeber. Die Preiszuordnung aus der WhatsApp-Umfrage hat sich
+erledigt — alle Preise sind neu direkt bei Airbnb erhoben.
