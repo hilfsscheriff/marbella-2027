@@ -1,4 +1,4 @@
-<title>Casa Chloe oder Villa Mariposa</title>
+<title>Drei Häuser, ein Entscheid</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
@@ -11,76 +11,73 @@
   --btn:linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%);
   --good:#008A05; --goodBg:#EAF6EA; --arches:#C1570D; --archesBg:#FDF1E8;
   --error:#C13515; --errorBg:#FDEDE9;
-  --blau:#1B6E8C; --blauBg:#E9F2F6;
   --mapLand:#F0EDE6; --mapLand2:#E6E2D8; --mapWater:#BFD8E6; --mapLine:#D2CEC4;
-  --shadow:0 6px 16px rgba(0,0,0,.12); --pill:#FFFFFF; --pillInk:#222222;
+  --shadow:0 6px 16px rgba(0,0,0,.12);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#121212; --surface:#1C1C1C; --surface2:#242424; --surface3:#2E2E2E;
   --ink:#F7F7F7; --ink2:#B0B0B0; --ink3:#7D7D7D; --border:#3A3A3A; --borderSoft:#2C2C2C;
   --rausch:#FF5A78; --onRausch:#2A0710; --btn:linear-gradient(to right,#FF385C 0%,#FF5A78 50%,#FF6B86 100%);
   --good:#5DD36A; --goodBg:#15291A; --arches:#F5945C; --archesBg:#2E1D10;
-  --error:#FF8163; --errorBg:#301410; --blau:#6FC3E0; --blauBg:#13272E;
+  --error:#FF8163; --errorBg:#301410;
   --mapLand:#23241F; --mapLand2:#2C2E27; --mapWater:#16303E; --mapLine:#3A3C34;
-  --shadow:0 6px 16px rgba(0,0,0,.6); --pill:#2E2E2E; --pillInk:#F7F7F7;
+  --shadow:0 6px 16px rgba(0,0,0,.6);
 }}
 :root[data-theme="dark"]{
   --bg:#121212; --surface:#1C1C1C; --surface2:#242424; --surface3:#2E2E2E;
   --ink:#F7F7F7; --ink2:#B0B0B0; --ink3:#7D7D7D; --border:#3A3A3A; --borderSoft:#2C2C2C;
   --rausch:#FF5A78; --onRausch:#2A0710; --btn:linear-gradient(to right,#FF385C 0%,#FF5A78 50%,#FF6B86 100%);
   --good:#5DD36A; --goodBg:#15291A; --arches:#F5945C; --archesBg:#2E1D10;
-  --error:#FF8163; --errorBg:#301410; --blau:#6FC3E0; --blauBg:#13272E;
+  --error:#FF8163; --errorBg:#301410;
   --mapLand:#23241F; --mapLand2:#2C2E27; --mapWater:#16303E; --mapLine:#3A3C34;
-  --shadow:0 6px 16px rgba(0,0,0,.6); --pill:#2E2E2E; --pillInk:#F7F7F7;
+  --shadow:0 6px 16px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
 body{background:var(--bg); color:var(--ink); margin:0; font-family:Figtree,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{margin:0; font-weight:600; letter-spacing:-.015em; text-wrap:balance}
 a{color:inherit}
-.wrap{max-width:1100px; margin:0 auto; padding:0 24px}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px}
 .topbar{position:sticky; top:0; z-index:40; background:var(--bg); border-bottom:1px solid var(--borderSoft)}
-.topbar .inner{display:flex; align-items:center; gap:18px; height:62px; max-width:1100px; margin:0 auto; padding:0 24px}
+.topbar .inner{display:flex; align-items:center; gap:18px; height:62px; max-width:1160px; margin:0 auto; padding:0 24px}
 .brand{font-weight:800; font-size:18px; color:var(--rausch); letter-spacing:-.03em; white-space:nowrap}
 .navlinks{display:flex; gap:2px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
 .navlinks::-webkit-scrollbar{display:none}
 .navlinks a{text-decoration:none; font-size:14px; font-weight:500; color:var(--ink2); padding:8px 12px; border-radius:999px; white-space:nowrap}
 .navlinks a:hover{background:var(--surface2); color:var(--ink)}
 .hero{padding:40px 0 8px}
-.hero h1{font-size:clamp(29px,4.6vw,44px); font-weight:700; line-height:1.1}
+.hero h1{font-size:clamp(29px,4.4vw,42px); font-weight:700; line-height:1.1}
 .hero .meta{color:var(--ink2); font-size:15.5px; margin-top:10px; display:flex; flex-wrap:wrap; gap:0 7px}
 .hero .meta span::after{content:"·"; margin-left:7px; color:var(--ink3)}
 .hero .meta span:last-child::after{content:""}
-.hero .lede{margin-top:16px; font-size:17.5px; color:var(--ink2); max-width:66ch; line-height:1.6}
+.hero .lede{margin-top:16px; font-size:17.5px; color:var(--ink2); max-width:68ch; line-height:1.6}
 section{padding:38px 0; border-top:1px solid var(--borderSoft)}
 .sechead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:20px}
 .sechead h2{font-size:clamp(21px,2.6vw,27px)}
 .sechead .hint{font-size:14px; color:var(--ink2); margin-left:auto}
-/* Duell */
-.duel{border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface)}
-.duel-head{display:grid; grid-template-columns:minmax(120px,1.1fr) 1fr 1fr}
-.duel-head>div{padding:20px 18px; border-bottom:1px solid var(--border)}
+.tnote{padding:14px 18px; font-size:13.5px; color:var(--ink2); background:var(--surface2); border-top:1px solid var(--border); line-height:1.55}
+/* Dreikampf */
+.duel{border:1px solid var(--border); border-radius:14px; overflow-x:auto; background:var(--surface)}
+.dgrid{min-width:860px}
+.duel-head,.drow{display:grid; grid-template-columns:minmax(104px,.8fr) 1fr 1fr 1fr}
+.duel-head>div{padding:18px 16px; border-bottom:1px solid var(--border)}
 .duel-head .c{border-left:1px solid var(--borderSoft)}
-.duel-head .tag{font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--rausch)}
-.duel-head h3{font-size:20px; margin-top:4px; line-height:1.2}
-.duel-head .sub{font-size:13.5px; color:var(--ink2); margin-top:3px}
-.duel-head .big{font-size:28px; font-weight:700; margin-top:11px; font-variant-numeric:tabular-nums}
-.duel-head .per{font-size:13.5px; color:var(--ink2)}
-.drow{display:grid; grid-template-columns:minmax(120px,1.1fr) 1fr 1fr; border-bottom:1px solid var(--borderSoft)}
+.duel-head .c.fav{background:var(--goodBg)}
+.duel-head .tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--rausch)}
+.duel-head h3{font-size:18.5px; margin-top:4px; line-height:1.2}
+.duel-head .sub{font-size:13px; color:var(--ink2); margin-top:3px}
+.duel-head .big{font-size:26px; font-weight:700; margin-top:10px; font-variant-numeric:tabular-nums}
+.duel-head .per{font-size:13px; color:var(--ink2)}
+.drow{border-bottom:1px solid var(--borderSoft)}
 .drow:last-child{border-bottom:none}
-.drow>div{padding:13px 18px; font-size:15px}
-.drow .k{color:var(--ink2); font-weight:600; font-size:14px; background:var(--surface2)}
+.drow>div{padding:12px 16px; font-size:14.5px}
+.drow .k{color:var(--ink2); font-weight:600; font-size:13.5px; background:var(--surface2)}
 .drow .c{border-left:1px solid var(--borderSoft); font-variant-numeric:tabular-nums}
-.drow .c.win{background:var(--goodBg); font-weight:700; color:var(--good); position:relative; padding-right:38px}
-.drow .c.win::after{content:"✓"; position:absolute; top:12px; right:15px; font-size:16px; font-weight:700}
+.drow .c.win{background:var(--goodBg); font-weight:700; color:var(--good); position:relative; padding-right:34px}
+.drow .c.win::after{content:"✓"; position:absolute; top:11px; right:13px; font-size:15px; font-weight:700}
 .drow .c.bad{color:var(--error)}
-.drow .c small{display:block; font-size:12.5px; color:var(--ink2); font-weight:400; margin-top:2px}
+.drow .c small{display:block; font-size:12px; color:var(--ink2); font-weight:400; margin-top:2px; line-height:1.35}
 .drow .c.win small{color:var(--good); opacity:.85}
-@media(max-width:720px){
-  .duel-head,.drow{grid-template-columns:1fr 1fr}
-  .drow .k{grid-column:1/-1; background:var(--surface3); padding:9px 18px}
-  .duel-head .k{display:none}
-}
-.warnbox{background:var(--errorBg); border:1px solid var(--error); border-radius:12px; padding:20px 22px; margin-top:24px}
+.warnbox{background:var(--errorBg); border:1px solid var(--error); border-radius:12px; padding:20px 22px; margin-top:22px}
 .warnbox h3{font-size:18px; color:var(--error)}
 .warnbox p{margin:9px 0 0; font-size:15px; line-height:1.6}
 .warnbox ul{margin:10px 0 0; padding-left:20px}
@@ -91,7 +88,7 @@ section{padding:38px 0; border-top:1px solid var(--borderSoft)}
   <div class="inner">
     <span class="brand">Marbella 2027</span>
     <nav class="navlinks">
-      <a href="#duell">Duell</a><a href="#entscheidend">Was entscheidet</a><a href="#betten">Betten</a>
+      <a href="#duell">Vergleich</a><a href="#entscheidend">Was entscheidet</a><a href="#betten">Betten</a>
       <a href="#karte">Karte</a><a href="#golf">Golf</a><a href="#ausgang">Ausgang</a><a href="#fazit">Fazit</a>
     </nav>
   </div>
@@ -99,9 +96,9 @@ section{padding:38px 0; border-top:1px solid var(--borderSoft)}
 
 <div class="wrap">
   <header class="hero">
-    <h1>Casa Chloe oder Villa Mariposa</h1>
-    <p class="meta"><span>Mi 5. – Mo 10. Mai 2027</span><span>5 Nächte</span><span>8 Mann</span><span>zwei Objekte</span><span>ein Entscheid</span></p>
-    <p class="lede">Von elf geprüften Unterkünften sind zwei übrig — und sie könnten kaum unterschiedlicher sein. Eine Wohnung mitten in Nueva Andalucía für 2'336 €, eine freistehende Villa im Golfresort für 3'930 €. Diese Seite legt beide nebeneinander, mit allem, was den Entscheid trägt.</p>
+    <h1>Drei Häuser, ein Entscheid</h1>
+    <p class="meta"><span>Mi 5. – Mo 10. Mai 2027</span><span>5 Nächte</span><span>8 Mann</span><span>drei Objekte</span><span>Marbella</span></p>
+    <p class="lede">Casa Chloe in Nueva Andalucía, das Reihenhaus an der Golden Mile und die Villa Mariposa im Golfresort — 2'336 €, 2'842 € und 3'930 €. Drei Lagen, drei Preisklassen, drei sehr unterschiedliche Wochen. Diese Seite legt sie nebeneinander.</p>
   </header>
 
   <section id="duell">
@@ -109,42 +106,88 @@ section{padding:38px 0; border-top:1px solid var(--borderSoft)}
       <h2>Der direkte Vergleich</h2>
       <p class="hint">Grün markiert, wer den Punkt gewinnt</p>
     </div>
-    <div class="duel">
+    <div class="duel"><div class="dgrid">
       <div class="duel-head">
         <div class="k"></div>
         <div class="c">
-          <p class="tag">Wohnung · Nueva Andalucía</p>
-          <h3>Casa Chloe</h3>
-          <p class="sub">im Komplex gegenüber Centro Plaza</p>
-          <p class="big">2'336 €</p>
-          <p class="per">292 pro Mann · 58 pro Nacht</p>
+          <p class="tag">Wohnung · Nueva Andalucía</p><h3>Casa Chloe</h3>
+          <p class="sub">Komplex gegenüber Centro Plaza</p>
+          <p class="big">2'336 €</p><p class="per">292 pro Mann · 58 pro Nacht</p>
+        </div>
+        <div class="c fav">
+          <p class="tag">Reihenhaus · Golden Mile</p><h3>Golden Mile</h3>
+          <p class="sub">zwischen Marbella und Banús</p>
+          <p class="big">2'842 €</p><p class="per">355 pro Mann · 71 pro Nacht</p>
         </div>
         <div class="c">
-          <p class="tag">Villa · Santa Clara Golf</p>
-          <h3>Villa Mariposa</h3>
+          <p class="tag">Villa · Santa Clara Golf</p><h3>Villa Mariposa</h3>
           <p class="sub">freistehend, neben dem 15. Loch</p>
-          <p class="big">3'930 €</p>
-          <p class="per">491 pro Mann · 98 pro Nacht</p>
+          <p class="big">3'930 €</p><p class="per">491 pro Mann · 98 pro Nacht</p>
         </div>
       </div>
 
-      <div class="drow"><div class="k">Preis</div><div class="c win">2'336 €<small>1'594 € günstiger — 199 pro Mann</small></div><div class="c">3'930 €<small>+68 % gegenüber Casa Chloe</small></div></div>
-      <div class="drow"><div class="k">Bewertung</div><div class="c win">★ 4,91 · 35 Bewertungen<small>Gäste-Favorit</small></div><div class="c">★ 4,67 · 12 Bewertungen<small>schwächste Note der elf geprüften</small></div></div>
-      <div class="drow"><div class="k">Badezimmer</div><div class="c bad">2<small>für acht Mann — der Engpass</small></div><div class="c win">5,5 laut Inserat<small>Beschreibung nennt eher 3 + Gäste-WC</small></div></div>
-      <div class="drow"><div class="k">Betten</div><div class="c">4 Betten<small>2 schlafen allein, einer auf der Schlafcouch</small></div><div class="c win">4 Kingsize<small>niemand allein, aber 90–100 cm pro Mann</small></div></div>
-      <div class="drow"><div class="k">Parkplatz</div><div class="c">auf dem Grundstück<small>Anzahl nicht angegeben</small></div><div class="c win">zwei Autos<small>ausdrücklich im Inserat, plus Strasse</small></div></div>
-      <div class="drow"><div class="k">Pool</div><div class="c">Gemeinschaftspool<small>gross, dazu Kinderpool</small></div><div class="c win">privat, beheizbar<small>Heizung 42,86 € Aufpreis, dazu Whirlpool</small></div></div>
-      <div class="drow"><div class="k">Golf-Fahrt<br>ganze Woche</div><div class="c">3,8 Std<small>La Cala 37 Min., Rio Real 17</small></div><div class="c win">3,0 Std<small>Rio Real 7 Min., Santa Clara 1</small></div></div>
-      <div class="drow"><div class="k">Puerto Banús</div><div class="c win">4 Minuten<small>1,8 km — Taxi unter 10 €</small></div><div class="c">16 Minuten<small>16,3 km — jeder Abend eine Fahrt</small></div></div>
-      <div class="drow"><div class="k">Marbella</div><div class="c">13 Minuten</div><div class="c win">11 Minuten</div></div>
-      <div class="drow"><div class="k">Flughafen</div><div class="c">49 Minuten</div><div class="c win">42 Minuten</div></div>
-      <div class="drow"><div class="k">Gastgeber</div><div class="c win">Chloe, privat<small>seit 10 Jahren, 24/7-Security im Komplex</small></div><div class="c">Buena Vida, Agentur<small>seit 12 Jahren, Firma in Marbella</small></div></div>
-      <div class="drow"><div class="k">Check-in</div><div class="c win">ab 15:00<small>Landung 12:25 — passt knapp</small></div><div class="c">nach Absprache<small>Ankunft ausserhalb der Zeiten 50 €</small></div></div>
-      <div class="drow"><div class="k">Extras</div><div class="c">Aufzug, Haustiere erlaubt, Supermarkt und Restaurants gegenüber</div><div class="c">Panoramablick auf Meer und La Concha, Fussbodenheizung, umzäunte Urbanisation mit Alarm</div></div>
-    </div>
+      <div class="drow"><div class="k">Preis</div>
+        <div class="c win">2'336 €<small>506 € unter Golden Mile, 1'594 € unter Mariposa</small></div>
+        <div class="c">2'842 €<small>+63 pro Mann gegenüber Casa Chloe</small></div>
+        <div class="c">3'930 €<small>+199 pro Mann gegenüber Casa Chloe</small></div></div>
+
+      <div class="drow"><div class="k">Bewertung</div>
+        <div class="c">★ 4,91 · 35<small>Gäste-Favorit</small></div>
+        <div class="c win">★ 4,93 · 29<small>Gäste-Favorit und Superhost</small></div>
+        <div class="c bad">★ 4,67 · 12<small>schwächste Note, mit Mängelbericht</small></div></div>
+
+      <div class="drow"><div class="k">Eigenes Bett</div>
+        <div class="c bad">2 von 8<small>einer auf der Schlafcouch im Wohnbereich</small></div>
+        <div class="c win">8 von 8<small>8 Betten auf 5 Zimmer</small></div>
+        <div class="c bad">0 von 8<small>vier Paare, dafür alle auf Kingsize</small></div></div>
+
+      <div class="drow"><div class="k">Badezimmer</div>
+        <div class="c bad">2<small>60 Min., bis alle acht fertig sind</small></div>
+        <div class="c">3,5<small>rund 45 Min.</small></div>
+        <div class="c win">5,5 laut Inserat<small>Beschreibung nennt eher 3 + Gäste-WC</small></div></div>
+
+      <div class="drow"><div class="k">Parkplatz</div>
+        <div class="c">auf dem Grundstück<small>Anzahl nicht angegeben</small></div>
+        <div class="c">auf dem Grundstück<small>Anzahl nicht angegeben</small></div>
+        <div class="c win">zwei Autos<small>ausdrücklich, plus Strasse</small></div></div>
+
+      <div class="drow"><div class="k">Pool</div>
+        <div class="c">Gemeinschaftspool<small>gross, plus Kinderpool</small></div>
+        <div class="c">zwei Gemeinschaftspools<small>eigener Garten mit Grill, Meerblick</small></div>
+        <div class="c win">privat, beheizbar<small>Heizung 42,86 € extra, plus Whirlpool</small></div></div>
+
+      <div class="drow"><div class="k">Golf-Fahrt<br>ganze Woche</div>
+        <div class="c">3,8 Std</div>
+        <div class="c">3,7 Std</div>
+        <div class="c win">3,0 Std<small>Rio Real 7 Min., Santa Clara 1</small></div></div>
+
+      <div class="drow"><div class="k">Puerto Banús</div>
+        <div class="c win">4 Minuten<small>1,8 km</small></div>
+        <div class="c">11 Minuten<small>6,8 km</small></div>
+        <div class="c bad">16 Minuten<small>16,3 km</small></div></div>
+
+      <div class="drow"><div class="k">Marbella</div>
+        <div class="c">13 Minuten</div>
+        <div class="c win">7 Minuten</div>
+        <div class="c">11 Minuten</div></div>
+
+      <div class="drow"><div class="k">Gastgeber</div>
+        <div class="c">Chloe, privat<small>seit 10 Jahren</small></div>
+        <div class="c win">Nancy, Superhost<small>seit 4 Jahren</small></div>
+        <div class="c">Buena Vida, Agentur<small>seit 12 Jahren</small></div></div>
+
+      <div class="drow"><div class="k">Zu beachten</div>
+        <div class="c">Aufzug, 24/7-Security, Supermarkt und Restaurants gegenüber</div>
+        <div class="c">Treppensteigen erforderlich, Zimmeraufteilung der 8 Betten nicht angegeben</div>
+        <div class="c">Panoramablick auf Meer und La Concha, umzäunte Urbanisation mit Alarm</div></div>
+
+      <div class="drow"><div class="k">Check-in</div>
+        <div class="c">ab 15:00</div><div class="c">ab 15:00, Check-out vor 11:00</div>
+        <div class="c">nach Absprache<small>ausserhalb der Zeiten 50 €</small></div></div>
+    </div></div>
 
     <div class="warnbox">
-      <h3>Bevor ihr Villa Mariposa bucht: lest die Bewertungen</h3>
+      <h3>Villa Mariposa: lest die Bewertungen, bevor ihr bucht</h3>
       <p>Die 4,67 Sterne verdecken einen ausführlichen negativen Bericht. Ein Gast schildert für seinen Aufenthalt:</p>
       <ul>
         <li>Chemikalien im Pool hätten helle Badekleidung binnen Stunden gelb verfärbt und Kleidungsstücke ruiniert</li>
@@ -152,177 +195,222 @@ section{padding:38px 0; border-top:1px solid var(--borderSoft)}
         <li>Das Wasser im oberen Bad sei nicht abgelaufen, das Bad ab dem zweiten Tag unbenutzbar gewesen</li>
         <li>Alle drei Punkte seien gemeldet und nicht bearbeitet worden; die Villa sei renovierungsbedürftig</li>
       </ul>
-      <p>Das ist die Schilderung eines einzelnen Gastes und muss nicht euer Erlebnis sein — die übrigen Bewertungen fallen deutlich besser aus. Aber es ist kein Geschmacksurteil, sondern eine Liste konkreter Mängel, und der schwerere Vorwurf ist nicht der Zustand, sondern die ausgebliebene Reaktion. Bei einer Agentur als Vermieterin ist das das Risiko, das ihr abwägen müsst. Die Einzelnoten stützen das Bild: <b>Kommunikation 4,6</b> und <b>Preis-Leistung 4,6</b> sind die schwächsten Werte im gesamten Vergleich.</p>
+      <p>Das ist die Schilderung eines einzelnen Gastes, die übrigen Bewertungen fallen deutlich besser aus. Aber es ist kein Geschmacksurteil, sondern eine Liste konkreter Mängel — und der schwerere Vorwurf ist nicht der Zustand, sondern die ausgebliebene Reaktion. Die Einzelnoten stützen das Bild: <b>Kommunikation 4,6</b> und <b>Preis-Leistung 4,6</b>.</p>
     </div>
   </section>
 
 <style>
-.three{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px}
+.three{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:20px}
 .pt{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 22px 22px}
 .pt .num{font-size:12px; font-weight:700; color:var(--rausch); text-transform:uppercase; letter-spacing:.08em}
 .pt h3{font-size:18.5px; margin-top:6px; line-height:1.25}
 .pt p{margin:10px 0 0; font-size:15px; color:var(--ink2); line-height:1.55}
 .pt p b{color:var(--ink)}
-.pt .hero-n{font-size:34px; font-weight:700; line-height:1; margin:14px 0 0; font-variant-numeric:tabular-nums}
+.pt .hero-n{font-size:32px; font-weight:700; line-height:1; margin:14px 0 0; font-variant-numeric:tabular-nums}
 .pt .hero-s{font-size:13.5px; color:var(--ink2); margin-top:4px}
 .pnl{background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-top:22px}
 .pnl .ph{padding:20px 22px 0}
 .pnl .ph h3{font-size:19px}
-.pnl .ph p{margin:8px 0 0; font-size:15px; color:var(--ink2); line-height:1.55; max-width:66ch}
+.pnl .ph p{margin:8px 0 0; font-size:15px; color:var(--ink2); line-height:1.55; max-width:68ch}
 .chw{overflow-x:auto; padding:10px 14px 16px}
-.chw svg{display:block; width:100%; min-width:520px; height:auto}
-.tnote{padding:14px 18px; font-size:13.5px; color:var(--ink2); background:var(--surface2); border-top:1px solid var(--border); line-height:1.55}
-.beds2{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px}
+.chw svg{display:block; width:100%; min-width:540px; height:auto}
+.beds2{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px}
 .bc{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 22px 22px}
+.bc.best{border-color:var(--good); border-width:1.5px}
 .bc h3{font-size:18px}
 .bc .v{font-size:14px; font-weight:700; margin-top:6px}
 .bc .v.o{color:var(--arches)} .bc .v.g{color:var(--good)}
 .bc ul{list-style:none; margin:13px 0 0; padding:0}
 .bc li{display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px dotted var(--borderSoft); font-size:14.5px; color:var(--ink2)}
 .bc li:last-child{border-bottom:none}
-.bc li b{color:var(--ink); font-variant-numeric:tabular-nums}
+.bc li b{color:var(--ink); font-variant-numeric:tabular-nums; text-align:right}
 .bc .cm{margin-top:12px; font-size:14px; color:var(--ink2); line-height:1.5}
-.mapcard{border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--mapLand); margin-top:4px}
+.mapcard{border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--mapLand)}
 .mapscroll{overflow-x:auto}
 .mapscroll svg{display:block; width:100%; min-width:700px; height:auto}
-.maplegend{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; padding:14px 18px; background:var(--surface); border-top:1px solid var(--border); font-size:13.5px; color:var(--ink2)}
+.maplegend{padding:14px 18px; background:var(--surface); border-top:1px solid var(--border); font-size:13.5px; color:var(--ink2)}
 </style>
 
 <section id="entscheidend">
-  <div class="sechead">
-    <h2>Was den Entscheid trägt</h2>
-    <p class="hint">Drei Punkte, der Rest ist Geschmack</p>
-  </div>
+  <div class="sechead"><h2>Was den Entscheid trägt</h2><p class="hint">Drei Punkte, der Rest ist Geschmack</p></div>
   <div class="three">
-
     <div class="pt">
-      <p class="num">Punkt 1 · der Engpass</p>
-      <h3>Zwei Bäder für acht Mann</h3>
+      <p class="num">Punkt 1 · das eigene Bett</p>
+      <h3>Acht, zwei oder keiner</h3>
+      <p class="hero-n" style="color:var(--good)">8 von 8</p>
+      <p class="hero-s">schlafen an der Golden Mile allein</p>
+      <p>Bei Casa Chloe sind es zwei, und einer davon liegt auf der <b>Schlafcouch im Wohnzimmer</b>. Bei Mariposa teilen sich alle vier Paare ein Bett — immerhin Kingsize, also 90 bis 100 cm pro Mann. Das Reihenhaus ist das einzige, wo die Frage gar nicht erst aufkommt.</p>
+    </div>
+    <div class="pt">
+      <p class="num">Punkt 2 · der Engpass</p>
+      <h3>Morgens vor dem Bad</h3>
       <p class="hero-n" style="color:var(--error)">60 Min</p>
       <p class="hero-s">bis alle acht bei Casa Chloe fertig sind</p>
-      <p>Bei 15 Minuten pro Mann und zwei Bädern braucht ihr vier Durchgänge. Bei Villa Mariposa sind es je nach tatsächlicher Bäderzahl zwei bis drei Durchgänge, also <b>30 bis 45 Minuten</b>. An einem Tag mit Startzeit um 08:30 entscheidet das, ob ihr um 06:45 oder um 07:30 aufsteht.</p>
+      <p>Zwei Bäder, acht Mann, 15 Minuten pro Person: vier Durchgänge. An der Golden Mile sind es mit 3,5 Bädern rund <b>45 Minuten</b>, bei Mariposa je nach echter Bäderzahl 30 bis 45. Bei einer Startzeit um 09:00 entscheidet das über eine Dreiviertelstunde Schlaf.</p>
     </div>
-
     <div class="pt">
-      <p class="num">Punkt 2 · der Preis</p>
-      <h3>199 € pro Mann Unterschied</h3>
-      <p class="hero-n">1'594 €</p>
-      <p class="hero-s">Aufpreis für die ganze Gruppe</p>
-      <p>Dafür bekommt ihr bei Mariposa: mehr Bäder, einen <b>privaten beheizbaren Pool</b> statt Gemeinschaftspool, eine freistehende Villa statt einer Wohnung im Komplex, zwei garantierte Parkplätze und Panoramablick. Gemessen an den 1'174 € Greenfees pro Mann sind 199 € rund ein Sechstel obendrauf.</p>
+      <p class="num">Punkt 3 · die Verlässlichkeit</p>
+      <h3>4,93 gegen 4,91 gegen 4,67</h3>
+      <p class="hero-n" style="color:var(--good)">Superhost</p>
+      <p class="hero-s">nur die Golden Mile hat beides</p>
+      <p>Casa Chloe und die Golden Mile sind beide Gäste-Favoriten mit fast identischer Note. Die Golden Mile hat zusätzlich den <b>Superhost-Status</b>. Villa Mariposa fällt mit 4,67 aus zwölf Bewertungen ab — und hat als einzige einen dokumentierten Mängelbericht ohne Reaktion des Vermieters.</p>
     </div>
-
-    <div class="pt">
-      <p class="num">Punkt 3 · die Bewertung</p>
-      <h3>35 gegen 12 Bewertungen</h3>
-      <p class="hero-n" style="color:var(--good)">4,91</p>
-      <p class="hero-s">Casa Chloe, Gäste-Favorit — gegen 4,67</p>
-      <p>Casa Chloe hat fast dreimal so viele Bewertungen bei besserer Note und ist als einziges der elf geprüften Objekte ein Gäste-Favorit. Bei Mariposa steht dem eine ausführliche Mängelschilderung gegenüber, dazu <b>Kommunikation 4,6</b> — der schwächste Wert im ganzen Vergleich.</p>
-    </div>
-
   </div>
 
   <div class="pnl">
     <div class="ph">
-      <h3>Der Golfvorteil von Mariposa ist kleiner, als er aussieht</h3>
-      <p>Villa Mariposa spart über die fünf Golftage 48 Minuten Fahrt. Aber sie liegt 16 statt 4 Minuten von Puerto Banús — und jeder Abend dort kostet die Differenz doppelt. <b>Ab dem dritten Ausgehabend fährt ihr von der Villa aus insgesamt mehr</b>, nicht weniger.</p>
+      <h3>Mariposas Golfvorteil kippt, sobald ihr ausgeht</h3>
+      <p>Über die fünf Golftage spart die Villa 48 Minuten Fahrt gegenüber Casa Chloe. Aber sie liegt 16 statt 4 Minuten von Puerto Banús, und jeder Abend dort kostet die Differenz doppelt. <b>Ab dem dritten Abend fahrt ihr von der Villa aus insgesamt mehr.</b></p>
     </div>
     <div class="chw">
-      <svg viewBox="0 0 700 230" role="img" aria-label="Gestapelte Balken: Fahrzeit für Golf und Ausgehabende, Casa Chloe gegen Villa Mariposa">
+      <svg viewBox="0 0 700 285" role="img" aria-label="Gestapelte Balken: Fahrzeit für Golf und drei Ausgehabende in Puerto Banús, drei Objekte im Vergleich">
         <g font-size="12.5" fill="var(--ink2)">
           <rect x="138" y="12" width="12" height="12" rx="2" fill="var(--ink2)"/><text x="157" y="22">Golf, fünf Tage</text>
-          <rect x="262" y="12" width="12" height="12" rx="2" fill="var(--rausch)"/><text x="281" y="22">drei Abende in Banús</text>
+          <rect x="272" y="12" width="12" height="12" rx="2" fill="var(--rausch)"/><text x="291" y="22">drei Abende in Puerto Banús</text>
         </g>
         <g stroke="var(--borderSoft)" stroke-width="1">
-          <line x1="228" y1="36" x2="228" y2="146"/><line x1="318" y1="36" x2="318" y2="146"/>
-          <line x1="408" y1="36" x2="408" y2="146"/><line x1="498" y1="36" x2="498" y2="146"/><line x1="588" y1="36" x2="588" y2="146"/>
+          <line x1="234" y1="36" x2="234" y2="176"/><line x1="330" y1="36" x2="330" y2="176"/><line x1="426" y1="36" x2="426" y2="176"/>
+          <line x1="522" y1="36" x2="522" y2="176"/><line x1="618" y1="36" x2="618" y2="176"/>
         </g>
-        <line x1="138" y1="36" x2="138" y2="146" stroke="var(--border)" stroke-width="1.4"/>
+        <line x1="138" y1="36" x2="138" y2="176" stroke="var(--border)" stroke-width="1.4"/>
         <g font-size="14" font-weight="600" text-anchor="end" fill="var(--ink)">
-          <text x="130" y="69">Casa Chloe</text><text x="130" y="123">Villa Mariposa</text>
+          <text x="130" y="66">Casa Chloe</text><text x="130" y="112">Golden Mile</text><text x="130" y="158">Villa Mariposa</text>
         </g>
         <g>
-          <rect x="138" y="46" width="342" height="34" rx="3" fill="var(--ink2)"/>
-          <rect x="482" y="46" width="36" height="34" rx="3" fill="var(--rausch)"/>
-          <text x="529" y="69" font-size="15" font-weight="700" fill="var(--good)">4,2 Std</text>
-          <rect x="138" y="100" width="270" height="34" rx="3" fill="var(--ink2)"/>
-          <rect x="410" y="100" width="144" height="34" rx="3" fill="var(--rausch)"/>
-          <text x="565" y="123" font-size="15" font-weight="700" fill="var(--error)">4,6 Std</text>
+          <rect x="138" y="46" width="364.8" height="30" rx="3" fill="var(--ink2)"/><rect x="504.8" y="46" width="38.4" height="30" rx="3" fill="var(--rausch)"/>
+          <text x="552" y="66" font-size="15" font-weight="700" fill="var(--good)">4,2 Std</text>
+          <rect x="138" y="92" width="355.2" height="30" rx="3" fill="var(--ink2)"/><rect x="495.2" y="92" width="105.6" height="30" rx="3" fill="var(--rausch)"/>
+          <text x="610" y="112" font-size="15" font-weight="700" fill="var(--ink)">4,8 Std</text>
+          <rect x="138" y="138" width="288" height="30" rx="3" fill="var(--ink2)"/><rect x="428" y="138" width="153.6" height="30" rx="3" fill="var(--rausch)"/>
+          <text x="591" y="158" font-size="15" font-weight="700" fill="var(--ink)">4,6 Std</text>
         </g>
         <g font-size="12.5" fill="var(--ink2)" text-anchor="middle">
-          <text x="138" y="166">0</text><text x="228" y="166">1 Std</text><text x="318" y="166">2 Std</text>
-          <text x="408" y="166">3 Std</text><text x="498" y="166">4 Std</text><text x="588" y="166">5 Std</text>
+          <text x="138" y="196">0</text><text x="234" y="196">1 Std</text><text x="330" y="196">2 Std</text>
+          <text x="426" y="196">3 Std</text><text x="522" y="196">4 Std</text><text x="618" y="196">5 Std</text>
         </g>
         <g font-size="13.5" fill="var(--ink2)">
-          <text x="138" y="198">Bei zwei Abenden sind beide gleichauf (4,1 Std).</text>
-          <text x="138" y="217">Bei vier Abenden: Casa Chloe 4,3 Std, Villa Mariposa 5,1 Std.</text>
+          <text x="138" y="228">Casa Chloe fährt am wenigsten, sobald Banús das Ziel ist.</text>
+          <text x="138" y="248">Geht ihr stattdessen in Marbella aus, dreht sich das Bild: dann liegt die</text>
+          <text x="138" y="268">Golden Mile mit 7 Minuten vorn und kommt auf 4,4 statt 4,8 Stunden.</text>
         </g>
       </svg>
     </div>
-    <p class="tnote">Dazu die Taxikosten: Von Casa Chloe sind es 1,8 km nach Banús, von der Villa 16,3 km. Bei drei Abenden und zwei Taxis pro Richtung rechnet mit rund <b>96 €</b> für die Gruppe gegenüber rund <b>336 €</b> — das sind 30 € pro Mann, die den Preisunterschied von 199 € auf etwa 170 € zusammenschmelzen lassen.</p>
+    <p class="tnote">Dazu die Taxikosten für drei Abende in Banús, zwei Taxis pro Richtung: von Casa Chloe rund <b>96 €</b> für die Gruppe, von der Golden Mile rund <b>200 €</b>, von Mariposa rund <b>336 €</b>. Das sind 12, 25 und 42 € pro Mann — genug, um den Preisabstand zwischen Casa Chloe und der Golden Mile auf etwa 50 € pro Mann zusammenschmelzen zu lassen.</p>
   </div>
 </section>
 
 <section id="betten">
-  <div class="sechead">
-    <h2>Wer schläft wo</h2>
-    <p class="hint">Acht Mann, keine Paare</p>
-  </div>
+  <div class="sechead"><h2>Wer schläft wo</h2><p class="hint">Acht Mann, keine Paare</p></div>
   <div class="beds2">
+    <div class="bc best">
+      <h3>Golden Mile</h3>
+      <p class="v g">Alle acht schlafen allein</p>
+      <ul>
+        <li><span>Betten gesamt</span><b>8</b></li><li><span>Schlafzimmer</span><b>5</b></li>
+        <li><span>müssen teilen</span><b>niemand</b></li><li><span>Badezimmer</span><b>3,5</b></li>
+      </ul>
+      <p class="cm">Acht Betten auf fünf Zimmer — die einzige der drei Unterkünfte ohne geteiltes Bett. <b>Die Zimmeraufteilung steht nicht im Inserat</b>, das solltet ihr bei Nancy nachfragen. Das Haus geht über mehrere Etagen, Treppensteigen ist laut Inserat erforderlich.</p>
+    </div>
     <div class="bc">
       <h3>Casa Chloe</h3>
-      <p class="v o">Zwei schlafen allein, sechs teilen sich ein Bett</p>
+      <p class="v o">Zwei allein, sechs teilen sich ein Bett</p>
       <ul>
-        <li><span>Schlafzimmer 1</span><b>1 Kingsize</b></li>
-        <li><span>Schlafzimmer 2</span><b>1 Kingsize</b></li>
+        <li><span>Schlafzimmer 1 · 2</span><b>je 1 Kingsize</b></li>
         <li><span>Schlafzimmer 3</span><b>2 Betten à 90 × 200</b></li>
         <li><span>Wohnbereich</span><b>Schlafcouch → 180 × 200</b></li>
+        <li><span>Badezimmer</span><b>2</b></li>
       </ul>
-      <p class="cm">Zwei bekommen ein 90er für sich. Drei Paare teilen sich Kingsize-Betten, <b>eines davon ist die Schlafcouch im Wohnzimmer</b> — wer dort landet, hat kein eigenes Zimmer und geht als Letzter schlafen.</p>
+      <p class="cm">Zwei bekommen ein 90er für sich. Drei Paare teilen sich Kingsize-Betten — <b>eines davon ist die Schlafcouch im Wohnzimmer</b>. Wer dort landet, hat kein eigenes Zimmer und geht als Letzter schlafen.</p>
     </div>
     <div class="bc">
       <h3>Villa Mariposa</h3>
-      <p class="v o">Niemand schläft allein — aber alle auf Kingsize</p>
+      <p class="v o">Niemand allein, aber alle auf Kingsize</p>
       <ul>
-        <li><span>Schlafzimmer 1</span><b>1 Kingsize</b></li>
-        <li><span>Schlafzimmer 2</span><b>1 Kingsize</b></li>
-        <li><span>Schlafzimmer 3</span><b>1 Kingsize</b></li>
-        <li><span>Schlafzimmer 4</span><b>1 Kingsize</b></li>
+        <li><span>Schlafzimmer 1–4</span><b>je 1 Kingsize</b></li>
         <li><span>Breite pro Mann</span><b>90–100 cm</b></li>
+        <li><span>müssen teilen</span><b>alle acht</b></li>
+        <li><span>Badezimmer</span><b>5,5 laut Inserat</b></li>
       </ul>
       <p class="cm">Vier Zimmer, vier Paare, keine Ausnahme. Dafür ist jedes Bett 180 bis 200 cm breit — <b>jeder hat so viel Platz wie in einem eigenen Einzelbett</b>, und niemand schläft im Wohnbereich.</p>
     </div>
   </div>
-  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px">Airbnb misst in Kategorien: Einzelbett 90 cm, Doppelbett rund 140, Queensize 150–160, Kingsize 180–200. Beide Objekte kommen ohne 140er-Doppelbetten aus — das ist besser als bei mehreren der ausgeschiedenen Kandidaten, wo vier Mann auf 140ern gelandet wären.</p>
+  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px">Airbnb misst in Kategorien: Einzelbett 90 cm, Doppelbett rund 140, Queensize 150–160, Kingsize 180–200. Alle drei kommen ohne 140er-Doppelbetten aus — bei mehreren ausgeschiedenen Kandidaten wären vier Mann auf 140ern gelandet, also 70 cm pro Person.</p>
+</section>
+
+<section id="karte">
+  <div class="sechead"><h2>Die drei auf der Karte</h2><p class="hint">West, Mitte, Ost</p></div>
+  <div class="mapcard">
+    <div class="mapscroll">
+    <svg viewBox="0 0 1000 620" role="img" aria-label="Karte mit Casa Chloe, Reihenhaus Golden Mile und Villa Mariposa">
+      <defs><clipPath id="fr"><rect x="0" y="0" width="1000" height="620"/></clipPath></defs>
+      <g clip-path="url(#fr)">
+        <rect x="0" y="0" width="1000" height="620" fill="var(--mapLand)"/>
+        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246 L 1000,0 L 0,0 L 0,196 Z" fill="var(--mapLand2)"/>
+        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246" fill="none" stroke="var(--mapLine)" stroke-width="1.2"/>
+        <path d="M -32.4,589.5 L -14.3,596.1 L 1.8,588.9 L 18.3,572.6 L 37.0,558.9 L 53.0,547.7 L 68.8,534.9 L 85.3,521.3 L 102.7,508.2 L 121.2,492.3 L 137.9,482.8 L 155.5,482.8 L 171.8,467.8 L 187.5,460.8 L 203.5,457.2 L 220.2,442.2 L 236.7,445.7 L 253.8,425.5 L 270.5,421.7 L 290.8,389.4 L 308.7,371.9 L 327.1,359.2 L 347.2,353.8 L 368.6,356.6 L 387.0,349.4 L 405.7,339.7 L 424.5,329.1 L 442.7,321.3 L 475.9,317.9 L 508.9,313.7 L 531.0,314.6 L 547.0,320.9 L 563.0,317.5 L 579.9,315.2 L 597.9,309.5 L 615.4,314.4 L 631.4,315.3 L 654.5,311.1 L 679.4,310.6 L 717.3,316.0 L 747.9,325.1 L 770.5,336.5 L 790.3,340.1 L 823.0,347.0 L 849.9,351.4 L 877.8,357.6 L 913.1,364.2 L 940.6,371.4 L 969.5,379.5 L 988.8,385.7 L 1022.5,395.1 L 1060,395.1 L 1060,680 L -60,680 Z" fill="var(--mapWater)"/>
+        <text x="700" y="512" fill="var(--ink3)" font-size="19" letter-spacing="6" font-weight="500" opacity=".85">MITTELMEER</text>
+        <g font-size="13" font-weight="600" fill="var(--error)">
+          <g transform="translate(764,279)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="-22" text-anchor="end">Rio Real Golf</text></g>
+          <g transform="translate(213,331)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="22" text-anchor="end">Aloha Golf</text></g>
+          <g transform="translate(884,318)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="9" y="6">Santa Clara Golf</text></g>
+        </g>
+        <g font-size="13" font-weight="500">
+          <g transform="translate(984,116)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">La Cala Resort</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">28–37 Min.</text></g>
+          <g transform="translate(984,172)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">Mijas Golf</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">30–37 Min.</text></g>
+        </g>
+        <g font-size="13.5" font-weight="600" fill="var(--ink2)">
+          <text x="292" y="196" text-anchor="middle">▲ La Concha</text>
+          <text x="42" y="493">San Pedro</text>
+          <text x="250" y="466" text-anchor="middle">Puerto Banús</text>
+          <text x="596" y="302">Marbella</text>
+        </g>
+        <circle cx="28.6" cy="478.3" r="3.5" fill="var(--ink2)"/><circle cx="250" cy="433.4" r="3.5" fill="var(--ink2)"/><circle cx="571.5" cy="293.9" r="3.5" fill="var(--ink2)"/>
+        <g stroke="var(--ink)" stroke-width="1.6">
+          <line x1="484" y1="252" x2="484" y2="272"/><line x1="847" y1="246" x2="847" y2="270"/>
+        </g>
+        <circle cx="211" cy="387" r="5" fill="var(--ink)"/><circle cx="484" cy="278" r="5" fill="var(--good)"/><circle cx="847" cy="274" r="5" fill="var(--ink)"/>
+        <g>
+          <rect x="112" y="368" width="198" height="38" rx="19" fill="var(--ink)"/>
+          <text x="211" y="393" text-anchor="middle" font-size="16" font-weight="700" fill="var(--bg)">Casa Chloe 2'336 €</text>
+          <rect x="368" y="214" width="232" height="38" rx="19" fill="var(--good)"/>
+          <text x="484" y="239" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">★ Golden Mile 2'842 €</text>
+          <rect x="700" y="208" width="212" height="38" rx="19" fill="var(--ink)"/>
+          <text x="806" y="233" text-anchor="middle" font-size="16" font-weight="700" fill="var(--bg)">Villa Mariposa 3'930 €</text>
+        </g>
+      </g>
+    </svg>
+    </div>
+    <p class="maplegend">Casa Chloe liegt 1,8 km von Puerto Banús und 8,6 km von Marbella. Die Golden Mile liegt dazwischen: 6,8 km nach Banús, 2,5 km nach Marbella. Villa Mariposa ist 16,3 km von Banús, aber nur 4 km von Rio Real. Airbnb zeigt Standorte rund 150 m ungenau.</p>
+  </div>
 </section>
 
 <style>
 .progwrap{overflow-x:auto; margin:0 -24px; padding:0 24px}
-.prog{display:grid; grid-template-columns:repeat(5,minmax(172px,1fr)); gap:13px; min-width:min-content}
-.day{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:15px 16px 16px}
-.day.opt{border-color:var(--rausch); border-width:1.5px}
+.prog{display:grid; grid-template-columns:repeat(5,minmax(184px,1fr)); gap:13px; min-width:min-content}
+.day{background:var(--surface); border:1.5px solid var(--rausch); border-radius:12px; padding:15px 16px 16px}
 .day .d{font-size:12.5px; font-weight:700; color:var(--rausch); text-transform:uppercase; letter-spacing:.05em}
 .day .c{font-size:18px; font-weight:600; margin-top:5px; line-height:1.2}
-.day .cc{font-size:13.5px; color:var(--ink2); margin-top:2px}
-.day .t{font-size:13.5px; margin-top:10px; font-variant-numeric:tabular-nums}
-.day .f{font-size:12.5px; color:var(--ink2); margin-top:7px; padding-top:8px; border-top:1px solid var(--borderSoft); font-variant-numeric:tabular-nums}
-.venues{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
+.day .t{font-size:13.5px; margin-top:9px; font-variant-numeric:tabular-nums}
+.day .mins{font-size:12.5px; color:var(--ink2); margin-top:8px; padding-top:8px; border-top:1px solid var(--borderSoft); line-height:1.5}
+.day .f{font-size:12.5px; color:var(--ink2); margin-top:6px; font-variant-numeric:tabular-nums}
+.venues{display:grid; grid-template-columns:repeat(auto-fit,minmax(275px,1fr)); gap:16px}
 .venue{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:17px 19px 18px}
 .venue .kind{font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--rausch)}
 .venue h4{font-size:17px; margin-top:4px}
 .venue p{margin:9px 0 0; font-size:14.5px; color:var(--ink2); line-height:1.5}
-.venue .meta{margin-top:11px; padding-top:10px; border-top:1px solid var(--borderSoft); font-size:13px; color:var(--ink2); display:flex; flex-wrap:wrap; gap:4px 14px}
+.venue .meta{margin-top:11px; padding-top:10px; border-top:1px solid var(--borderSoft); font-size:13px; color:var(--ink2); display:flex; flex-direction:column; gap:3px}
 .venue .meta b{color:var(--ink)}
-.fazit{border:1.5px solid var(--rausch); border-radius:14px; padding:26px 28px 28px; background:var(--surface)}
-.fazit .tag{display:inline-block; background:var(--rausch); color:var(--onRausch); font-size:12px; font-weight:700; padding:5px 13px; border-radius:999px}
+.fazit{border:1.5px solid var(--good); border-radius:14px; padding:26px 28px 28px; background:var(--surface)}
+.fazit .tag{display:inline-block; background:var(--good); color:#fff; font-size:12px; font-weight:700; padding:5px 13px; border-radius:999px}
 .fazit h3{font-size:26px; margin-top:13px}
-.fazit p{margin:13px 0 0; font-size:16px; line-height:1.62; color:var(--ink2); max-width:70ch}
+.fazit p{margin:13px 0 0; font-size:16px; line-height:1.62; color:var(--ink2); max-width:72ch}
 .fazit p b{color:var(--ink)}
-.fazit .split{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:22px; padding-top:20px; border-top:1px solid var(--borderSoft)}
+.fazit .split{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:22px; padding-top:20px; border-top:1px solid var(--borderSoft)}
 .fazit .split h4{font-size:15.5px}
 .fazit .split ul{margin:9px 0 0; padding-left:19px}
 .fazit .split li{font-size:14.5px; color:var(--ink2); line-height:1.5; margin-bottom:5px}
-.cta{display:inline-block; margin-top:20px; margin-right:10px; background:var(--btn); color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:12px 22px; border-radius:8px}
-.cta.alt{background:none; color:var(--ink); border:1px solid var(--ink)}
+.cta{display:inline-block; margin-top:20px; margin-right:9px; background:var(--btn); color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:12px 20px; border-radius:8px}
+.cta.alt{background:none; color:var(--ink); border:1px solid var(--border)}
 .qcard{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px 24px 24px; margin-top:22px}
 .qcard h3{font-size:18px}
 .qcard ol{margin:14px 0 0; padding-left:0; list-style:none; counter-reset:q}
@@ -336,72 +424,27 @@ a:focus-visible{outline:2.5px solid var(--rausch); outline-offset:2px; border-ra
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
-<section id="karte">
-  <div class="sechead"><h2>Die zwei auf der Karte</h2><p class="hint">Ost gegen West</p></div>
-  <div class="mapcard">
-    <div class="mapscroll">
-    <svg viewBox="0 0 1000 620" role="img" aria-label="Karte: Casa Chloe in Nueva Andalucía und Villa Mariposa in Ost-Marbella">
-      <defs><clipPath id="fr"><rect x="0" y="0" width="1000" height="620"/></clipPath></defs>
-      <g clip-path="url(#fr)">
-        <rect x="0" y="0" width="1000" height="620" fill="var(--mapLand)"/>
-        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246 L 1000,0 L 0,0 L 0,196 Z" fill="var(--mapLand2)"/>
-        <path d="M 120,150 Q 200,96 292,118 Q 360,134 430,178 Q 500,214 560,196 Q 620,180 700,206 L 1000,246" fill="none" stroke="var(--mapLine)" stroke-width="1.2"/>
-        <path d="M -32.4,589.5 L -14.3,596.1 L 1.8,588.9 L 18.3,572.6 L 37.0,558.9 L 53.0,547.7 L 68.8,534.9 L 85.3,521.3 L 102.7,508.2 L 121.2,492.3 L 137.9,482.8 L 155.5,482.8 L 171.8,467.8 L 187.5,460.8 L 203.5,457.2 L 220.2,442.2 L 236.7,445.7 L 253.8,425.5 L 270.5,421.7 L 290.8,389.4 L 308.7,371.9 L 327.1,359.2 L 347.2,353.8 L 368.6,356.6 L 387.0,349.4 L 405.7,339.7 L 424.5,329.1 L 442.7,321.3 L 475.9,317.9 L 508.9,313.7 L 531.0,314.6 L 547.0,320.9 L 563.0,317.5 L 579.9,315.2 L 597.9,309.5 L 615.4,314.4 L 631.4,315.3 L 654.5,311.1 L 679.4,310.6 L 717.3,316.0 L 747.9,325.1 L 770.5,336.5 L 790.3,340.1 L 823.0,347.0 L 849.9,351.4 L 877.8,357.6 L 913.1,364.2 L 940.6,371.4 L 969.5,379.5 L 988.8,385.7 L 1022.5,395.1 L 1060,395.1 L 1060,680 L -60,680 Z" fill="var(--mapWater)"/>
-        <text x="700" y="510" fill="var(--ink3)" font-size="19" letter-spacing="6" font-weight="500" opacity=".85">MITTELMEER</text>
-        <g font-size="13" font-weight="600" fill="var(--error)">
-          <g transform="translate(764,279)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="-22" text-anchor="end">Rio Real Golf</text></g>
-          <g transform="translate(213,331)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="-8" y="22" text-anchor="end">Aloha Golf</text></g>
-          <g transform="translate(884,318)"><path d="M 0,0 L 0,-20" stroke="var(--error)" stroke-width="2"/><path d="M 0,-20 L 14,-15.5 L 0,-11 Z" fill="var(--error)"/><text x="9" y="6">Santa Clara Golf</text></g>
-        </g>
-        <g font-size="13" font-weight="500">
-          <g transform="translate(984,116)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">La Cala Resort</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">Chloe 37 · Mariposa 28 Min.</text></g>
-          <g transform="translate(984,172)"><path d="M 0,-8 L 10,0 L 0,8 Z" fill="var(--error)"/><text x="-9" y="-2" text-anchor="end" font-weight="600" fill="var(--ink)">Mijas Golf</text><text x="-9" y="15" text-anchor="end" fill="var(--ink2)" font-size="12.5">Chloe 37 · Mariposa 30 Min.</text></g>
-        </g>
-        <g font-size="13.5" font-weight="600" fill="var(--ink2)">
-          <text x="292" y="230" text-anchor="middle">▲ La Concha</text>
-          <text x="42" y="493">San Pedro</text>
-          <text x="250" y="466" text-anchor="middle">Puerto Banús</text>
-          <text x="596" y="300">Marbella</text>
-        </g>
-        <circle cx="28.6" cy="478.3" r="3.5" fill="var(--ink2)"/><circle cx="250" cy="433.4" r="3.5" fill="var(--ink2)"/><circle cx="571.5" cy="293.9" r="3.5" fill="var(--ink2)"/>
-        <line x1="847" y1="246" x2="847" y2="270" stroke="var(--ink)" stroke-width="1.6"/>
-        <circle cx="211" cy="387" r="5" fill="var(--ink)"/><circle cx="847" cy="274" r="5" fill="var(--ink)"/>
-        <g>
-          <rect x="112" y="368" width="198" height="38" rx="19" fill="var(--rausch)"/>
-          <text x="211" y="393" text-anchor="middle" font-size="16" font-weight="700" fill="var(--onRausch)">Casa Chloe 2'336 €</text>
-          <rect x="700" y="208" width="212" height="38" rx="19" fill="var(--ink)"/>
-          <text x="806" y="233" text-anchor="middle" font-size="16" font-weight="700" fill="var(--bg)">Villa Mariposa 3'930 €</text>
-        </g>
-      </g>
-    </svg>
-    </div>
-    <p class="maplegend">Casa Chloe liegt 1,8 km von Puerto Banús, Villa Mariposa 16,3 km — dafür 4 km statt 16 km von Rio Real. Airbnb zeigt Standorte rund 150 m ungenau.</p>
-  </div>
-</section>
-
 <section id="golf">
-  <div class="sechead"><h2>Der überarbeitete Golfplan</h2><p class="hint">gilt für beide Objekte</p></div>
-  <p style="max-width:72ch; color:var(--ink2); font-size:16px; margin:0 0 20px">Unverändert gegenüber der letzten Fassung: acht Runden wie geplant, aber in anderer Reihenfolge, mit Rio Real am Ankunftstag und <b style="color:var(--ink)">Las Brisas statt La Hacienda</b>. Das spart 1,8 Stunden Fahrt, rund 170 € Greenfees pro Mann — und macht <b style="color:var(--ink)">Freitag- und Samstagnacht frei</b>, die im ursprünglichen Plan durch die 08:30-Startzeit am Sonntag blockiert waren.</p>
-  <div class="progwrap">
-    <div class="prog">
-      <div class="day opt"><div class="d">Mi 5. Mai</div><div class="c">Rio Real</div><div class="cc">Chloe 17 · Mariposa 7 Min.</div><div class="t">16:00 / 16:10</div><div class="f">ca. 140 € · Ankunft entspannt</div></div>
-      <div class="day opt"><div class="d">Do 6. Mai</div><div class="c">La Cala</div><div class="cc">América · Europa</div><div class="t">09:00 · 15:00</div><div class="f">ca. 100 € + 134 €</div></div>
-      <div class="day opt"><div class="d">Fr 7. Mai</div><div class="c">Mijas</div><div class="cc">Olivos · Lagos</div><div class="t">09:40 · 16:00</div><div class="f">ca. 135 € + 105 € · Nacht frei</div></div>
-      <div class="day opt"><div class="d">Sa 8. Mai</div><div class="c">Las Brisas</div><div class="cc">Chloe 3 · Mariposa 18 Min.</div><div class="t">11:00 · eine Runde</div><div class="f">ca. 140 € · Nacht frei</div></div>
-      <div class="day opt"><div class="d">So 9. Mai</div><div class="c">Santa Clara<br>+ Rio Real</div><div class="cc">Mariposa 1 bzw. 7 Min.</div><div class="t">10:00 · 15:30</div><div class="f">ca. 110 € + 140 € · Nacht frei</div></div>
-    </div>
-  </div>
-  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px">Startzeiten und Greenfees sind Vorschläge und Richtwerte für die Maisaison, keine Buchungen. Wer La Hacienda in Alcaidesa als einzigen echten Links-Platz der Küste behalten will, ersetzt den Samstag — dann steigt die Fahrzeit von 3,0 bzw. 3,8 auf 4,2 bzw. 5,0 Stunden.</p>
+  <div class="sechead"><h2>Der überarbeitete Golfplan</h2><p class="hint">Anfahrt je Objekt: Chloe · Golden Mile · Mariposa</p></div>
+  <p style="max-width:74ch; color:var(--ink2); font-size:16px; margin:0 0 20px">Acht Runden wie geplant, aber in anderer Reihenfolge: Rio Real am Ankunftstag statt La Cala, und <b style="color:var(--ink)">Las Brisas statt La Hacienda</b>. Das spart 1,8 Stunden Fahrt und rund 170 € Greenfees pro Mann — und macht <b style="color:var(--ink)">Freitag- und Samstagnacht frei</b>, die im ursprünglichen Plan durch die 08:30-Startzeit am Sonntag blockiert waren.</p>
+  <div class="progwrap"><div class="prog">
+    <div class="day"><div class="d">Mi 5. Mai</div><div class="c">Rio Real</div><div class="t">16:00 / 16:10</div><div class="mins">17 · 14 · <b>7</b> Min.</div><div class="f">ca. 140 € · Ankunft entspannt</div></div>
+    <div class="day"><div class="d">Do 6. Mai</div><div class="c">La Cala</div><div class="t">09:00 · 15:00</div><div class="mins">37 · 34 · <b>28</b> Min.</div><div class="f">ca. 100 € + 134 €</div></div>
+    <div class="day"><div class="d">Fr 7. Mai</div><div class="c">Mijas</div><div class="t">09:40 · 16:00</div><div class="mins">37 · 33 · <b>30</b> Min.</div><div class="f">ca. 135 € + 105 € · Nacht frei</div></div>
+    <div class="day"><div class="d">Sa 8. Mai</div><div class="c">Las Brisas</div><div class="t">11:00 · eine Runde</div><div class="mins"><b>3</b> · 13 · 18 Min.</div><div class="f">ca. 140 € · Nacht frei</div></div>
+    <div class="day"><div class="d">So 9. Mai</div><div class="c">Santa Clara<br>+ Rio Real</div><div class="t">10:00 · 15:30</div><div class="mins">17 · 14 · <b>1</b> Min.</div><div class="f">ca. 110 € + 140 € · Nacht frei</div></div>
+  </div></div>
+  <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px">Startzeiten und Greenfees sind Vorschläge und Richtwerte für die Maisaison, keine Buchungen. Wer La Hacienda in Alcaidesa als einzigen echten Links-Platz der Küste behalten will, ersetzt den Samstag — dann steigt die Fahrzeit je nach Objekt um gut eine Stunde.</p>
 </section>
 
 <section id="ausgang">
   <div class="sechead"><h2>Wo abends etwas läuft</h2><p class="hint">Clubs, nicht Bars · Anfang Mai ist Vorsaison</p></div>
-  <p style="max-width:72ch; color:var(--ink2); font-size:16px; margin:0 0 20px">Marbella läuft ab Juni auf vollen Touren. Anfang Mai öffnen die grossen Clubs meist nur <b style="color:var(--ink)">Freitag und Samstag</b> — genau die beiden Nächte, die der überarbeitete Golfplan freiräumt.</p>
+  <p style="max-width:74ch; color:var(--ink2); font-size:16px; margin:0 0 20px">Marbella läuft ab Juni auf vollen Touren. Anfang Mai öffnen die grossen Clubs meist nur <b style="color:var(--ink)">Freitag und Samstag</b> — genau die beiden Nächte, die der überarbeitete Golfplan freiräumt.</p>
   <div class="venues">
-    <div class="venue"><p class="kind">Clubmeile · was ihr kennt</p><h4>Puerto Banús</h4><p>Tibu, Momento, Pangea — die Clubs liegen am Hafen nebeneinander, man wechselt zu Fuss. Im Mai am Wochenende zuverlässig voll.</p><p class="meta"><span>ab <b>Chloe 4 Min.</b></span><span>ab <b>Mariposa 16 Min.</b></span><span>Eintritt ca. 20–30 €</span></p></div>
-    <div class="venue"><p class="kind">Club · die Institution</p><h4>Olivia Valere</h4><p>Der grösste Name der Küste, gebaut wie ein maurischer Palast. Der Abend, für den man sich anzieht. Keine Shorts, keine Sportschuhe.</p><p class="meta"><span>ab <b>Chloe 10 Min.</b></span><span>ab <b>Mariposa 15 Min.</b></span><span>füllt sich ab <b>01:00</b></span></p></div>
-    <div class="venue"><p class="kind">Clubhafen · neu für dich</p><h4>Puerto Deportivo Marbella</h4><p>Marbellas eigener Yachthafen: kompakt, voller Clubs und Spätbars, jünger und spanischer als Banús, kein Türsteher-Theater. Ganzjährig offen.</p><p class="meta"><span>ab <b>Chloe 13 Min.</b></span><span>ab <b>Mariposa 11 Min.</b></span></p></div>
-    <div class="venue"><p class="kind">Tagesparty · Sonntag</p><h4>Nikki Beach</h4><p>Der klassische Sonntag an der Costa del Sol: Beach Club, DJ, Party am Nachmittag. Passt zum Sonntag oder zum Montag vor dem Rückflug.</p><p class="meta"><span>ab <b>Chloe 22 Min.</b></span><span>ab <b>Mariposa 10 Min.</b></span><span>Saisonstart Frühjahr</span></p></div>
+    <div class="venue"><p class="kind">Clubmeile · was ihr kennt</p><h4>Puerto Banús</h4><p>Tibu, Momento, Pangea — die Clubs liegen am Hafen nebeneinander, man wechselt zu Fuss. Im Mai am Wochenende zuverlässig voll.</p><p class="meta"><span>Casa Chloe <b>4 Min.</b></span><span>Golden Mile <b>11 Min.</b></span><span>Mariposa <b>16 Min.</b></span></p></div>
+    <div class="venue"><p class="kind">Club · die Institution</p><h4>Olivia Valere</h4><p>Der grösste Name der Küste, gebaut wie ein maurischer Palast. Der Abend, für den man sich anzieht. Keine Shorts, keine Sportschuhe.</p><p class="meta"><span>Casa Chloe <b>10 Min.</b></span><span>Golden Mile <b>8 Min.</b></span><span>Mariposa <b>15 Min.</b></span></p></div>
+    <div class="venue"><p class="kind">Clubhafen · neu für dich</p><h4>Puerto Deportivo Marbella</h4><p>Marbellas eigener Yachthafen: kompakt, voller Clubs und Spätbars, jünger und spanischer als Banús, kein Türsteher-Theater. Ganzjährig offen.</p><p class="meta"><span>Casa Chloe <b>13 Min.</b></span><span>Golden Mile <b>7 Min.</b></span><span>Mariposa <b>11 Min.</b></span></p></div>
+    <div class="venue"><p class="kind">Tagesparty · Sonntag</p><h4>Nikki Beach</h4><p>Der klassische Sonntag an der Costa del Sol: Beach Club, DJ, Party am Nachmittag. Passt zum Sonntag oder zum Montag vor dem Rückflug.</p><p class="meta"><span>Casa Chloe <b>22 Min.</b></span><span>Golden Mile <b>18 Min.</b></span><span>Mariposa <b>10 Min.</b></span></p></div>
   </div>
   <p class="tnote" style="border:1px solid var(--border); border-radius:12px; margin-top:18px"><b>Vor der Reise prüfen.</b> Clubs in Marbella wechseln Namen, Betreiber und Öffnungszeiten häufiger als anderswo, und mein Wissensstand endet im Frühjahr 2026 — eure Reise ist ein Jahr später. Lagen und Grundmuster stimmen, die einzelnen Läden gehören kurz vorher gegengecheckt.</p>
 </section>
@@ -410,51 +453,53 @@ a:focus-visible{outline:2.5px solid var(--rausch); outline-offset:2px; border-ra
   <div class="sechead"><h2>Mein Fazit</h2></div>
   <div class="fazit">
     <span class="tag">Empfehlung</span>
-    <h3>Casa Chloe — mit einer Bedingung</h3>
-    <p>Der Ausschlag gibt nicht der Preis, sondern die <b>Verlässlichkeit</b>. Casa Chloe hat 35 Bewertungen bei 4,91 und ist Gäste-Favorit; Villa Mariposa hat 12 bei 4,67, darunter eine detaillierte Mängelschilderung, auf die der Vermieter laut Gast nicht reagiert hat. Bei einer Woche zu acht ist ein Vermieter, der nicht ans Telefon geht, das teuerste Risiko im Feld — teurer als 199 € pro Mann.</p>
-    <p>Dazu kommt: <b>Mariposas Golfvorteil hält der Prüfung nicht stand.</b> Über die fünf Golftage spart sie 48 Minuten, verliert aber 24 Minuten pro Ausgehabend. Ab dem dritten Abend in Banús fahrt ihr von der Villa aus insgesamt mehr — und zahlt dabei rund 240 € mehr Taxi.</p>
-    <p><b>Die Bedingung:</b> Vor dem Buchen bestätigen lassen, dass zwei Autos auf das Grundstück passen. Das Inserat sagt nur «Parkplatz auf dem Grundstück» ohne Anzahl. Kommt ein Nein, kippt die Rechnung — dann ist Mariposa mit ihren zwei garantierten Plätzen im Vorteil.</p>
+    <h3>Das Reihenhaus an der Golden Mile</h3>
+    <p>Mit dem dritten Objekt im Feld verschiebt sich der Entscheid. Die Golden Mile <b>räumt genau die zwei Schwächen aus, an denen Casa Chloe hängt</b>: Statt zwei Bädern gibt es 3,5, und statt zwei eigenen Betten haben alle acht eines. Dafür zahlt ihr 63 € pro Mann mehr — und holt davon rund die Hälfte über kürzere Taxifahrten wieder herein.</p>
+    <p>Dazu kommt die beste Bewertung im Feld: <b>4,93 aus 29 Bewertungen, Gäste-Favorit und Superhost.</b> Casa Chloe liegt mit 4,91 aus 35 praktisch gleichauf, hat aber keinen Superhost-Status. Villa Mariposa fällt mit 4,67 aus zwölf Bewertungen ab, und der dokumentierte Mängelbericht ohne Reaktion des Vermieters ist bei einer Woche zu acht das teuerste Risiko im Feld.</p>
+    <p>Und die Lage löst euren Zielkonflikt am ehesten auf: <b>Marbella in 7, Puerto Banús in 11 Minuten.</b> Egal, wohin ihr abends wollt, es sind rund zehn Minuten — ihr müsst euch nicht vorher entscheiden.</p>
+    <p><b>Die Bedingung:</b> Vor dem Buchen bei Nancy zwei Dinge bestätigen lassen — <b>wie viele Autos aufs Grundstück passen</b> und <b>wie die acht Betten auf die fünf Zimmer verteilt sind</b>. Beides steht nicht im Inserat. Kommt beim Parkplatz ein Nein, ist Villa Mariposa mit ihren zwei garantierten Plätzen im Vorteil.</p>
     <div class="split">
-      <div>
-        <h4>Nehmt trotzdem Villa Mariposa, wenn …</h4>
-        <ul>
-          <li>euch zwei Bäder für acht Mann zu knapp sind — das ist der eine Punkt, an dem Casa Chloe klar verliert</li>
-          <li>ihr abends ohnehin meist am Haus bleibt und grillt statt auszugehen</li>
-          <li>ein eigener beheizbarer Pool und eine freistehende Villa den Aufpreis wert sind</li>
-          <li>niemand auf einer Schlafcouch im Wohnzimmer landen soll</li>
-        </ul>
-      </div>
       <div>
         <h4>Nehmt Casa Chloe, wenn …</h4>
         <ul>
-          <li>ihr die 1'594 € lieber in Greenfees, Essen und Ausgang steckt</li>
-          <li>ihr an mehr als zwei Abenden nach Banús wollt</li>
-          <li>euch eine belastbare Bewertung wichtiger ist als Ausstattung</li>
-          <li>ihr mit gestaffeltem Aufstehen kein Problem habt</li>
+          <li>der Preis absolut zuoberst steht — sie ist und bleibt die günstigste</li>
+          <li>ihr an fast jedem Abend nach Banús wollt; vier Minuten schlägt alles</li>
+          <li>euch zwei Bäder und eine Schlafcouch im Wohnzimmer nicht stören</li>
+          <li>ihr Aufzug und 24/7-Security im Haus schätzt</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nehmt Villa Mariposa, wenn …</h4>
+        <ul>
+          <li>ein <b>privater beheizbarer Pool</b> den Aufpreis wert ist — das kann keine der anderen</li>
+          <li>ihr die meisten Bäder wollt und das Rating-Risiko in Kauf nehmt</li>
+          <li>zwei garantierte Parkplätze den Ausschlag geben</li>
+          <li>ihr abends meist am Haus bleibt und grillt statt auszugehen</li>
         </ul>
       </div>
     </div>
-    <a class="cta" href="https://www.airbnb.de/rooms/1426033411556144418" target="_blank" rel="noopener">Casa Chloe ansehen</a>
-    <a class="cta alt" href="https://www.airbnb.de/rooms/973810797315194730" target="_blank" rel="noopener">Villa Mariposa ansehen</a>
+    <a class="cta" href="https://www.airbnb.de/rooms/950588449849254017" target="_blank" rel="noopener">Golden Mile ansehen</a>
+    <a class="cta alt" href="https://www.airbnb.de/rooms/1426033411556144418" target="_blank" rel="noopener">Casa Chloe</a>
+    <a class="cta alt" href="https://www.airbnb.de/rooms/973810797315194730" target="_blank" rel="noopener">Villa Mariposa</a>
   </div>
 
   <div class="qcard">
     <h3>Vor dem Buchen klären</h3>
     <ol>
-      <li><b>Casa Chloe: Passen zwei Autos aufs Grundstück?</b><em>Die entscheidende Frage. Das Inserat nennt keine Anzahl.</em></li>
+      <li><b>Golden Mile: Wie viele Autos passen aufs Grundstück, und wie sind die acht Betten verteilt?</b><em>Die zwei Fragen, an denen meine Empfehlung hängt. Beides steht nicht im Inserat.</em></li>
+      <li><b>Casa Chloe: Passen zwei Autos aufs Grundstück?</b><em>Auch hier nennt das Inserat keine Anzahl.</em></li>
       <li><b>Villa Mariposa: Drei oder 5,5 Badezimmer?</b><em>Das Inserat sagt 5,5, die Beschreibung zählt ein geteiltes Bad, ein Ensuite und ein Gäste-Duschbad auf — das sind eher drei plus WC.</em></li>
-      <li><b>Villa Mariposa: Sind die gemeldeten Mängel behoben?</b><em>Pooltür, Abfluss im oberen Bad, Poolchemie. Direkt beim Gastgeber nachfragen und die Antwort schriftlich behalten.</em></li>
-      <li><b>Casa Chloe: Wer schläft auf der Schlafcouch?</b><em>Besser vorher regeln als am ersten Abend.</em></li>
-      <li><b>Beide: Endpreis inklusive Reinigung, Kaution und Kurtaxe?</b><em>Die 2'336 € und 3'930 € sind die Airbnb-Gesamtpreise; ob alles drin ist, zeigt erst die Buchungsmaske.</em></li>
-      <li><b>Beide: Check-in am 5. Mai.</b><em>Landung 12:25, Startzeit 16:00. Casa Chloe lässt ab 15:00 einchecken, bei Mariposa kostet Ankunft ausserhalb der Zeiten 50 €.</em></li>
+      <li><b>Villa Mariposa: Sind die gemeldeten Mängel behoben?</b><em>Pooltür, Abfluss im oberen Bad, Poolchemie. Nachfragen und die Antwort schriftlich behalten.</em></li>
+      <li><b>Golden Mile: Wie viele Etagen, und wie steil sind die Treppen?</b><em>Das Inserat weist ausdrücklich darauf hin, dass Treppensteigen erforderlich ist.</em></li>
+      <li><b>Alle drei: Endpreis inklusive Reinigung, Kaution und Kurtaxe?</b><em>Die genannten Beträge sind die Airbnb-Gesamtpreise; ob alles enthalten ist, zeigt erst die Buchungsmaske.</em></li>
     </ol>
   </div>
 </section>
 
 <footer>
-  <p><b>Woher die Zahlen kommen.</b> Preise, Bewertungen, Betten, Bäder und Hausregeln aus den beiden Airbnb-Inseraten, abgefragt am 14. September 2026 für 5.–10. Mai 2027 mit 8 Gästen. Es sind Gesamtpreise für die ganze Buchung in Euro; «pro Mann» ist daraus durch acht geteilt. Die Schilderung der Mängel bei Villa Mariposa stammt aus einer öffentlichen Gästebewertung auf der Inseratsseite und ist hier sinngemäss zusammengefasst.</p>
+  <p><b>Woher die Zahlen kommen.</b> Preise, Bewertungen, Betten, Bäder und Hausregeln aus den drei Airbnb-Inseraten, abgefragt am 14. September 2026 für 5.–10. Mai 2027 mit 8 Gästen. Es sind Gesamtpreise für die ganze Buchung in Euro; «pro Mann» ist daraus durch acht geteilt. Die Schilderung der Mängel bei Villa Mariposa stammt aus einer öffentlichen Gästebewertung und ist hier sinngemäss zusammengefasst.</p>
   <p><b>Wie gerechnet wurde.</b> Fahrzeiten sind echte Strassenrouten (OSRM auf OpenStreetMap-Daten), ohne Verkehrsaufkommen. Die Rechnung «Golf plus Abende» unterstellt drei Ausgehabende in Puerto Banús mit je einer Hin- und Rückfahrt. Taxipreise und Greenfees sind Schätzwerte, keine Angebote. Der Bad-Engpass rechnet mit 15 Minuten pro Person.</p>
-  <p><b>Was diese Seite nicht kann.</b> Verfügbarkeit und Endpreis stehen erst beim Buchen fest. Zwölf Bewertungen sind eine dünne Basis — der Schnitt von Villa Mariposa kann sich mit wenigen neuen Gästen deutlich verschieben. Diese Seite gehört der Reisegruppe und steht in keiner Verbindung zu Airbnb; beide Inserate sind dort verlinkt.</p>
+  <p><b>Was diese Seite nicht kann.</b> Verfügbarkeit und Endpreis stehen erst beim Buchen fest. Zwölf Bewertungen sind eine dünne Basis — der Schnitt von Villa Mariposa kann sich mit wenigen neuen Gästen deutlich verschieben. Diese Seite gehört der Reisegruppe und steht in keiner Verbindung zu Airbnb; alle drei Inserate sind dort verlinkt.</p>
 </footer>
 
 </div>
